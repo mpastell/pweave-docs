@@ -1,0 +1,90 @@
+{% extends "!layout.html" %}
+
+{% block rootrellink %}
+        <li><a href="{{ pathto('index') }}">Home</a>|&nbsp;</li>
+        <li><a href="{{ pathto('docs') }}">Documentation</a>&raquo;</li>
+{% endblock %}
+
+
+{% block relbar1 %}
+
+	<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+	  <a href="{{ pathto('index') }}">
+	    <h1>Pweave - reports from data with Python</h1></a>
+	</div>
+
+{{ super() }}
+{% endblock %}
+
+
+{% block sidebar1 %}
+{# A separate sidebar for index page #}
+{% if pagename == 'index' %}
+	<div class="sphinxsidebar">
+          <div class="sphinxsidebarwrapper">
+	    <h3><a href="docs.html">Quick Start</a></h3>
+            <ul>
+	      <ul>
+		<li><a class="reference external" href="http://pypi.python.org/pypi/Pweave">Download</a></li>
+		<li><a class="reference external" href="docs.html">Documentation</a></li>
+	      </ul>
+	    </ul>
+
+	    <h3>Discussion</h3>
+	    <ul>
+	      <li>Ask for help or request features:</li>
+	      <ul>
+		<li><a href="https://groups.google.com/forum/?fromgroups=#!forum/pweave">Pweave Group</a></li>
+		<li>matti.pastell(a)helsinki.fi</li>
+	      </ul>
+	    </ul>
+
+	    <h3>Development and issues</h3>
+	    <ul>
+	      <ul>		
+		<li><a href="https://github.com/mpastell/Pweave">Pweave
+		    at GitHub</a></li>
+	      </ul>
+	    </ul>
+	    <div id="searchbox" style="display: none">
+              <h3>Search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+		Enter search terms or a module, class or function name.
+              </p>
+            </div>
+            <script type="text/javascript">$('#searchbox').show(0);</script>
+          </div>
+	</div>
+{% else %}
+{{ super() }}
+{% endif %}
+{% endblock %}
+
+
+
+{%-block footer %}
+    <div class="footer">
+Documentation for Pweave {{ release }}.
+&copy; Copyright 2010, 2011  <a href="http://mpastell.com">Matti
+	Pastell</a>. Created
+using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version
+}}.  Last updated on {{ last_updated }}.
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+      var pageTracker = _gat._getTracker("UA-6474352-5");
+      pageTracker._trackPageview();
+      } catch(err) {}</script>
+    </div>
+{%- endblock %}
+
+
