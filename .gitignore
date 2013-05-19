@@ -220,4 +220,5 @@ examples/figures/
 pweave_source/figures
 pweave_source/*.py
 source/conf_2.py
+*.pdf
 

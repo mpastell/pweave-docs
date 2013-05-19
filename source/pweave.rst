@@ -19,7 +19,7 @@ line scripts.
 .. note:: 
 
   This document was also created with Pweave, have a look at the
-  `source <_static/pweave.pnw>`_.
+  `source <_static/pweave.rstw>`_.
 
 
 Simple weaving and tangling:
@@ -35,28 +35,35 @@ from the documents namespace :py:attr:`Pweb.globals` to global namespace.
  
 
 
+.. code-block:: python
 
->>> import pweave
->>> # Weave a document with default options
->>> pweave.pweave('ma.Pnw')
-Processing chunk 1 named None
-Processing chunk 2 named None
-Processing chunk 3 named None
-Processing chunk 4 named None
-Pweaved ma.Pnw to ma.rst
->>> # Extract the code
->>> pweave.ptangle('ma.Pnw')
-Tangled code from ma.Pnw to ma.py
+    >>> import pweave
+    >>> # Weave a document with default options
+    >>> pweave.pweave('ma.Pnw')
+    Processing chunk 1 named None
+    Processing chunk 2 named None
+    Processing chunk 3 named None
+    Processing chunk 4 named None
+    Pweaved ma.Pnw to ma.rst
+    >>> # Extract the code
+    >>> pweave.ptangle('ma.Pnw')
+    Tangled code from ma.Pnw to ma.py
+    
 
 
 
-
-pweave and pweave function
+Pweave function reference
 --------------------------
 
 .. autofunction:: pweave.pweave
 
 .. autofunction:: pweave.ptangle
+
+.. autofunction:: pweave.publish
+
+.. autofunction:: pweave.convert
+
+.. autofunction:: pweave.spin
 
 
 More options with Pweb Class
@@ -72,3 +79,5 @@ Pweb Class
 .. autoclass:: pweave.Pweb
    :members: 
 
+
+   

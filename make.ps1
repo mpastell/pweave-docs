@@ -12,7 +12,7 @@ if ($arg -eq "pweave" -or $arg -eq "all")
     #Build Pweave
     cd ..\pweave
     python setup.py install
-    cd ..\pweavedocs2
+    cd ..\pweave-docs
 }
 
 

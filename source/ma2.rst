@@ -7,7 +7,7 @@ Pweave Example - Frequency response of a moving average filter
 **Create 11 point moving average filter and plot its frequency response and print the values.**
 
 
-::
+.. code:: python
 
     from pylab import *
     import scipy.signal as signal
@@ -22,23 +22,24 @@ Pweave Example - Frequency response of a moving average filter
 **Make the impulse response function and use terminal formatted output (=doctest block.)**
 
 
+.. code:: python
 
->>> n = 11.
->>> n
-11.0
->>> b = repeat(1/n, n)
->>> b
-array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
-        0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
-        0.09090909])
-
+    >>> n = 11.
+    >>> n
+    11.0
+    >>> b = repeat(1/n, n)
+    >>> b
+    array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
+            0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
+            0.09090909])
+    
 
 
 
 **Calculate the frequency response and plot it:**
 
 
-::
+.. code:: python
 
     w, h = mfreqz(b)
     #Plot the function

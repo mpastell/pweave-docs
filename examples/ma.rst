@@ -22,16 +22,17 @@ Pweave Example - Frequency response of a moving average filter
 **Make the impulse response function and use terminal formatted output (=doctest block.)**
 
 
+.. code-block:: python
 
->>> n = 11.
->>> n
-11.0
->>> b = repeat(1/n, n)
->>> b
-array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
-        0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
-        0.09090909])
-
+    >>> n = 11.
+    >>> n
+    11.0
+    >>> b = repeat(1/n, n)
+    >>> b
+    array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
+            0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
+            0.09090909])
+    
 
 
 
