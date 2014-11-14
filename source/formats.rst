@@ -22,6 +22,8 @@ formats using:
     
     * html:
        HTML with pygments highlighting
+    * leanpub:
+       Leanpub markdown
     * md2html:
        Markdown to HTML using Python-Markdown
     * pandoc:

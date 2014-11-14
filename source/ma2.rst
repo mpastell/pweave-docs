@@ -16,6 +16,7 @@ Pweave Example - Frequency response of a moving average filter
         w,h = signal.freqz(b,a)
         h = abs(h)
         return(w/max(w), h)
+    
 
 
 
@@ -29,9 +30,12 @@ Pweave Example - Frequency response of a moving average filter
     11.0
     >>> b = repeat(1/n, n)
     >>> b
-    array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
-            0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
+    array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,
+    0.09090909,
+            0.09090909,  0.09090909,  0.09090909,  0.09090909,
+    0.09090909,
             0.09090909])
+    
     
 
 
@@ -47,6 +51,7 @@ Pweave Example - Frequency response of a moving average filter
     ylabel('Amplitude')
     xlabel(r'Normalized Frequency (x$\pi$rad/sample)')
     show()
+    
 
 .. figure:: figures/ma2_figure3_1.pdf
    :width: 10cm
@@ -62,7 +67,6 @@ Pweave Example - Frequency response of a moving average filter
    :header: "Amplitude", "Frequency"
 
 
-
    1.0 , 0.0
    1.0 , 0.0
    1.0 , 0.0
@@ -73,4 +77,5 @@ Pweave Example - Frequency response of a moving average filter
    0.99 , 0.01
    0.99 , 0.02
    0.98 , 0.02
+
 

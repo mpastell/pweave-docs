@@ -45,5 +45,5 @@ show()
 <<results = 'rst', echo = False>>=
 print 
 for i in range(10):
-    print '  ' , round(h[i],2) , ',' , round(w[i],2)
+    print('  ' , round(h[i],2) , ',' , round(w[i],2))
 @ 

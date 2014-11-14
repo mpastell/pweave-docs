@@ -12,8 +12,8 @@ imported. Second you can work interactively with the data after the
 code from the document has been run. Further it is possible to fully
 customize the document execution and formatting using the :py:class:`Pweb` class.
 
-pweave module contains two functions :py:func:`pweave` and
-:py:func:`ptangle` that offer the same functionality as the command
+pweave module contains two functions :py:func:`weave` and
+:py:func:`tangle` that offer the same functionality as the command
 line scripts.
 
 .. note:: 
@@ -29,7 +29,7 @@ Here's and example of simple weaving and tangling using example
 document `ma.Pnw <_static/ma.Pnw>`_. Notice that pweave prints out the
 progress so in case of an error you can tell in which chunk it
 occurred. Also in case of an error returns already evaluated results
-from the documents namespace :py:attr:`Pweb.globals` to global namespace.
+from the documents namespace :py:attr:`PwebProcessorGlobals.globals` to global namespace.
 
 .. change default options for code chunks
  
@@ -39,15 +39,16 @@ from the documents namespace :py:attr:`Pweb.globals` to global namespace.
 
     >>> import pweave
     >>> # Weave a document with default options
-    >>> pweave.pweave('ma.Pnw')
+    >>> pweave.weave('ma.Pnw')
     Processing chunk 1 named None
     Processing chunk 2 named None
     Processing chunk 3 named None
     Processing chunk 4 named None
     Pweaved ma.Pnw to ma.rst
     >>> # Extract the code
-    >>> pweave.ptangle('ma.Pnw')
+    >>> pweave.tangle('ma.Pnw')
     Tangled code from ma.Pnw to ma.py
+    
     
 
 
@@ -55,9 +56,9 @@ from the documents namespace :py:attr:`Pweb.globals` to global namespace.
 Pweave function reference
 --------------------------
 
-.. autofunction:: pweave.pweave
+.. autofunction:: pweave.weave
 
-.. autofunction:: pweave.ptangle
+.. autofunction:: pweave.tangle
 
 .. autofunction:: pweave.publish
 

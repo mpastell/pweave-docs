@@ -26,6 +26,7 @@ Let's start by creating an instance of :py:class:`Pweb` class with rst document:
     >>> from pprint import pprint
     >>> doc = Pweb('ma2.Pnw', format = "rst")
     
+    
 
 
 
@@ -49,6 +50,7 @@ Have a look at what the format dictionary contains:
      'termstart': '.. code:: python\n',
      'width': '15 cm'}
     
+    
 
 
 
@@ -64,7 +66,9 @@ default figure width to 10cm and figure format to pdf. The
 
 .. code-block:: python
 
-    >>> doc.updateformat({'width' : '10cm', 'figfmt' : '.pdf', 'savedformats' : ['.pdf']})
+    >>> doc.updateformat({'width' : '10cm', 'figfmt' : '.pdf',
+    'savedformats' : ['.pdf']})
+    
     
 
 
@@ -82,6 +86,7 @@ And after setting options weave and tangle the document:
     Pweaved ma2.Pnw to ma2.rst
     >>> doc.tangle()
     Tangled code from ma2.Pnw to ma2.py
+    
     
 
 

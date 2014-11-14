@@ -35,6 +35,10 @@ if ($arg -eq "docs" -or $arg -eq "all")
     cp -Force -Recurse figures ..\build\html
     mv -Force ma.html ..\source\_static
     cd ..
+    
+    #Example page from Pweave examples
+    cp -Force ..\pweave\examples\index.rst source\examples
+    cp -Force -Recurse ..\pweave\examples\* build\html\examples
 }
 
 #Weave examples
@@ -60,6 +64,8 @@ if ($arg -eq "ex" -or $arg -eq "all")
 
   cp -Force -Recurse figures ..\source\_static
   cd ..
+
+
 }
 
 #Docs

@@ -232,7 +232,8 @@ chunks.
    also be used in latex documents, where the output will formatted as
    verbatim.
 
-.. envvar:: f_pos = "htpb"
+
+.. envvar:: f_pos = "htpb" 
 
    Sets the figure position for latex figures.
 

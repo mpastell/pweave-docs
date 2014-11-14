@@ -34,12 +34,13 @@ needed for formatting.*
     class MDtoHTML(PwebHTMLFormatter):
     
         chunks = [] #Let's keep a copy of chunks
-        
+    
         def preformat_chunk(self, chunk):
             MDtoHTML.chunks.append(chunk.copy()) #Store the chunks
             if chunk['type'] == "doc":
                 chunk['content'] = markdown.markdown(chunk['content'])
             return(chunk)
+    
 
 
 
@@ -52,6 +53,7 @@ The specified subclass can then be used as formatter with
     doc = Pweb('ma.mdw')
     doc.setformat(Formatter = MDtoHTML)
     doc.weave()
+    
 
 ::
 
@@ -59,6 +61,7 @@ The specified subclass can then be used as formatter with
     Processing chunk 2 named None
     Processing chunk 3 named None
     Pweaved ma.mdw to ma.html
+    
     
 
 
@@ -87,6 +90,7 @@ Let's see what the first code chunk contains:
 
     import pprint
     pprint.pprint(MDtoHTML.chunks[1])
+    
 
 ::
 
@@ -94,31 +98,37 @@ Let's see what the first code chunk contains:
      'codeend': '',
      'codestart': '',
      'complete': True,
-     'content': '\nfrom pylab import *\nimport scipy.signal as signal\n#A function to plot frequency and phase response\ndef mfreqz(b,a=1):\n    w,h = signal.freqz(b,a)\n    h = abs(h)\n    return(w/max(w), h)',
+     u'content': u'\nfrom pylab import *\nimport scipy.signal as
+    signal\n#A function to plot frequency and phase response\ndef
+    mfreqz(b,a=1):\n    w,h = signal.freqz(b,a)\n    h = abs(h)\n
+    return(w/max(w), h)\n',
      'doctype': 'html',
      'echo': True,
+     'engine': 'python',
      'evaluate': True,
      'extension': 'html',
      'f_env': None,
      'f_pos': 'htpb',
      'f_size': (8, 6),
+     'f_spines': True,
      'fig': True,
      'figfmt': '.png',
      'figure': [],
      'include': True,
      'name': None,
-     'number': 1,
+     u'number': 1,
      'outputend': '',
      'outputstart': '',
-     'result': '\n',
+     'result': '\n\n',
      'results': 'verbatim',
      'savedformats': ['.png'],
      'term': False,
      'termend': '',
      'termstart': '',
-     'type': 'code',
+     u'type': u'code',
      'width': '600',
-     'wrap': False}
+     'wrap': True}
+    
     
 
 

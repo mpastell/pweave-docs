@@ -18,6 +18,7 @@ Contents:
    subclassing.rst
    examples.rst
    texamples.rst
+   examples/index.rst	
    emacs.rst
    links.rst
    release.rst

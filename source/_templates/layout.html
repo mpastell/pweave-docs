@@ -2,7 +2,12 @@
 
 {% block rootrellink %}
         <li><a href="{{ pathto('index') }}">Home</a>|&nbsp;</li>
-        <li><a href="{{ pathto('docs') }}">Documentation</a>&raquo;</li>
+        <li><a href="{{ pathto('docs')
+        }}">Documentation</a>|&nbsp;</li>
+        <li><a href="{{ pathto('examples/index')
+        }}">Examples</a>&raquo;</li>
+
+
 {% endblock %}
 
 
@@ -22,6 +27,12 @@
 {% if pagename == 'index' %}
 	<div class="sphinxsidebar">
           <div class="sphinxsidebarwrapper">
+
+	    <h3>Documentation for</h3>
+	    <ul>
+	      <li>Pweave {{ release }}</li>
+	    </ul>
+        
 	    <h3><a href="docs.html">Quick Start</a></h3>
             <ul>
 	      <ul>
@@ -71,7 +82,7 @@
 {%-block footer %}
     <div class="footer">
 Documentation for Pweave {{ release }}.
-&copy; Copyright 2010, 2011  <a href="http://mpastell.com">Matti
+&copy; Copyright 2010-2014  <a href="http://mpastell.com">Matti
 	Pastell</a>. Created
 using <a href="http://sphinx.pocoo.org/">Sphinx</a> {{ sphinx_version
 }}.  Last updated on {{ last_updated }}.
