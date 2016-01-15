@@ -37,7 +37,7 @@ Pweave has several options for LaTeX output, here is a demonstation of differenc
 Latex with pygments syntax highlighting:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:download:`<FIR_design_pygments.texw>`, `<FIR_design_pygments.tex>`__ , `<FIR_design_pygments.pdf>`__ and with IPython shell `<FIR_design_pygments_ipy.pdf>`__.
+:download:`FIR_design_pygments.texw<FIR_design_pygments.texw>`, `<FIR_design_pygments.tex>`__ , `<FIR_design_pygments.pdf>`__ and with IPython shell `<FIR_design_pygments_ipy.pdf>`__.
 
 
 .. code:: shell
