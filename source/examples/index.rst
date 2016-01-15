@@ -15,7 +15,7 @@ capturing figures and it is available in several formats.
    :widths: 8, 12, 5, 5, 5
 
 
-   texpygments, `<FIR_design_pygments.texw>`__ , `open <FIR_design_pygments.tex>`__ , , `open <FIR_design_pygments.pdf>`__
+   texpygments, `:download:<FIR_design_pygments.texw>`__ , :download:`open <FIR_design_pygments.tex>`__ , , :download:`open <FIR_design_pygments.pdf>`__
    tex, `<FIR_design_verb.texw>`__ , `open <FIR_design_verb.tex>`__ , , `open <FIR_design_verb.pdf>`__
    texminted, `<FIR_design_minted.texw>`__, `open <FIR_design_minted.tex>`__ , ,`open <FIR_design_minted.pdf>`__
    rst, `<FIR_design.rstw>`__, `open <FIR_design.rst>`__ , `open <FIR_design_rst.html>`__ ,
