@@ -1,0 +1,248 @@
+
+<HTML>
+  <HEAD>
+
+  <meta charset="UTF-8">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/LaTeX", "output/HTML-CSS"],
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+    </script>
+
+    <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+
+
+
+    <style>
+      body
+      {
+      max-width : 1000px;
+      margin : auto;
+      margin-top : 20px;
+      font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-align : justify
+      }
+
+      h1.title {font-size : 1.6em}
+
+      h1 {font-size : 1.4em}
+
+      h2 {font-size : 1.2em}
+
+      h3 {font-size : 1.1em}
+
+      h1, h2, h3, h4, h5, h6
+      {
+      color : maroon;
+      }
+
+      .highlight
+      {
+      border-style:solid;
+      border-width : 1px;
+      border-color : gray;
+      padding-left : 5px;
+      }
+
+      a
+      {
+      color : maroon;
+      }
+
+      .footer
+      {
+      font-size : smaller;
+      color : gray;
+      text-align : right;
+      }
+
+      .hll { background-color: #ffffcc }
+.c { color: #408080; font-style: italic } /* Comment */
+.err { border: 1px solid #FF0000 } /* Error */
+.k { color: #008000; font-weight: bold } /* Keyword */
+.o { color: #666666 } /* Operator */
+.cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.cp { color: #BC7A00 } /* Comment.Preproc */
+.c1 { color: #408080; font-style: italic } /* Comment.Single */
+.cs { color: #408080; font-style: italic } /* Comment.Special */
+.gd { color: #A00000 } /* Generic.Deleted */
+.ge { font-style: italic } /* Generic.Emph */
+.gr { color: #FF0000 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.gi { color: #00A000 } /* Generic.Inserted */
+.go { color: #888888 } /* Generic.Output */
+.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #0044DD } /* Generic.Traceback */
+.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #008000 } /* Keyword.Pseudo */
+.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #B00040 } /* Keyword.Type */
+.m { color: #666666 } /* Literal.Number */
+.s { color: #BA2121 } /* Literal.String */
+.na { color: #7D9029 } /* Name.Attribute */
+.nb { color: #008000 } /* Name.Builtin */
+.nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.no { color: #880000 } /* Name.Constant */
+.nd { color: #AA22FF } /* Name.Decorator */
+.ni { color: #999999; font-weight: bold } /* Name.Entity */
+.ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.nf { color: #0000FF } /* Name.Function */
+.nl { color: #A0A000 } /* Name.Label */
+.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.nt { color: #008000; font-weight: bold } /* Name.Tag */
+.nv { color: #19177C } /* Name.Variable */
+.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mb { color: #666666 } /* Literal.Number.Bin */
+.mf { color: #666666 } /* Literal.Number.Float */
+.mh { color: #666666 } /* Literal.Number.Hex */
+.mi { color: #666666 } /* Literal.Number.Integer */
+.mo { color: #666666 } /* Literal.Number.Oct */
+.sb { color: #BA2121 } /* Literal.String.Backtick */
+.sc { color: #BA2121 } /* Literal.String.Char */
+.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #BA2121 } /* Literal.String.Double */
+.se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.sh { color: #BA2121 } /* Literal.String.Heredoc */
+.si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.sx { color: #008000 } /* Literal.String.Other */
+.sr { color: #BB6688 } /* Literal.String.Regex */
+.s1 { color: #BA2121 } /* Literal.String.Single */
+.ss { color: #19177C } /* Literal.String.Symbol */
+.bp { color: #008000 } /* Name.Builtin.Pseudo */
+.vc { color: #19177C } /* Name.Variable.Class */
+.vg { color: #19177C } /* Name.Variable.Global */
+.vi { color: #19177C } /* Name.Variable.Instance */
+.il { color: #666666 } /* Literal.Number.Integer.Long */
+
+    </style>
+  </HEAD>
+  <BODY>
+<H1 class = "title"> Linear Regression model with Python</H1>
+
+<p><strong>Author:</strong>  Matti Pastell <BR/>
+<strong>Date:</strong>  19.4.2013 <BR/></p>
+<h1>Requirements</h1>
+<p>This en example of doing linear regression analysis using Python
+and <a href="http://statsmodels.sourceforge.net">statsmodels</a>. We'll use the new formula API
+which makes fitting the models very familiar for R users.
+You'll also need <a href="http://www.numpy.org/">Numpy</a>, <a href="http://pandas.pydata.org/">Pandas</a>
+and <a href="http://matplotlib.org/">matplolib</a>.</p>
+<p>The analysis can be published using  Pweave 0.22 and later.</p>
+<p>Import libraries</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">as</span> <span class="nn">sm</span>
+<span class="kn">import</span> <span class="nn">statsmodels</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+</pre></div>
+
+<p>Statsmodels api seems to change often, check release version:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">statsmodels</span><span class="o">.</span><span class="n">__version__</span>
+<span class="s">&#39;0.6.1&#39;</span>
+</pre></div>
+
+<p>We'll use <a href="http://stat.ethz.ch/R-manual/R-patched/library/MASS/html/whiteside.html">whiteside</a> dataset from R package MASS. You can read the description of the dataset from the link, but in short it contains:</p>
+<blockquote>
+<p><em>The weekly gas consumption and average external temperature at a house in south-east England for two
+heating seasons, one of 26 weeks before, and one of 30 weeks after cavity-wall insulation was installed.</em></p>
+</blockquote>
+<p>Load dataset using Pandas:</p>
+<div class="highlight"><pre><span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://raw.githubusercontent.com/mpastell/Rdatasets/master/csv/MASS/whiteside.csv&#39;</span>
+<span class="n">whiteside</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+
+<h1>Fitting the model</h1>
+<p>Let's see what the relationship between the gas consumption is before the insulation.
+See <a href="http://statsmodels.sourceforge.net/devel/example_formulas.html">statsmodels documentation</a>
+for more information about the syntax.</p>
+<div class="highlight"><pre><span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="o">=</span><span class="s">&#39;Gas ~ Temp&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">whiteside</span><span class="p">,</span> <span class="n">subset</span> <span class="o">=</span> <span class="n">whiteside</span><span class="p">[</span><span class="s">&#39;Insul&#39;</span><span class="p">]</span><span class="o">==</span><span class="s">&quot;Before&quot;</span><span class="p">)</span>
+<span class="n">fitted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fitted</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+<div class="highlight"><pre>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    Gas   R-squared:                       0.944
+Model:                            OLS   Adj. R-squared:                  0.941
+Method:                 Least Squares   F-statistic:                     403.1
+Date:                Sat, 16 Jan 2016   Prob (F-statistic):           1.64e-16
+Time:                        01:07:49   Log-Likelihood:                -2.8783
+No. Observations:                  26   AIC:                             9.757
+Df Residuals:                      24   BIC:                             12.27
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------
+Intercept      6.8538      0.118     57.876      0.000         6.609     7.098
+Temp          -0.3932      0.020    -20.078      0.000        -0.434    -0.353
+==============================================================================
+Omnibus:                        0.296   Durbin-Watson:                   2.420
+Prob(Omnibus):                  0.862   Jarque-Bera (JB):                0.164
+Skew:                          -0.177   Prob(JB):                        0.921
+Kurtosis:                       2.839   Cond. No.                         13.3
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</pre></div>
+
+<h1>Plot the data and fit</h1>
+<div class="highlight"><pre><span class="n">Before</span> <span class="o">=</span> <span class="n">whiteside</span><span class="p">[</span><span class="n">whiteside</span><span class="p">[</span><span class="s">&quot;Insul&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s">&quot;Before&quot;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Before</span><span class="p">[</span><span class="s">&quot;Temp&quot;</span><span class="p">],</span> <span class="n">Before</span><span class="p">[</span><span class="s">&quot;Gas&quot;</span><span class="p">],</span> <span class="s">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Before</span><span class="p">[</span><span class="s">&quot;Temp&quot;</span><span class="p">],</span> <span class="n">fitted</span><span class="o">.</span><span class="n">fittedvalues</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">&#39;Data&#39;</span><span class="p">,</span> <span class="s">&#39;Fitted model&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Temperature&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Gas&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;Before Insulation&#39;</span><span class="p">)</span>
+</pre></div>
+<img src="figures/linear_regression_figure6_1.png" width="600"/>
+
+<h1>Fit diagnostiscs</h1>
+<p>Statsmodels <a href="http://statsmodels.sourceforge.net/devel/generated/statsmodels.regression.linear_model.OLSResults.html">OLSresults</a> objects contain the usual diagnostic information about the model and you can use the <code>get_influence()</code> method to get more diagnostic information (such as Cook's distance).</p>
+<h2>A look at the residuals</h2>
+<p>Histogram of normalized residuals</p>
+<div class="highlight"><pre><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">fitted</span><span class="o">.</span><span class="n">resid_pearson</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Normalized residuals&#39;</span><span class="p">)</span>
+</pre></div>
+<img src="figures/linear_regression_figure7_1.png" width="600"/>
+
+<h2>Cooks distance</h2>
+<p><a href="http://statsmodels.sourceforge.net/devel/generated/statsmodels.stats.outliers_influence.OLSInfluence.html">OLSInfluence</a>
+ objects contain more diagnostic information</p>
+<div class="highlight"><pre><span class="n">influence</span> <span class="o">=</span> <span class="n">fitted</span><span class="o">.</span><span class="n">get_influence</span><span class="p">()</span>
+<span class="c">#c is the distance and p is p-value</span>
+<span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="n">influence</span><span class="o">.</span><span class="n">cooks_distance</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)),</span> <span class="n">c</span><span class="p">,</span> <span class="n">markerfmt</span><span class="o">=</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
+</pre></div>
+<img src="figures/linear_regression_figure8_1.png" width="600"/>
+
+<h1>Statsmodels builtin plots</h1>
+<p>Statsmodels includes a some builtin function for plotting residuals against leverage:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">statsmodels.graphics.regressionplots</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">plot_leverage_resid2</span><span class="p">(</span><span class="n">fitted</span><span class="p">)</span>
+<span class="n">influence_plot</span><span class="p">(</span><span class="n">fitted</span><span class="p">)</span>
+</pre></div>
+<img src="figures/linear_regression_figure9_1.png" width="600"/>
+<img src="figures/linear_regression_figure9_2.png" width="600"/>
+
+    <HR/>
+    <div class="footer">
+      <p>Published from <a href="linear_regression.py">linear_regression.py</a>
+    using <a href="http://mpastell.com/pweave">Pweave</a> 0.23.2
+    on 16-01-2016.<p></div>
+  </BODY>
+</HTML>

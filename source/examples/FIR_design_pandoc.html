@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Matti Pastell" />
+  <title>FIR filter design with Python and SciPy</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<div id="header">
+<h1 class="title">FIR filter design with Python and SciPy</h1>
+<h2 class="author">Matti Pastell</h2>
+<h3 class="date">15th April 2013</h3>
+</div>
+<h1 id="introduction">Introduction</h1>
+<p>This an example of a script that can be published using <a href="http://mpastell.com/pweave">Pweave</a>. The script can be executed normally using Python or published to HTML with Pweave Text is written in markdown in lines starting with &quot;<code>#'</code> &quot; and code is executed and results are included in the published document. The concept is similar to publishing documents with <a href="http://mathworks.com">MATLAB</a> or using stitch with <a href="http://http://yihui.name/knitr/demo/stitch/">Knitr</a>.</p>
+<p>Notice that you don't need to define chunk options (see <a href="http://mpastell.com/pweave/usage.html#code-chunk-options">Pweave docs</a> ), but you do need one line of whitespace between text and code. If you want to define options you can do it on using a line starting with <code>#+</code>. just before code e.g. <code>#+ term=True, caption='Fancy plots.'</code>. If you're viewing the HTML version have a look at the <a href="FIR_design.py">source</a> to see the markup.</p>
+<p>The code and text below comes mostly from my blog post <a href="http://mpastell.com/2010/01/18/fir-with-scipy/">FIR design with SciPy</a>, but I've updated it to reflect new features in SciPy.</p>
+<h1 id="fir-filter-design">FIR Filter Design</h1>
+<p>We'll implement lowpass, highpass and ' bandpass FIR filters. If you want to read more about DSP I highly recommend <a href="http://www.dspguide.com/">The Scientist and Engineer's Guide to Digital Signal Processing</a> which is freely available online.</p>
+<h2 id="functions-for-frequency-phase-impulse-and-step-response">Functions for frequency, phase, impulse and step response</h2>
+<p>Let's first define functions to plot filter properties.</p>
+<pre class="sourceCode python"><code class="sourceCode python"><span class="ch">from</span> pylab <span class="ch">import</span> *
+<span class="ch">import</span> scipy.signal <span class="ch">as</span> signal
+
+<span class="co">#Plot frequency and phase response</span>
+<span class="kw">def</span> mfreqz(b,a=<span class="dv">1</span>):
+    w,h = signal.freqz(b,a)
+    h_dB = <span class="dv">20</span> * log10 (<span class="dt">abs</span>(h))
+    subplot(<span class="dv">211</span>)
+    plot(w/<span class="dt">max</span>(w),h_dB)
+    ylim(-<span class="dv">150</span>, <span class="dv">5</span>)
+    ylabel(<span class="st">&#39;Magnitude (db)&#39;</span>)
+    xlabel(<span class="st">r&#39;Normalized Frequency (x$\pi$rad/sample)&#39;</span>)
+    title(<span class="st">r&#39;Frequency response&#39;</span>)
+    subplot(<span class="dv">212</span>)
+    h_Phase = unwrap(arctan2(imag(h),real(h)))
+    plot(w/<span class="dt">max</span>(w),h_Phase)
+    ylabel(<span class="st">&#39;Phase (radians)&#39;</span>)
+    xlabel(<span class="st">r&#39;Normalized Frequency (x$\pi$rad/sample)&#39;</span>)
+    title(<span class="st">r&#39;Phase response&#39;</span>)
+    subplots_adjust(hspace=<span class="fl">0.5</span>)
+
+<span class="co">#Plot step and impulse response</span>
+<span class="kw">def</span> impz(b,a=<span class="dv">1</span>):
+    l = <span class="dt">len</span>(b)
+    impulse = repeat(<span class="dv">0</span>.,l); impulse[<span class="dv">0</span>] =<span class="dv">1</span>.
+    x = arange(<span class="dv">0</span>,l)
+    response = signal.lfilter(b,a,impulse)
+    subplot(<span class="dv">211</span>)
+    stem(x, response)
+    ylabel(<span class="st">&#39;Amplitude&#39;</span>)
+    xlabel(<span class="st">r&#39;n (samples)&#39;</span>)
+    title(<span class="st">r&#39;Impulse response&#39;</span>)
+    subplot(<span class="dv">212</span>)
+    step = cumsum(response)
+    stem(x, step)
+    ylabel(<span class="st">&#39;Amplitude&#39;</span>)
+    xlabel(<span class="st">r&#39;n (samples)&#39;</span>)
+    title(<span class="st">r&#39;Step response&#39;</span>)
+    subplots_adjust(hspace=<span class="fl">0.5</span>)</code></pre>
+<h2 id="lowpass-fir-filter">Lowpass FIR filter</h2>
+<p>Designing a lowpass FIR filter is very simple to do with SciPy, all you need to do is to define the window length, cut off frequency and the window.</p>
+<p>The Hamming window is defined as: <span class="math">\(w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}\)</span>, where <span class="math">\(\alpha=0.54\)</span> and <span class="math">\(\beta=0.46\)</span></p>
+<p>The next code chunk is executed in term mode, see the <a href="FIR_design.py">Python script</a> for syntax. Notice also that Pweave can now catch multiple figures/code chunk.</p>
+<pre class="sourceCode python"><code class="sourceCode python">&gt;&gt;&gt; n = <span class="dv">61</span>
+&gt;&gt;&gt; a = signal.firwin(n, cutoff = <span class="fl">0.3</span>, window = <span class="st">&quot;hamming&quot;</span>)
+&gt;&gt;&gt; <span class="co">#Frequency and phase response</span>
+&gt;&gt;&gt; mfreqz(a)
+&gt;&gt;&gt; show()
+&gt;&gt;&gt; <span class="co">#Impulse and step response</span>
+&gt;&gt;&gt; figure(<span class="dv">2</span>)
+&lt;matplotlib.figure.Figure <span class="dt">object</span> at <span class="bn">0x7fdb3a20e5d0</span>&gt;
+&gt;&gt;&gt; impz(a)
+&gt;&gt;&gt; show()</code></pre>
+<p><img src="figures/FIR_design_figure2_1.png" /><br /><img src="figures/FIR_design_figure2_2.png" /><br /></p>
+<h2 id="highpass-fir-filter">Highpass FIR Filter</h2>
+<p>Let's define a highpass FIR filter, if you compare to original blog post you'll notice that it has become easier since 2009. You don't need to do ' spectral inversion &quot;manually&quot; anymore!</p>
+<pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">101</span>
+a = signal.firwin(n, cutoff = <span class="fl">0.3</span>, window = <span class="st">&quot;hanning&quot;</span>,
+pass_zero=<span class="ot">False</span>)
+mfreqz(a)
+show()</code></pre>
+<p><img src="figures/FIR_design_figure3_1.png" /><br /></p>
+<h2 id="bandpass-fir-filter">Bandpass FIR filter</h2>
+<p>Notice that the plot has a caption defined in code chunk options.</p>
+<pre class="sourceCode python"><code class="sourceCode python">n = <span class="dv">1001</span>
+a = signal.firwin(n, cutoff = [<span class="fl">0.2</span>, <span class="fl">0.5</span>], window = <span class="st">&#39;blackmanharris&#39;</span>,
+pass_zero = <span class="ot">False</span>)
+mfreqz(a)
+show()</code></pre>
+<div class="figure">
+<img src="figures/FIR_design_figure4_1.png" alt="Bandpass FIR filter." />
+<p class="caption">Bandpass FIR filter.</p>
+</div>
+</body>
+</html>

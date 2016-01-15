@@ -1,0 +1,222 @@
+
+<HTML>
+  <HEAD>
+
+  <meta charset="UTF-8">
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/LaTeX", "output/HTML-CSS"],
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+    </script>
+
+    <script type="text/javascript"
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+
+
+
+    <style>
+      body
+      {
+      max-width : 1000px;
+      margin : auto;
+      margin-top : 20px;
+      font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-align : justify
+      }
+
+      h1.title {font-size : 1.6em}
+
+      h1 {font-size : 1.4em}
+
+      h2 {font-size : 1.2em}
+
+      h3 {font-size : 1.1em}
+
+      h1, h2, h3, h4, h5, h6
+      {
+      color : maroon;
+      }
+
+      .highlight
+      {
+      border-style:solid;
+      border-width : 1px;
+      border-color : gray;
+      padding-left : 5px;
+      }
+
+      a
+      {
+      color : maroon;
+      }
+
+      .footer
+      {
+      font-size : smaller;
+      color : gray;
+      text-align : right;
+      }
+
+      .hll { background-color: #ffffcc }
+.c { color: #408080; font-style: italic } /* Comment */
+.err { border: 1px solid #FF0000 } /* Error */
+.k { color: #008000; font-weight: bold } /* Keyword */
+.o { color: #666666 } /* Operator */
+.cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.cp { color: #BC7A00 } /* Comment.Preproc */
+.c1 { color: #408080; font-style: italic } /* Comment.Single */
+.cs { color: #408080; font-style: italic } /* Comment.Special */
+.gd { color: #A00000 } /* Generic.Deleted */
+.ge { font-style: italic } /* Generic.Emph */
+.gr { color: #FF0000 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.gi { color: #00A000 } /* Generic.Inserted */
+.go { color: #888888 } /* Generic.Output */
+.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #0044DD } /* Generic.Traceback */
+.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #008000 } /* Keyword.Pseudo */
+.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #B00040 } /* Keyword.Type */
+.m { color: #666666 } /* Literal.Number */
+.s { color: #BA2121 } /* Literal.String */
+.na { color: #7D9029 } /* Name.Attribute */
+.nb { color: #008000 } /* Name.Builtin */
+.nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.no { color: #880000 } /* Name.Constant */
+.nd { color: #AA22FF } /* Name.Decorator */
+.ni { color: #999999; font-weight: bold } /* Name.Entity */
+.ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.nf { color: #0000FF } /* Name.Function */
+.nl { color: #A0A000 } /* Name.Label */
+.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.nt { color: #008000; font-weight: bold } /* Name.Tag */
+.nv { color: #19177C } /* Name.Variable */
+.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mb { color: #666666 } /* Literal.Number.Bin */
+.mf { color: #666666 } /* Literal.Number.Float */
+.mh { color: #666666 } /* Literal.Number.Hex */
+.mi { color: #666666 } /* Literal.Number.Integer */
+.mo { color: #666666 } /* Literal.Number.Oct */
+.sb { color: #BA2121 } /* Literal.String.Backtick */
+.sc { color: #BA2121 } /* Literal.String.Char */
+.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #BA2121 } /* Literal.String.Double */
+.se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.sh { color: #BA2121 } /* Literal.String.Heredoc */
+.si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.sx { color: #008000 } /* Literal.String.Other */
+.sr { color: #BB6688 } /* Literal.String.Regex */
+.s1 { color: #BA2121 } /* Literal.String.Single */
+.ss { color: #19177C } /* Literal.String.Symbol */
+.bp { color: #008000 } /* Name.Builtin.Pseudo */
+.vc { color: #19177C } /* Name.Variable.Class */
+.vg { color: #19177C } /* Name.Variable.Global */
+.vi { color: #19177C } /* Name.Variable.Instance */
+.il { color: #666666 } /* Literal.Number.Integer.Long */
+
+    </style>
+  </HEAD>
+  <BODY>
+<H1 class = "title"> AR model using Yule-Walker method</H1>
+
+<p><strong>Author:</strong>  Matti Pastell <BR/>
+<strong>Date:</strong>  14.5.2013 <BR/></p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span><span class="p">,</span> <span class="n">linalg</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="k">class</span> <span class="nc">YW</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A class to fit AR model using Yule-Walker method&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+
+<pre><code>
+</code></pre>
+<h1>Calculate autocorrelation</h1>
+<p>YW method requires that we compute the sample autocorrelation function:</p>
+<p><span class="math">\[r_k = \frac{1}{(n-k)\sigma^2}\sum_{t=1}^{n-k}(X_t - \mu)(X_{t+k} - \mu)\]</span class="math"></p>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">autocorr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lag</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="s">&#39;full&#39;</span><span class="p">)</span>
+        <span class="n">mid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">acov</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">mid</span><span class="p">:</span><span class="n">mid</span><span class="o">+</span><span class="n">lag</span><span class="p">]</span>
+        <span class="n">acor</span> <span class="o">=</span> <span class="n">acov</span><span class="o">/</span><span class="n">acov</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">acor</span><span class="p">)</span>
+</pre></div>
+
+<h1>Fit</h1>
+<p>Form the Yule-Walker equations <span class="math">\(r = R \Phi\)</span class="math"> based on sample
+autocorrelation <span class="math">\(r_k\)</span class="math">. Notice that the matrix R is a Toeplizt matrix
+and it is thus easy to form using <code>toeplitz</code> function from <code>scipy.linalg</code>.</p>
+<p><span class="math">\[\begin{pmatrix}
+    r_1\\
+    r_2\\
+    \vdots\\
+    r_p
+  \end{pmatrix}
+   =
+  \begin{pmatrix}
+    r_0      &amp; r_1    &amp; \ldots  &amp; r_{p-1} \\
+    r_1    &amp; r_0      &amp; \ldots  &amp; r_{p-2} \\
+    \vdots &amp; \vdots &amp; \ddots  &amp; \vdots \\ 
+    r_{p-1} &amp; r_{p-2} &amp; \ldots  &amp;  r_0
+  \end{pmatrix}
+    \begin{pmatrix}
+      \phi_1\\
+      \phi_2\\
+      \vdots\\
+      \phi_{p}\\
+  \end{pmatrix}\]</span class="math"></p>
+<p>And solve simply using: <span class="math">\[\Phi = R^{-1}r\]</span class="math"></p>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">ac</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">autocorr</span><span class="p">(</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">R</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">toeplitz</span><span class="p">(</span><span class="n">ac</span><span class="p">[:</span><span class="n">p</span><span class="p">])</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">ac</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">p</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phi</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">R</span><span class="p">)</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+
+<h1>Calculate and plot the spectrum</h1>
+<p>The spectrum of an AR process is given by:</p>
+<p><span class="math">\[S(f) = \frac{\sigma^2}{|1 - \sum_{k=1}^{p} \phi_k e^{-2\pi ikf}|^2} \]</span class="math"></p>
+<p>It can be calcuted easily using <code>scipy.signal.freqz</code>.</p>
+<div class="highlight"><pre>    <span class="k">def</span> <span class="nf">spectrum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">phi</span><span class="p">])</span>
+        <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">freqz</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">h_db</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">)))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">h_db</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">r&#39;Normalized Frequency ($\times \pi$rad/sample)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">r&#39;Power/frequency (dB/rad/sample)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">r&#39;Yule-Walker Spectral Density Estimate&#39;</span><span class="p">)</span>
+</pre></div>
+
+<h1>Try it out:</h1>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ar1</span> <span class="o">=</span> <span class="n">YW</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ar1</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ar1</span><span class="o">.</span><span class="n">phi</span>
+<span class="n">array</span><span class="p">([</span> <span class="mf">1.19379795</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21810471</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.12747881</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06257484</span><span class="p">,</span>
+<span class="o">-</span><span class="mf">0.12929761</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">ar1</span><span class="o">.</span><span class="n">spectrum</span><span class="p">()</span>
+</pre></div>
+<img src="figures/AR_yw_figure5_1.png" width="600"/>
+
+
+    <HR/>
+    <div class="footer">
+      <p>Published from <a href="AR_yw.mdw">AR_yw.mdw</a>
+    using <a href="http://mpastell.com/pweave">Pweave</a> 0.23.2
+    on 16-01-2016.<p></div>
+  </BODY>
+</HTML>
