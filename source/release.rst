@@ -1,8 +1,33 @@
 Release notes
 -------------
 
-0.22.2
-______
+**In 0.23.2**
+
+Released 16th, January 2016
+
+* Add --latex_engine option to pypublish. Enables the use xetex or luatex
+* Bug fixes
+  - Fix formatting bugs for eval=FALSE #18
+  - Fix white space error in code chunks for wrap = FALSE #24
+  - Fix unicode bug with pypublish #21
+  - Update pypublish template to include textcomp due to changes in Pandoc #23
+
+**In 0.23.1**
+
+Released 12th, January 2016
+
+* Fix for multiline indented blocks by @abukaj
+* Pypublish missing \begin{document} problem fixed by @abukaj
+* Fix for pandoc 1.14 - \tightlist not defined @trsaunders
+
+**In 0.23**
+
+Released 7th, December 2014
+
+* New Python option --shell eshell, runs python as subprocess and is not affected by Pweave imports.
+* Pweave can now be used to weave Octave, Matlab and Julia code using --shell option. Have a look at the examples on Github
+
+**0.22.2**
 
 Released 14th, November 2014
 
@@ -10,16 +35,14 @@ Released 14th, November 2014
 * Fixed caching
 * Improved error reporting and exception handling
 
-0.22.1
-______
+**0.22.1**
 
 Released 14th, November 2014
 
 * Fixed a bug with inline code chunks.
 
 
-0.22
-____
+**0.22**
 
 Released 13th, November 2014
 
@@ -53,7 +76,7 @@ Released 13th, November 2014
 
 * New options for figures
 
-  - f_size ( (8,6) ) Saved figure size in inches a tuple (w, h) 
+  - f_size ( (8,6) ) Saved figure size in inches a tuple (w, h)
   - f_env (None) Environment that goes around figure e.g. sidefigure
   - f_spines (True) removes spines from figure right and top if False.
   - complete (False)
@@ -61,16 +84,14 @@ Released 13th, November 2014
   - engine: Choose engine running the code. "python" or "shell"
 
 
-0.21.2
-______
+**0.21.2**
 
 Released 15th, April 2013
 
 - Bug fix: 0.21.1 Failed to build, 0.21.2 now works.
 
-0.21.1
-______
 
+**0.21.1**
 Released 12th, April 2013
 
 - Bug fix: Documentation mode was broken in 0.21. It's now
@@ -80,8 +101,7 @@ Released 12th, April 2013
 - Documentation has been improved a lot see e.g. examples about
   `customizing <customizing.html>`_ and `subclassing <subclassing.html>`_.
 
-0.21
-____
+**0.21**
 
 Released: 11th, April 2013
 
@@ -92,7 +112,7 @@ Released: 11th, April 2013
   included in code
 - New chunk option wrap will wrap code and results (defaults to True).
 - Removed `--minted` command line option, this is now available as
-  "texminted" format. 
+  "texminted" format.
 - New default format for minted code block. (Thanks to Thomas Unterthiner)
 - New features for latex figures
 
@@ -105,21 +125,19 @@ Released: 11th, April 2013
 
 
 
-0.20.1
-______
+**0.20.1**
 
 Released: 10th, October 2011
-di
+
 - Included tangling script and function: Ptangle and pweave.ptangle
 - Pweave and Ptangle are now .exe files in Windows and can (and must)
   be executed without the .py extension.
 - Bug fix: Pweave no longer adds extra line to the start of file ->
   pandoc title blocks work now.
 
-0.20
-____
+**0.20**
 
-Released: 8th, October 2011y
+Released: 8th, October 2011
 
 - This is a major release and Pweave is completely restructured
 - Pweave is now a library and can be run from the interpreter, this
@@ -145,8 +163,7 @@ Released: 8th, October 2011y
   * chunk start and end detection improved, decorators are working now.
   * term mode now executes chunks with term = False if execution fails.
 
-0.13
-____
+**0.13**
 
 Released: 3rd, February 2011
 
@@ -156,8 +173,7 @@ Released: 3rd, February 2011
   (Contributed by Tamas Nepusz).
 
 
-0.12
-____
+**0.12**
 
 Released: 4th, May 2010
 
@@ -167,8 +183,7 @@ Released: 4th, May 2010
 -  Documentation: added howto for using `Pweave with
    Emacs <emacs.html>`_ and more complete example
 
-0.11
-____
+**0.11**
 
 Released: 22th, March 2010
 
@@ -178,10 +193,8 @@ Released: 22th, March 2010
 -  Pweave now extracts code from the source document
 
 
-0.10
-_____
+**0.10**
 
 Released: 12th, March 2010
 
 -  Initial release
-
