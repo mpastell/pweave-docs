@@ -14,6 +14,7 @@ formats using:
 
     from pweave import PwebFormats
     PwebFormats.listformats()
+    
 
 ::
 
@@ -41,11 +42,13 @@ formats using:
     * texminted:
        Latex with predefined minted environment for codeblocks
     * texpweave:
-       Latex output with user defined formatting using named environments (in latex header)
+       Latex output with user defined formatting using named environments
+    (in latex header)
     * texpygments:
        Latex output with pygments highlighted output
     
-    More info: http://mpastell.com/pweave/formats.html 
+    More info: http://mpastell.com/pweave/formats.html
+    
     
     
 
@@ -69,7 +72,7 @@ Format descriptions
   LaTeX with preset `minted <https://code.google.com/p/minted/>`_ formatting for
   code and results. Sample `document <_static/ma-tex.texw>`_ and
   `pdf <_static/ma-tex_minted.pdf>`_ output.
-  
+
 .. describe:: texpweave
 
   LaTeX where code is written using `pweavecode`, results using

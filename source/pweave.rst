@@ -40,10 +40,10 @@ from the documents namespace :py:attr:`PwebProcessorGlobals.globals` to global n
     >>> import pweave
     >>> # Weave a document with default options
     >>> pweave.weave('ma.Pnw')
-    Processing chunk 1 named None
-    Processing chunk 2 named None
-    Processing chunk 3 named None
-    Processing chunk 4 named None
+    Processing chunk 1 named None from line 17
+    Processing chunk 2 named None from line 26
+    Processing chunk 3 named None from line 37
+    Processing chunk 4 named None from line 49
     Pweaved ma.Pnw to ma.rst
     >>> # Extract the code
     >>> pweave.tangle('ma.Pnw')

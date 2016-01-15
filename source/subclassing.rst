@@ -57,9 +57,9 @@ The specified subclass can then be used as formatter with
 
 ::
 
-    Processing chunk 1 named None
-    Processing chunk 2 named None
-    Processing chunk 3 named None
+    Processing chunk 1 named None from line 22
+    Processing chunk 2 named None from line 31
+    Processing chunk 3 named None from line 42
     Pweaved ma.mdw to ma.html
     
     
@@ -117,11 +117,13 @@ Let's see what the first code chunk contains:
      'include': True,
      'name': None,
      u'number': 1,
+     'option_string': u'',
      'outputend': '',
      'outputstart': '',
      'result': '\n\n',
      'results': 'verbatim',
      'savedformats': ['.png'],
+     u'start_line': 22,
      'term': False,
      'termend': '',
      'termstart': '',

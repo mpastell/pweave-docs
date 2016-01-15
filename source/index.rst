@@ -17,6 +17,7 @@ Contents:
    pweave.rst
    customizing.rst
    subclassing.rst
+   defaults.rst
    examples/index.rst
    emacs.rst
    links.rst

@@ -28,6 +28,7 @@ dictionary. You can manipulate the dictionary to change the options.
                         'fig': True,
                         'include': True,
                         'name': None,
+                        'option_string': '',
                         'results': 'verbatim',
                         'term': False,
                         'wrap': True}}
@@ -61,6 +62,7 @@ dictionary. You can manipulate the dictionary to change the options.
                         'fig': True,
                         'include': True,
                         'name': None,
+                        'option_string': '',
                         'results': 'verbatim',
                         'term': False,
                         'wrap': False}}

@@ -10,7 +10,7 @@ source_encoding = 'utf-8'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Pweave - reports from data using Python'
+project = u'Pweave - Scientific Reports Using Python'
 copyright = u'Matti Pastell. 2010 - '
 
 # The short X.Y version.
@@ -18,8 +18,6 @@ version = '0.23'
 # The full version, including alpha/beta/rc tags.
 release = '0.23.2'
 
-# List of documents that shouldn't be included in the build.
-unused_docs = ['ma', 'ma2']
 
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
@@ -31,7 +29,7 @@ pygments_style = 'sphinx'
 html_style = '/default.css'
 
 # "<project> v<release> documentation".
-html_title = "Pweave - reports from data with Python"
+html_title = "Pweave - Scientific Reports Using Python"
 
 # Different theme for index
 #html_additional_pages = {'index' : 'customindex.html'}
@@ -96,7 +94,7 @@ latex_font_size = '12pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('docs', 'Pweave-docs.tex', u'Pweave - Reports from Data Using Python.',
+  ('index', 'Pweave-docs.tex', u'Pweave - Scientific Reports Using Python.',
   u'Matti Pastell', 'howto'),
 ]
 

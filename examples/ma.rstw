@@ -14,7 +14,7 @@ def mfreqz(b,a=1):
     w,h = signal.freqz(b,a)
     h = abs(h)
     return(w/max(w), h)
-@ 
+@
 
 **Make the impulse response function and use terminal formatted output (=doctest block.)**
 
@@ -34,7 +34,7 @@ plot(w,h,'k')
 ylabel('Amplitude')
 xlabel(r'Normalized Frequency (x$\pi$rad/sample)')
 show()
-@ 
+@
 
 
 **The first 10 values of the frequency response (w,h) as a table, notice that the code is hidden in the output document.**
@@ -44,7 +44,7 @@ show()
    :widths: 15, 15
 
 <<results = 'rst', echo = False>>=
-print 
+print
 for i in range(10):
-    print '  ' , round(h[i],2) , ',' , round(w[i],2)
-@ 
+    print('  ' , round(h[i],2) , ',' , round(w[i],2))
+@

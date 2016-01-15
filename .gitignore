@@ -1,3 +1,19 @@
+# Example builds
+examples/figures/
+*.aux
+*.log
+*.out
+examples/*.html
+examples/*.pdf
+examples/*.tex
+examples/*.rst
+examples/*.md
+examples/*.*#
+examples/cache
+examples/_*
+
+
+
 #################
 ## Eclipse
 #################
@@ -221,4 +237,3 @@ pweave_source/figures
 pweave_source/*.py
 source/conf_2.py
 *.pdf
-

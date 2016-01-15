@@ -37,7 +37,7 @@ Have a look at what the format dictionary contains:
 
     >>> pprint(doc.getformat())
     {'codeend': '\n\n',
-     'codestart': '.. code:: python\n',
+     'codestart': '.. code:: %s\n',
      'doctype': 'rst',
      'extension': 'rst',
      'figfmt': '.png',
@@ -47,7 +47,7 @@ Have a look at what the format dictionary contains:
      'savedformats': ['.png'],
      'termend': '\n\n',
      'termindent': '    ',
-     'termstart': '.. code:: python\n',
+     'termstart': '.. code:: %s\n',
      'width': '15 cm'}
     
     
@@ -79,10 +79,10 @@ And after setting options weave and tangle the document:
 .. code-block:: python
 
     >>> doc.weave()
-    Processing chunk 1 named None
-    Processing chunk 2 named None
-    Processing chunk 3 named None
-    Processing chunk 4 named None
+    Processing chunk 1 named None from line 17
+    Processing chunk 2 named None from line 26
+    Processing chunk 3 named None from line 37
+    Processing chunk 4 named None from line 49
     Pweaved ma2.Pnw to ma2.rst
     >>> doc.tangle()
     Tangled code from ma2.Pnw to ma2.py

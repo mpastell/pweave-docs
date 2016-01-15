@@ -21,7 +21,8 @@ import scipy.signal as signal
 def mfreqz(b,a=1):
     w,h = signal.freqz(b,a)
     h = abs(h)
-    return(w/max(w), h)\end{minted}
+    return(w/max(w), h)
+\end{minted}
 
 
 \textbf{Make the impulse response function and use terminal formatted output (=doctest block.)}
@@ -33,9 +34,12 @@ def mfreqz(b,a=1):
 11.0
 >>> b = repeat(1/n, n)
 >>> b
-array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
-        0.09090909,  0.09090909,  0.09090909,  0.09090909,  0.09090909,
+array([ 0.09090909,  0.09090909,  0.09090909,  0.09090909,
+0.09090909,
+        0.09090909,  0.09090909,  0.09090909,  0.09090909,
+0.09090909,
         0.09090909])
+
 \end{minted}
 
 
@@ -49,10 +53,11 @@ w, h = mfreqz(b)
 plot(w,h,'k')
 ylabel('Amplitude')
 xlabel(r'Normalized Frequency (x$\pi$rad/sample)')
-show()\end{minted}
+show()
+\end{minted}
 \begin{figure}[htpb]
 \center
-\includegraphics[width= \textwidth]{figures/ma-tex_figure3_1.pdf}
+\includegraphics[width= \linewidth]{figures/ma-tex_figure3_1.pdf}
 \caption{Frequency response of an 11 point moving average filter}
 \label{fig:None}
 \end{figure}
@@ -68,7 +73,6 @@ show()\end{minted}
 \textbf{Amplitude} &  \textbf{Frequency} \\ \hline
 
 
-
 1.0 & 0.0 \\
 1.0 & 0.0 \\
 1.0 & 0.0 \\
@@ -79,6 +83,7 @@ show()\end{minted}
 0.99 & 0.01 \\
 0.99 & 0.02 \\
 0.98 & 0.02 \\
+
 
 \end{tabular}
 \end{center}
