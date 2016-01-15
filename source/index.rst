@@ -17,13 +17,10 @@ Contents:
    pweave.rst
    customizing.rst
    subclassing.rst
-   examples.rst
-   texamples.rst
    examples/index.rst
    emacs.rst
    links.rst
    release.rst
-
 
 
 Indices and tables
