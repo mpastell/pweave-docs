@@ -107,7 +107,7 @@ Notice also that Pweave can now catch multiple figures/code chunk.
 >>> show()
 >>> #Impulse and step response
 >>> figure(2)
-<matplotlib.figure.Figure object at 0x7fdb3a20e5d0>
+<matplotlib.figure.Figure object at 0x7fa9946f15d0>
 >>> impz(a)
 >>> show()
 

@@ -22,5 +22,4 @@ cd ..
 cd examples
 make
 cd ..
-cp examples/index.rst source/examples
-cp -r examples/* build/html/examples
+cp examples/* source/examples

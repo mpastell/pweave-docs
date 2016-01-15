@@ -1,6 +1,5 @@
 html:
 	Pweave index.rstw
-	rst2html.py index.rst index.html
 clean:
 	rm -f *.pdf
 	rm -f *.out
