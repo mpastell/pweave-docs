@@ -15,7 +15,7 @@ capturing figures and it is available in several formats.
    :widths: 8, 12, 5, 5, 5
 
 
-   texpygments, `:download:<FIR_design_pygments.texw>`__ , :download:`open <FIR_design_pygments.tex>`__ , , :download:`open <FIR_design_pygments.pdf>`__
+   texpygments, :download:`<FIR_design_pygments.texw>`, :download:`open <FIR_design_pygments.tex>` , , :download:`open <FIR_design_pygments.pdf>`__
    tex, `<FIR_design_verb.texw>`__ , `open <FIR_design_verb.tex>`__ , , `open <FIR_design_verb.pdf>`__
    texminted, `<FIR_design_minted.texw>`__, `open <FIR_design_minted.tex>`__ , ,`open <FIR_design_minted.pdf>`__
    rst, `<FIR_design.rstw>`__, `open <FIR_design.rst>`__ , `open <FIR_design_rst.html>`__ ,
@@ -47,7 +47,7 @@ Latex with pygments syntax highlighting:
     Pweave -s ipython -f texpygments FIR_design_pygments.texw
     cp FIR_design_pygments.tex FIR_design_pygments_ipy.tex
     pdflatex FIR_design_pygments_ipy.tex
-    
+
 
 
 
@@ -61,7 +61,7 @@ Latex with pygments syntax highlighting:
     Pweave -s ipython -f texpygments FIR_design_pygments.texw
     cp FIR_design_pygments.tex FIR_design_pygments_ipy.tex
     pdflatex FIR_design_pygments_ipy.tex
-    
+
 
 
 
@@ -75,7 +75,7 @@ Latex with verbatim output:
 
     Pweave -f tex FIR_design_verb.texw
     pdflatex FIR_design_verb.tex
-    
+
 
 
 
@@ -89,7 +89,7 @@ Latex with Minted package for syntax highlighting:
 
     Pweave -f texminted FIR_design_minted.texw
     pdflatex -shell-escape FIR_design_minted.tex
-    
+
 
 
 
@@ -108,7 +108,7 @@ reStructuredText
 
     Pweave FIR_design.rstw
     rst2html.py FIR_design.rst FIR_design_rst.html
-    
+
 
 
 
@@ -125,7 +125,7 @@ You can publish documents directly using the `pypublish` command.
 
     pypublish FIR_design.py
     pypublish -f pdf FIR_design.py
-    
+
 
 
 
@@ -143,7 +143,7 @@ Pandoc
 
     Pweave -f pandoc FIR_design.mdw
     pandoc -s --mathjax FIR_design.md -o FIR_design_pandoc.html
-    
+
 
 
 
@@ -159,7 +159,7 @@ to pypublish command.
 .. code:: shell
 
     Pweave -f md2html FIR_design_noweb.mdw
-    
+
 
 
 
@@ -178,7 +178,7 @@ documentation within a class using `complete` chunk option.
     Pweave -f md2html AR_yw.mdw
     Pweave -f pandoc2latex AR_yw.mdw
     pdflatex AR_yw.tex
-    
+
 
 
 
@@ -192,7 +192,7 @@ Linear regression with Statsmodels: `<linear_regression.py>`__ , `<linear_regres
 .. code:: shell
 
     pypublish linear_regression.py
-    
+
 
 
 
@@ -219,7 +219,3 @@ It was created using:
     >>> import pweave
     >>> pweave.__version__
     u'0.23.2'
-    
-    
-
-
