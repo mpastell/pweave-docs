@@ -52,16 +52,19 @@ Features:
 Install and quickstart:
 -----------------------
 
-With easy_install:::
+with pip::
 
-  easy_install -U Pweave
+  pip install --upgrade Pweave
+  
+with conda::
+
+  conda install -c https://conda.binstar.org/mpastell pweave
 
 Or download the source package from `PyPi
-<http://pypi.python.org/pypi/Pweave>`_ and run:::
+<http://pypi.python.org/pypi/Pweave>`_ and run::
 
   python setup.py install
 
-Or run the binary exe installer on Windows.
 
 After the installation you get options with:
 
@@ -69,9 +72,6 @@ After the installation you get options with:
 
   $ Pweave --help
   $ Ptangle
-
-.. note:: Windows users: Check that the Python scripts directory is in
-   your path (e.g. for me this c:\\python27\\scripts).
 
 
 
