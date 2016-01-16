@@ -26,7 +26,11 @@ exclude_trees = ['_build']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
-html_style = '/default.css'
+import sphinx_rtd_theme
+html_theme = "sphinx_rtd_theme"
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+#html_style = '/default.css'
 
 # "<project> v<release> documentation".
 html_title = "Pweave - Scientific Reports Using Python"

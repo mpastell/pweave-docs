@@ -12,22 +12,21 @@ capturing figures and it is available in several formats.
 
 .. csv-table:: Example in different formats.
    :header: "Format", "Source", "Pweaved", "HTML", "PDF"
-   :widths: 8, 12, 5, 5, 5
+   :widths: 7, 11, 5, 5, 5
 
 
    texpygments, :download:`FIR_design_pygments.texw <FIR_design_pygments.texw>` , :download:`open <FIR_design_pygments.tex>` , , :download:`open <FIR_design_pygments.pdf>`
-   tex, `<FIR_design_verb.texw>`__ , `open <FIR_design_verb.tex>`__ , , `open <FIR_design_verb.pdf>`__
-   texminted, `<FIR_design_minted.texw>`__, `open <FIR_design_minted.tex>`__ , ,`open <FIR_design_minted.pdf>`__
-   rst, `<FIR_design.rstw>`__, `open <FIR_design.rst>`__ , `open <FIR_design_rst.html>`__ ,
-   script, `<FIR_design.py>`__, , `open <FIR_design.html>`__ , `open <FIR_design.pdf>`__
-   pandoc, `<FIR_design.mdw>`__, `open <FIR_design.md>`__ , `open <FIR_design_pandoc.html>`__ ,
+   tex, :download:`FIR_design_verb.texw <FIR_design_verb.texw>`, :download:`open <FIR_design_verb.tex>`, , :download:`open <FIR_design_verb.pdf>`
+   texminted, :download:`FIR_design_minted.texw <FIR_design_minted.texw>`, :download:`open <FIR_design_minted.tex>`, ,:download:`open <FIR_design_minted.pdf>`
+   rst, :download:`FIR_design.rstw <FIR_design.rstw>`, :download:`open <FIR_design.rst>`, :download:`open <FIR_design_rst.html>`,
+   script, :download:`FIR_design.py <FIR_design.py>`, , :download:`open <FIR_design.html>`, :download:`open <FIR_design.pdf>`
+   pandoc, :download:`FIR_design.mdw <FIR_design.mdw>`, :download:`open <FIR_design.md>` , :download:`open <FIR_design_pandoc.html>`,
 
 
 
 
 
-Below are the commands used to process the examples from command line.
-
+The commands used to process the examples from command line are shown below.
 
 Latex
 =====
@@ -37,7 +36,8 @@ Pweave has several options for LaTeX output, here is a demonstation of differenc
 Latex with pygments syntax highlighting:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:download:` FIR_design_pygments.texw <FIR_design_pygments.texw>`, :download:`<FIR_design_pygments.tex>`, :download:`<FIR_design_pygments.pdf>` and with IPython shell :download:`<FIR_design_pygments_ipy.pdf>`.
+:download:`FIR_design_pygments.texw <FIR_design_pygments.texw>`, :download:`FIR_design_pygments.tex <FIR_design_pygments.tex>`, :download:`FIR_design_pygments.pdf <FIR_design_pygments.pdf>`
+and with IPython shell :download:`FIR_design_pygments_ipy.pdf <FIR_design_pygments_ipy.pdf>`.
 
 
 .. code:: shell
@@ -48,7 +48,6 @@ Latex with pygments syntax highlighting:
     cp FIR_design_pygments.tex FIR_design_pygments_ipy.tex
     pdflatex FIR_design_pygments_ipy.tex
     
-
 
 
 
@@ -68,7 +67,7 @@ Latex with pygments syntax highlighting:
 Latex with verbatim output:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`<FIR_design_verb.texw>`__, `<FIR_design_verb.tex>`__ , `<FIR_design_verb.pdf>`__ .
+:download:`FIR_design_verb.texw <FIR_design_verb.texw>`, :download:`FIR_design_verb.tex <FIR_design_verb.tex>`, :download:`FIR_design_verb.pdf <FIR_design_verb.pdf>`.
 
 
 .. code:: shell
@@ -82,7 +81,7 @@ Latex with verbatim output:
 Latex with Minted package for syntax highlighting:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`<FIR_design_minted.texw>`__, `<FIR_design_minted.tex>`__ , `<FIR_design_minted.pdf>`__ .
+:download:`FIR_design_minted.texw <FIR_design_minted.texw>`, :download:`FIR_design_minted.tex <FIR_design_minted.tex>` , :download:`FIR_design_minted.pdf <FIR_design_minted.pdf>` .
 
 
 .. code:: shell
@@ -101,7 +100,7 @@ Latex with Minted package for syntax highlighting:
 reStructuredText
 ================
 
-`<FIR_design.rstw>`__, `<FIR_design.rst>`__ , `<FIR_design_rst.html>`__ .
+:download:`FIR_design.rstw <FIR_design.rstw>`, :download:`FIR_design.rst <FIR_design.rst>` , :download:`FIR_design_rst.html <FIR_design_rst.html>`.
 
 
 .. code:: shell
@@ -118,7 +117,7 @@ Published from script
 
 You can publish documents directly using the `pypublish` command.
 
-`<FIR_design.py>`__, `<FIR_design.html>`__ , `<FIR_design.pdf>`__ .
+:download:`FIR_design.py <FIR_design.py>`, :download:`FIR_design.html <FIR_design.html>` , :download:`FIR_design.pdf <FIR_design.pdf>` .
 
 
 .. code:: shell
@@ -136,7 +135,7 @@ Markdown
 Pandoc
 ~~~~~~
 
-`<FIR_design.mdw>`__, `<FIR_design.md>`__ , `<FIR_design_pandoc.html>`__
+:download:`FIR_design.mdw <FIR_design.mdw>`, :download:`FIR_design.md <FIR_design.md>` , :download:`FIR_design_pandoc.html <FIR_design_pandoc.html>`
 
 
 .. code:: shell
@@ -153,7 +152,7 @@ Python-markdown
 `md2html` and `pandoc2latex` formats produce output that is identical
 to pypublish command.
 
-`<FIR_design.mdw>`__, `<FIR_design.html>`__
+:download:`FIR_design.mdw <FIR_design.mdw>`, :download:`FIR_design.html <FIR_design.html>`
 
 
 .. code:: shell
@@ -170,7 +169,7 @@ Splitting code to multiple chunks
 This example shows how to split code between multiple chunks to write
 documentation within a class using `complete` chunk option.
 
-`<AR_yw.mdw>`__ , `<AR_yw.html>`__ , `<AR_yw.pdf>`__ .
+:download:`AR_yw.mdw <AR_yw.mdw>` , :download:`AR_yw.html <AR_yw.html>` , :download:`AR_yw.pdf <AR_yw.pdf>` .
 
 
 .. code:: shell
@@ -186,14 +185,13 @@ documentation within a class using `complete` chunk option.
 Miscellaneous
 -------------
 
-Linear regression with Statsmodels: `<linear_regression.py>`__ , `<linear_regression.html>`__
+Linear regression with Statsmodels: :download:`linear_regression.py <linear_regression.py>`, :download:`linear_regression.html <linear_regression.html>`
 
 
 .. code:: shell
 
     pypublish linear_regression.py
     
-
 
 
 
@@ -206,12 +204,11 @@ IPython shell to run all examples using::
 
   Pweave index.rstw
 
-
 The latest version of the examples with any required extra files are
-available from the `Git <http://github.com/mpastell/pweave/>`__
+available from the `Git <http://github.com/mpastell/pweave-docs/>`__
 repository in examples directory.
 
-It was created using:
+This gallery was created using:
 
 
 .. code:: python
@@ -219,6 +216,10 @@ It was created using:
     >>> import pweave
     >>> pweave.__version__
     u'0.23.2'
+    >>> import sys
+    >>> print(sys.version)
+    2.7.10 (default, Oct 14 2015, 16:09:02)
+    [GCC 5.2.1 20151010]
     
     
 
