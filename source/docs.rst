@@ -13,12 +13,13 @@ Contents:
 
    index.rst
    usage.rst
+   chunks.rst
+   defaults.rst
    formats.rst
    pweave.rst
    pypublish.rst
    customizing.rst
    subclassing.rst
-   defaults.rst
    examples/index.rst
    emacs.rst
    links.rst
@@ -29,5 +30,6 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
+
 .. * :ref:`modindex`
    * :ref:`search`

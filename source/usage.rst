@@ -54,7 +54,6 @@ documentation chunks, just like `Sweave
                            'font.size' : 10 })
    %>
 
-
 .. versionadded:: 0.2
 
 .. index:: options, figures, inline code chunks
@@ -69,7 +68,7 @@ ________________________
 Weaving a Pweave source file produces a document
 that contains text and the weaved code together with its
 evaluated output.  All of the produced figures are placed in the
-'figures/' folder as a default. 
+'figures/' folder as a default.
 
 See `formats <formats.html>`_ page for a list of supported
 output formats.
@@ -128,7 +127,7 @@ Weave a document with default options (rst with png figures)
 
 ::
 
-  $ Pweave ma.Pnw
+  $ pweave ma.Pnw
   Output written to ma.rst
 
 
@@ -136,13 +135,13 @@ Weave a Latex document with png figures:
 
 ::
 
-  $ Pweave -f tex -g png source.Pnw
+  $ pweave -f tex -g png source.Pnw
 
 Get options:
 
 ::
 
-  $ Pweave --help
+  $ pweave --help
 
 
 Tangling Pweave Documents
@@ -151,113 +150,10 @@ _________________________
 Tangling refers to extracting the source code from Pweave
 document. This can be done using Ptangle script::
 
-  $ Ptangle file
+  $ ptangle file
 
-  $ Ptangle ma.pnw
+  $ ptangle ma.pnw
   Tangled code from ma.pnw to ma.py
-
-
-
-Code Chunk Options
-__________________
-
-Pweave currently has the following options for processing the code
-chunks.
-
-.. envvar:: name, label
-
-   If the first option of chunk is unnamed it will become the chunk
-   name, you can also set the chunk name using the name or label (*for
-   Sweave compatibility*) keys. All of these definitions are equal
-   ``<<analysis, Fig = True>>=``,  ``<<Fig = True, name =
-   'analysis'>>=``,  ``<<Fig = True, label = 'analysis'>>=``. Chunk
-   names are used for figure names, but expanding named chunks in the
-   Pweave todo list.
-
-.. versionadded:: 0.2
-
-.. envvar:: fig = True or (False)
-
-   Whether a matplotlib plot produced by the code chunk should be
-   included in the file. The figure will be added with '.. image::'
-   directive in .rst and \\includegraphics tag in .tex documents. See
-   the 'caption' option if you want to use figure environment. As of
-   version 0.21 Pweave supports multiple figures per code chunk.
-
-
-.. envvar:: include = True or (False)
-   
-   If include is True generated figures are automatically included in
-    the document otherwise figures are generated, but not
-    included. This is useful if you want more control over figure
-    formatting e.g. use subfigures in Latex.  
-   
-.. versionadded:: 0.21
-
-.. envvar:: width
-
-   The width of the created figure (using format specific
-   markup). The default width depends on the otuput format.
-
-.. envvar:: echo = True or (False)
-
-   Echo the python code in the output document. If False the source
-   code will be hidden.
-
-.. envvar:: evaluate = True or (False).
-
-   Evaluate the code chunk. If False the chunk won't be executed.
-
-.. envvar:: results = 'verbatim'
-
-   The output format of the printed results. 'verbatim' for literal
-   block, 'hidden' for hidden results or anything other string for raw
-   output (I tend to use 'tex' for Latex and 'rst' for rest. Raw output
-   is useful if you wan't to e.g. create tables from code chunks.
-
-.. envvar:: caption = ''
-
-   A string providing a caption for the figure produced in the code
-   chunk. Can only be used with 'fig = True' option. If a caption is
-   provided the figure will be added in the .rst document with the
-   '.. figure::' directive and as a figure float in Latex.
-
-.. versionadded:: 0.12
-
-.. envvar:: term = False or (True)
-
-   If True the output emulates a terminal session i.e. the code chunk
-   and the output will be printed as a `doctest block
-   <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#doctest-blocks>`_. Can
-   also be used in latex documents, where the output will formatted as
-   verbatim.
-
-
-.. envvar:: f_pos = "htpb" 
-
-   Sets the figure position for latex figures.
-
-.. versionadded:: 0.21
-
-.. envvar:: wrap = True or (False,"code", "results")
-
-   Controls wrapping of long lines. If True both code and output are
-   wrapped to 75 characters. You can also specify "code" or "results" options to
-   wrap only input or output.
-
-.. versionadded:: 0.21
-
-.. note::
-
-   You can now use loops, if sentences and function definitions in
-   term chunks (as of Pweave 0.13). However sometimes execution in
-   term mode can fail in which case the chunk will be executed with
-   term=False.
-
-.. versionadded:: 0.12
-
-.. include:: defaults.rst
-
 
 Caching results
 _______________
@@ -290,7 +186,7 @@ ______________
    <http://matplotlib.sourceforge.net/>`_ figures.
 
 .. describe:: Source code
-   	      
+
    Is produced by Pweave from the source document. Contains the source
    code extracted from the code chunks.
 
