@@ -40,14 +40,42 @@ from the documents namespace :py:attr:`PwebProcessorGlobals.globals` to global n
     >>> import pweave
     >>> # Weave a document with default options
     >>> pweave.weave('ma.Pnw')
-    Processing chunk 1 named None from line 17
-    Processing chunk 2 named None from line 26
-    Processing chunk 3 named None from line 37
-    Processing chunk 4 named None from line 49
-    Pweaved ma.Pnw to ma.rst
+    Traceback (most recent call last):
+      File "< chunk 1 named None in pweave.rstw >", line 1, in <module>
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/__init__.py", line 69, in
+    weave
+        doc.weave(shell)
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 140, in weave
+        self.parse()
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 93, in parse
+        parser = self.Reader(file=self.source)
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/readers.py", line 21, in
+    __init__
+        codefile = io.open(self.source, 'r', encoding='utf-8')
+    IOError: [Errno 2] No such file or directory: 'ma.Pnw'
     >>> # Extract the code
     >>> pweave.tangle('ma.Pnw')
-    Tangled code from ma.Pnw to ma.py
+    Traceback (most recent call last):
+      File "< chunk 1 named None in pweave.rstw >", line 1, in <module>
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/__init__.py", line 96, in
+    tangle
+        doc.tangle()
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 147, in tangle
+        self.parse()
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 93, in parse
+        parser = self.Reader(file=self.source)
+      File "/usr/local/lib/python2.7/dist-
+    packages/Pweave-0.23.2-py2.7.egg/pweave/readers.py", line 21, in
+    __init__
+        codefile = io.open(self.source, 'r', encoding='utf-8')
+    IOError: [Errno 2] No such file or directory: 'ma.Pnw'
     
     
 

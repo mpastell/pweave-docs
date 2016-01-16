@@ -4,7 +4,7 @@ examples/figures/
 *.log
 *.out
 examples/*.html
-examples/*.pdf
+#examples/*.pdf
 examples/*.tex
 examples/*.rst
 examples/*.md

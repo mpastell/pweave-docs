@@ -6,8 +6,9 @@ Output Formats
 Listing formats
 ---------------
 
-Pweave supports output in several formats. You can list the supported
-formats using:
+Pweave supports output in several formats. See the `example gallery <examples/index.html`>__ for examples.
+
+You can list the supported formats using:
 
 
 .. code-block:: python
@@ -59,19 +60,17 @@ Format descriptions
 
 .. describe:: rst
 
-  `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ . See :ref:`rst-example`.
+  `reStructuredText <http://docutils.sourceforge.net/rst.html>`_ .
 
 .. describe:: tex
 
   Standard LaTeX. Code, results and terminal blocks are written using
-  `verbatim` environment. Sample `document <_static/ma-tex.texw>`_ and
-  `pdf <_static/ma-tex.pdf>`_ output.
+  `verbatim` environment.
 
 .. describe:: texminted
 
   LaTeX with preset `minted <https://code.google.com/p/minted/>`_ formatting for
-  code and results. Sample `document <_static/ma-tex.texw>`_ and
-  `pdf <_static/ma-tex_minted.pdf>`_ output.
+  code and results.
 
 .. describe:: texpweave
 
@@ -87,10 +86,10 @@ Format descriptions
 
 .. describe:: sphinx
 
-  reStructuredText for `Sphinx <http://sphinx-doc.org/>`_ . See :ref:`sphinx-example`.
 
+reStructuredText for `Sphinx <http://sphinx-doc.org/>`_ .
 .. describe :: html
 
   HTML with `pygments <http://pygments.org/>`_ highlighting for
   code. You'll need to add css yourself, here's one option
-  `pygments.css <_static/pygments.css>`_ . Sample `ma.html <_static/ma.html>`_.
+  `pygments.css <_static/pygments.css>`_ .

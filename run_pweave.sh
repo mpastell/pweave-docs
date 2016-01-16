@@ -10,7 +10,6 @@ pweave -f sphinx subclassing.rstw
 
 cp *.rstw ../source/_static #copy Pweave documents to _static
 mv  *.rst ../source #copy Pweave documents to _static
-cp *.Pnw ../source/_static
 cp ma.mdw ../source/_static #Weaved in subclassing.rst
 cp -r figures ../source/_static
 cp -r figures ../build/latex
@@ -21,5 +20,9 @@ cd ..
 #Example gallery
 cd examples
 make
+rm -f *.out
+rm -f *.log
+rm -f *.aux
 cd ..
-cp examples/* source/examples
+cp examples/* source/examples/
+cp -r examples/figures html_files/_downloads

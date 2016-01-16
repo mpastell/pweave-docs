@@ -7,14 +7,14 @@ templates_path = ['_templates']
 # The suffix of source filenames.
 source_suffix = '.rst'
 source_encoding = 'utf-8'
-master_doc = 'index'
+master_doc = 'docs'
 
 # General information about the project.
 project = u'Pweave - Scientific Reports Using Python'
 copyright = u'Matti Pastell. 2010 - '
 
 # The short X.Y version.
-version = '0.23'
+version = '0.23.2'
 # The full version, including alpha/beta/rc tags.
 release = '0.23.2'
 
@@ -22,6 +22,7 @@ release = '0.23.2'
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
 exclude_trees = ['_build']
+exclude_patterns = ['examples/FIR_design.rst']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -35,8 +36,6 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # "<project> v<release> documentation".
 html_title = "Pweave - Scientific Reports Using Python"
 
-# Different theme for index
-#html_additional_pages = {'index' : 'customindex.html'}
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -54,6 +53,7 @@ html_title = "Pweave - Scientific Reports Using Python"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_extra_path = ["../html_files"]
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -98,7 +98,7 @@ latex_font_size = '12pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Pweave-docs.tex', u'Pweave - Scientific Reports Using Python.',
+  ('docs', 'pweave-docs-' + release  + '.tex', u'Pweave - Scientific Reports Using Python.',
   u'Matti Pastell', 'howto'),
 ]
 
