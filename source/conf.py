@@ -19,6 +19,7 @@ version = '0.23.2'
 release = '0.23.2'
 
 
+
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
 exclude_trees = ['_build']
@@ -64,10 +65,8 @@ html_last_updated_fmt = '%b %d, %Y'
 html_use_smartypants = True
 
 # If false, no module index is generated.
-#html_use_modindex = True
-
-# If false, no index is generated.
-#html_use_index = True
+html_use_modindex = True
+html_use_index = True
 
 # If true, the index is split into individual pages for each letter.
 #html_split_index = False

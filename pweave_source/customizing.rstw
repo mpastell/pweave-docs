@@ -15,21 +15,21 @@ of an existing format. It sets chunk delimiters, output extension and
 figure format and width.
 
 You can do this easily with :py:class:`Pweb` class. Below
-is a small demonstration using ReST Pweave document `ma2.Pnw <_static/ma2.Pnw>`_.
+is a small demonstration using ReST Pweave document `ma.mdw <_static/ma.mdw>`_.
 
-Let's start by creating an instance of :py:class:`Pweb` class with rst document:
+Let's start by creating an instance of :py:class:`Pweb` class with markdown document:
 
 <<term=True>>=
 from pweave import *
 from pprint import pprint
-doc = Pweb('ma2.Pnw', format = "rst")
+doc = Pweb('ma.mdw', format = "pandoc")
 @
 
 Have a look at what the format dictionary contains:
 
 <<term=True>>=
 pprint(doc.getformat())
-@ 
+@
 
 The names of the dictionary elements are hopefully self
 explanatory. You'll notice that you can specify start and end tag for
@@ -42,7 +42,7 @@ default figure width to 10cm and figure format to pdf. The
 
 <<term=True>>=
 doc.updateformat({'width' : '10cm', 'figfmt' : '.pdf', 'savedformats' : ['.pdf']})
-@ 
+@
 
 And after setting options weave and tangle the document:
 

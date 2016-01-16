@@ -48,6 +48,7 @@ Format descriptions
 
 
 reStructuredText for `Sphinx <http://sphinx-doc.org/>`_ .
+
 .. describe :: html
 
   HTML with `pygments <http://pygments.org/>`_ highlighting for

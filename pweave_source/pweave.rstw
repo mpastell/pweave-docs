@@ -16,7 +16,7 @@ pweave module contains two functions :py:func:`weave` and
 :py:func:`tangle` that offer the same functionality as the command
 line scripts.
 
-.. note:: 
+.. note::
 
   This document was also created with Pweave, have a look at the
   `source <_static/pweave.rstw>`_.
@@ -32,15 +32,15 @@ occurred. Also in case of an error returns already evaluated results
 from the documents namespace :py:attr:`PwebProcessorGlobals.globals` to global namespace.
 
 .. change default options for code chunks
- 
+
 
 <<term = True>>=
 import pweave
-# Weave a document with default options
-pweave.weave('ma.Pnw')
+# Weave a pandoc document with default options
+pweave.weave('ma.mdw', doctype = "pandoc")
 # Extract the code
-pweave.tangle('ma.Pnw')
-@ 
+pweave.tangle('ma.mdw')
+@
 
 Pweave function reference
 --------------------------
@@ -67,7 +67,4 @@ Pweb Class
 ----------
 
 .. autoclass:: pweave.Pweb
-   :members: 
-
-
-   
+   :members:

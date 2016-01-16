@@ -15,16 +15,16 @@ of an existing format. It sets chunk delimiters, output extension and
 figure format and width.
 
 You can do this easily with :py:class:`Pweb` class. Below
-is a small demonstration using ReST Pweave document `ma2.Pnw <_static/ma2.Pnw>`_.
+is a small demonstration using ReST Pweave document `ma.mdw <_static/ma.mdw>`_.
 
-Let's start by creating an instance of :py:class:`Pweb` class with rst document:
+Let's start by creating an instance of :py:class:`Pweb` class with markdown document:
 
 
 .. code-block:: python
 
     >>> from pweave import *
     >>> from pprint import pprint
-    >>> doc = Pweb('ma2.Pnw', format = "rst")
+    >>> doc = Pweb('ma.mdw', format = "pandoc")
     
     
 
@@ -36,18 +36,18 @@ Have a look at what the format dictionary contains:
 .. code-block:: python
 
     >>> pprint(doc.getformat())
-    {'codeend': '\n\n',
-     'codestart': '.. code:: %s\n',
-     'doctype': 'rst',
-     'extension': 'rst',
+    {'codeend': '~~~~~~~~~~~~~\n\n',
+     'codestart': '~~~~{.%s}',
+     'doctype': 'pandoc',
+     'extension': 'md',
      'figfmt': '.png',
-     'indent': '    ',
-     'outputend': '\n\n',
-     'outputstart': '.. code::\n',
+     'indent': '',
+     'outputend': '~~~~~~~~~~~~~\n\n',
+     'outputstart': '~~~~{.%s}',
      'savedformats': ['.png'],
-     'termend': '\n\n',
-     'termindent': '    ',
-     'termstart': '.. code:: %s\n',
+     'termend': '~~~~~~~~~~~~~\n\n',
+     'termindent': '',
+     'termstart': '~~~~{.%s}',
      'width': '15 cm'}
     
     
@@ -79,35 +79,12 @@ And after setting options weave and tangle the document:
 .. code-block:: python
 
     >>> doc.weave()
-    Traceback (most recent call last):
-      File "< chunk 4 named None in customizing.rstw >", line 1, in
-    <module>
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 140, in weave
-        self.parse()
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 93, in parse
-        parser = self.Reader(file=self.source)
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/readers.py", line 21, in
-    __init__
-        codefile = io.open(self.source, 'r', encoding='utf-8')
-    IOError: [Errno 2] No such file or directory: 'ma2.Pnw'
+    Processing chunk 1 named None from line 22
+    Processing chunk 2 named None from line 31
+    Processing chunk 3 named None from line 42
+    Pweaved ma.mdw to ma.md
     >>> doc.tangle()
-    Traceback (most recent call last):
-      File "< chunk 4 named None in customizing.rstw >", line 1, in
-    <module>
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 147, in tangle
-        self.parse()
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 93, in parse
-        parser = self.Reader(file=self.source)
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/readers.py", line 21, in
-    __init__
-        codefile = io.open(self.source, 'r', encoding='utf-8')
-    IOError: [Errno 2] No such file or directory: 'ma2.Pnw'
+    Tangled code from ma.mdw to ma.py
     
     
 

@@ -16,7 +16,7 @@ pweave module contains two functions :py:func:`weave` and
 :py:func:`tangle` that offer the same functionality as the command
 line scripts.
 
-.. note:: 
+.. note::
 
   This document was also created with Pweave, have a look at the
   `source <_static/pweave.rstw>`_.
@@ -32,50 +32,21 @@ occurred. Also in case of an error returns already evaluated results
 from the documents namespace :py:attr:`PwebProcessorGlobals.globals` to global namespace.
 
 .. change default options for code chunks
- 
+
 
 
 .. code-block:: python
 
     >>> import pweave
-    >>> # Weave a document with default options
-    >>> pweave.weave('ma.Pnw')
-    Traceback (most recent call last):
-      File "< chunk 1 named None in pweave.rstw >", line 1, in <module>
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/__init__.py", line 69, in
-    weave
-        doc.weave(shell)
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 140, in weave
-        self.parse()
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 93, in parse
-        parser = self.Reader(file=self.source)
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/readers.py", line 21, in
-    __init__
-        codefile = io.open(self.source, 'r', encoding='utf-8')
-    IOError: [Errno 2] No such file or directory: 'ma.Pnw'
+    >>> # Weave a pandoc document with default options
+    >>> pweave.weave('ma.mdw', doctype = "pandoc")
+    Processing chunk 1 named None from line 22
+    Processing chunk 2 named None from line 31
+    Processing chunk 3 named None from line 42
+    Pweaved ma.mdw to ma.md
     >>> # Extract the code
-    >>> pweave.tangle('ma.Pnw')
-    Traceback (most recent call last):
-      File "< chunk 1 named None in pweave.rstw >", line 1, in <module>
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/__init__.py", line 96, in
-    tangle
-        doc.tangle()
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 147, in tangle
-        self.parse()
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/pweb.py", line 93, in parse
-        parser = self.Reader(file=self.source)
-      File "/usr/local/lib/python2.7/dist-
-    packages/Pweave-0.23.2-py2.7.egg/pweave/readers.py", line 21, in
-    __init__
-        codefile = io.open(self.source, 'r', encoding='utf-8')
-    IOError: [Errno 2] No such file or directory: 'ma.Pnw'
+    >>> pweave.tangle('ma.mdw')
+    Tangled code from ma.mdw to ma.py
     
     
 
@@ -106,7 +77,4 @@ Pweb Class
 ----------
 
 .. autoclass:: pweave.Pweb
-   :members: 
-
-
-   
+   :members:
