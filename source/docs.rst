@@ -15,6 +15,7 @@ Contents:
    usage.rst
    formats.rst
    pweave.rst
+   pypublish.rst
    customizing.rst
    subclassing.rst
    defaults.rst

@@ -11,7 +11,7 @@ examples/*.md
 examples/*.*#
 examples/cache
 examples/_*
-
+publish.sh
 
 
 #################

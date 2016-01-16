@@ -41,7 +41,7 @@ Features:
 * Supports reST, LaTeX, HTML or markdown for document chunks
 * Publish reports from Python scipts. Similar to R markdown.
 * Run from command line or interpreter.
-* Support also for Octave, Matlab and Julia code.
+* Support also for Octave and Matlab code.
 
 Install and quickstart:
 -----------------------
@@ -77,6 +77,6 @@ Browse `documentation <docs.html>`_ or go straight to an `examples <examples/ind
 Thanks
 ------
 
-Thanks to following people for contributing patches and ideas: Tamas
+Thanks to following people for contributing patches and ideas: Jakub Kowalski, Tamas
 Nepusz, Nicky van Foreest, Mark Edgington, Thomas Unterthiner, Matthew
-McDonald, Grant Goodyear, Aaron O'Leary.
+McDonald, Grant Goodyear, Aaron O'Leary, Thomas Saunders .

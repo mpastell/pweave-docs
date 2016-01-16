@@ -40,24 +40,16 @@ Latex with pygments syntax highlighting:
 and with IPython shell :download:`FIR_design_pygments_ipy.pdf <FIR_design_pygments_ipy.pdf>`.
 
 
-.. code:: shell
-
-    Pweave -f texpygments FIR_design_pygments.texw
-    pdflatex FIR_design_pygments.tex
-    Pweave -s ipython -f texpygments FIR_design_pygments.texw
-    cp FIR_design_pygments.tex FIR_design_pygments_ipy.tex
-    pdflatex FIR_design_pygments_ipy.tex
-    
-
-
-
+Notice that the first command creates the needed :download:`pygments.sty <pygments.sty>`.
+See `pygments docs <http://pygments.org/docs/cmdline/#generating-styles>`__ for more info.
 
 
 .. code:: shell
 
-    Pweave -f texpygments FIR_design_pygments.texw
+    pygmentize -f tex -S default > pygments.sty
+    pweave -f texpygments FIR_design_pygments.texw
     pdflatex FIR_design_pygments.tex
-    Pweave -s ipython -f texpygments FIR_design_pygments.texw
+    pweave -s ipython -f texpygments FIR_design_pygments.texw
     cp FIR_design_pygments.tex FIR_design_pygments_ipy.tex
     pdflatex FIR_design_pygments_ipy.tex
     
@@ -72,7 +64,7 @@ Latex with verbatim output:
 
 .. code:: shell
 
-    Pweave -f tex FIR_design_verb.texw
+    pweave -f tex FIR_design_verb.texw
     pdflatex FIR_design_verb.tex
     
 
@@ -86,7 +78,7 @@ Latex with Minted package for syntax highlighting:
 
 .. code:: shell
 
-    Pweave -f texminted FIR_design_minted.texw
+    pweave -f texminted FIR_design_minted.texw
     pdflatex -shell-escape FIR_design_minted.tex
     
 
@@ -105,7 +97,7 @@ reStructuredText
 
 .. code:: shell
 
-    Pweave FIR_design.rstw
+    pweave FIR_design.rstw
     rst2html.py FIR_design.rst FIR_design_rst.html
     
 
@@ -140,7 +132,7 @@ Pandoc
 
 .. code:: shell
 
-    Pweave -f pandoc FIR_design.mdw
+    pweave -f pandoc FIR_design.mdw
     pandoc -s --mathjax FIR_design.md -o FIR_design_pandoc.html
     
 
@@ -174,13 +166,33 @@ documentation within a class using `complete` chunk option.
 
 .. code:: shell
 
-    Pweave -f md2html AR_yw.mdw
-    Pweave -f pandoc2latex AR_yw.mdw
+    pweave -f md2html AR_yw.mdw
+    pweave -f pandoc2latex AR_yw.mdw
     pdflatex AR_yw.tex
     
 
 
 
+Octave and Matlab
+-----------------
+
+Pweave also supports weaving Octave/Matlab documents similar to Python. The support
+is more limited, but it is still useful. See the example below for more info.
+
+:download:`octave_sample.mdw <octave_sample.mdw>` , :download:`octave_sample.md <octave_sample.md>` , :download:`octave_sample.pdf <octave_sample.pdf>` .
+
+
+.. code:: shell
+
+    pweave -s octave -f pandoc octave_sample.mdw
+    pandoc octave_sample.md -o octave_sample.pdf
+    
+
+
+
+If you have Matlab and "python-matlab-brigde" installed you can use `-s matlab` option.
+
+.. versionadded:: 0.23
 
 Miscellaneous
 -------------
@@ -202,7 +214,7 @@ About the gallery
 This page is an executable document that be run using Pweave using
 IPython shell to run all examples using::
 
-  Pweave index.rstw
+  pweave index.rstw
 
 The latest version of the examples with any required extra files are
 available from the `Git <http://github.com/mpastell/pweave-docs/>`__
