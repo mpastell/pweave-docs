@@ -102,6 +102,12 @@ chunks.
 
 .. versionadded:: 0.21
 
+.. envvar:: complete = True
+
+  Used to include code spanning multiple chunks before it get executed. Useful for e.g. documenting class definitions. Use complete = False all but the last chunk and set the last one as complete = True. Pweave executes all of the chunks together and includes the results after the last one. See:  :ref:`multi-chunk-example` example.
+
+.. versionadded:: 0.22
+
 .. envvar:: source
 
     Read chunk contents from file or python module or file. e.g. source = "mychunk.py".

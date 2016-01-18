@@ -155,6 +155,8 @@ to pypublish command.
 
 
 
+.. _multi-chunk-example:
+
 Splitting code to multiple chunks
 ---------------------------------
 
@@ -230,8 +232,8 @@ This gallery was created using:
     u'0.23.2'
     >>> import sys
     >>> print(sys.version)
-    2.7.10 (default, Oct 14 2015, 16:09:02)
-    [GCC 5.2.1 20151010]
+    2.7.11 |Continuum Analytics, Inc.| (default, Dec  6 2015, 18:08:32)
+    [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)]
     
     
 
