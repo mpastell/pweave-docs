@@ -108,7 +108,7 @@ multiple figures/code chunk.
     >>> show()
     >>> #Impulse and step response
     >>> figure(2)
-    <matplotlib.figure.Figure object at 0x7f482af9e5d0>
+    <matplotlib.figure.Figure object at 0x7f3261ce38d0>
     >>> impz(a)
     >>> show()
     

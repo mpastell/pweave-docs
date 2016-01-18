@@ -130,6 +130,8 @@ Pweave -f md2html FIR_design_noweb.mdw
 @
 
 
+.. _multi-chunk-example:
+
 Splitting code to multiple chunks
 ---------------------------------
 

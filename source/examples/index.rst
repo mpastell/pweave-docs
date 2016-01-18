@@ -229,7 +229,7 @@ This gallery was created using:
 
     >>> import pweave
     >>> pweave.__version__
-    u'0.23.2'
+    u'0.23.2+'
     >>> import sys
     >>> print(sys.version)
     2.7.11 |Continuum Analytics, Inc.| (default, Dec  6 2015, 18:08:32)

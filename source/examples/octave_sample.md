@@ -1,3 +1,4 @@
+
 # Using Octave with Pweave
 
 You can also use Pweave to publish reports using GNU Octave or Matlab. The
@@ -30,6 +31,7 @@ y =  300
 ~~~~~~~~~~~~~
 
 
+
 You can also display the result from inline chunk 2+5= 7
 
 ## Solving least squares
@@ -52,7 +54,7 @@ title('Histogram of residuals')
 ~~~~~~~~~~~~~
 
 ~~~~{.octave}
-a =  0.19234
+a =  0.19972
 
 ~~~~~~~~~~~~~
 
