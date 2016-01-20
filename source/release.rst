@@ -1,6 +1,19 @@
 Release notes
 -------------
 
+**In 0.24**
+
+Released 20th, January 2016
+
+* New input format: markdown
+* New supported script format: Spyder cell markup
+* Support new link attributes for pandoc >= 1.16
+* pypublish now embeds figures in html output
+* pypublish no longer defaults to wrap = False in html output
+* Improved test coverage
+* More robust script reader, not sensitive to empty lines anymore
+* Removed obsolete Julia support.
+
 **In 0.23.2**
 
 Released 16th, January 2016

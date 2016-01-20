@@ -107,14 +107,14 @@ Notice also that Pweave can now catch multiple figures/code chunk.
 >>> show()
 >>> #Impulse and step response
 >>> figure(2)
-<matplotlib.figure.Figure object at 0x7ff3497d38d0>
+<matplotlib.figure.Figure object at 0x7f0f527d7050>
 >>> impz(a)
 >>> show()
 
 ~~~~~~~~~~~~~
 
 ![](figures/FIR_design_figure2_1.png)\
-![](figures/FIR_design_figure2_2.png)\
+![](figures/FIR_design_figure2_1.png)\
 
 
 ## Highpass FIR Filter

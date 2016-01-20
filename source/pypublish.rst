@@ -1,13 +1,27 @@
+.. _publish:
 
 Publishing scipts
 =================
 
+.. note:: You'll need Pweave >= 0.24 for this.
+
 As option to using the noweb format Pweave can also publish html and pdf
 documents from Python scripts with a specific format.
 
-These scripts can be executed normally using Python or published to HTML with Pweave Text is written in markdown in lines starting with "#' " and code is executed and results are included in the published document. The concept is similar to publishing documents with MATLAB or using Knitr's `spin <http://yihui.name/knitr/demo/stitch/>`__.
+These scripts can be executed normally using Python or published to HTML with Pweave.
+Documentation is written in markdown in lines starting with ``#'``, ``#%%`` or ``# %%`` ,
+and code is executed and results are included in the published document.
+``#%%`` is also  `code cell <https://pythonhosted.org/spyder/editor.html#how-to-define-a-code-cell>`_ mark up used in Spyder IDE.
 
-Notice that you don't need to define chunk options (see Pweave docs ), but you do need one line of whitespace between text and code. If you want to define options you can do it on using a line starting with #+. just before code e.g. #+ term=True, caption='Fancy plots.'. See the example below for the markup.
+The concept is similar to publishing documents with MATLAB or
+using Knitr's `spin <http://yihui.name/knitr/demo/stitch/>`__.
+Pweave will remove the first empty space from each line of documentation.
+
+
+All lines that are not documentation are treated as code. You can set chunk options
+using lines starting with ``#+``, ``#%%`` or ``# %%`` just before code
+e.g. ``#+ term=True, caption='Fancy plots.'``. See the example below for the markup.
+
 
 The scripts can be published using the `pypublish` scipts:
 
@@ -17,3 +31,11 @@ The scripts can be published using the `pypublish` scipts:
 
     pypublish FIR_design.py
     pypublish -f pdf FIR_design.py
+
+
+You can also use any pweave supported format in the comments and run pweave
+using script as input. e.g to get latex output you can use:
+
+.. code:: shell
+
+    pweave -f tex FIR_design.py

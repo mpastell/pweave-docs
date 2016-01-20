@@ -9,16 +9,15 @@ source_suffix = '.rst'
 source_encoding = 'utf-8'
 master_doc = 'docs'
 
-# General information about the project.
-project = u'Pweave - Scientific Reports Using Python'
-copyright = u'Matti Pastell. 2010 - '
 
 # The short X.Y version.
-version = '0.23.2'
+version = '0.24'
 # The full version, including alpha/beta/rc tags.
-release = '0.23.2'
+release = '0.24'
 
-
+# General information about the project.
+project = u"Pweave v%s documentation" % release
+copyright = u'Matti Pastell. 2010 - '
 
 # List of directories, relative to source directory, that shouldn't be searched
 # for source files.
@@ -35,11 +34,12 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 #html_style = '/default.css'
 
 # "<project> v<release> documentation".
-html_title = "Pweave - Scientific Reports Using Python"
+html_title = u"Pweave v%s documentation" % release
+
 
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+#html_short_title = "Pweave v%s documentation" % release
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.

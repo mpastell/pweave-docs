@@ -109,7 +109,13 @@ Published from script
 
 You can publish documents directly using the `pypublish` command.
 
+Using doxygen mark up:
+
 :download:`FIR_design.py <FIR_design.py>`, :download:`FIR_design.html <FIR_design.html>` , :download:`FIR_design.pdf <FIR_design.pdf>` .
+
+Using cell mark up:
+
+:download:`FIR_design_cells.py <FIR_design.py>`, :download:`FIR_design_cells.html <FIR_design_cells.html>` , :download:`FIR_design_cells.pdf <FIR_design_cells.pdf>` .
 
 
 .. code:: shell
@@ -229,7 +235,7 @@ This gallery was created using:
 
     >>> import pweave
     >>> pweave.__version__
-    u'0.23.2+'
+    u'0.24'
     >>> import sys
     >>> print(sys.version)
     2.7.11 |Continuum Analytics, Inc.| (default, Dec  6 2015, 18:08:32)

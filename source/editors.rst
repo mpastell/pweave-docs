@@ -8,9 +8,9 @@ Atom
 **Markdown source:**
 I use the following packages to edit markdown source:
 
-- `Markdown Preview Plus <https://atom.io/packages/markdown-preview-plus>`__ without pandoc allows
+- `Markdown Preview Plus <https://atom.io/packages/markdown-preview-plus>`_ without pandoc allows
   preview of the source document (without syntax highlighting).
-- `<https://atom.io/packages/language-pfm>`__ for pandoc syntax highlighting in source
+- `language-pfm <https://atom.io/packages/language-pfm>`_ for pandoc syntax highlighting in source
 
 
 Emacs
@@ -50,3 +50,8 @@ VIM
 ---
 
 Pweave VIM plugin: `<https://github.com/naught101/vim-pweave>`__ .
+
+Spyder
+------
+
+Pweave can publish Spyder can scipts using ``#%%`` `code cell mark up <https://pythonhosted.org/spyder/editor.html#how-to-define-a-code-cell>`_ .

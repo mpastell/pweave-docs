@@ -4,7 +4,6 @@ Pweave Basics
 
 .. index:: source document, output document
 
-
 Pweave documents
 ________________
 
@@ -16,18 +15,19 @@ to Pweave using `-i` command line option.
 Code chunk formats
 ------------------
 
-.. describe:: noweb
+noweb
++++++
 
-  Noweb syntax for defining code chunks has been adopted from  `Sweave
-  <http://www.stat.uni-muenchen.de/~leisch/Sweave/>`_.
+Noweb syntax for defining code chunks has been adopted from  `Sweave
+<http://www.stat.uni-muenchen.de/~leisch/Sweave/>`_.
 
 
-  Code chunk starts with a line marked with ``<<>>=`` or ``<<options>>=`` and end
-  with line marked with ``@``. The code between the start and end markers
-  is executed and the output is captured to the output document.
+Code chunk starts with a line marked with ``<<>>=`` or ``<<options>>=`` and end
+with line marked with ``@``. The code between the start and end markers
+is executed and the output is captured to the output document.
 
-  **Example:** A code chunk that saves and displays a 12 cm wide image
-  and hides the source code:
+**Example:** A code chunk that saves and displays a 12 cm wide image
+and hides the source code:
 
 ::
 
@@ -37,10 +37,11 @@ Code chunk formats
   show()
   @
 
-.. describe:: markdown
+markdown
+++++++++
 
-  Pweave can run code from fenced markdown python code blocks. All of the
-  following are valid ways to define a code chunk:
+Pweave can run code from fenced markdown python code blocks. All of the
+following are valid ways to define a code chunk:
 
 ::
 
@@ -50,27 +51,29 @@ Code chunk formats
 
 ..
 
-  However options can only be defined in brackets:
+However options can only be defined in brackets:
 
 ::
 
   ```{python, caption = "Some figure"}
 
 
-.. describe:: Documentation chunk
+Documentation chunk
+-------------------
 
-   The rest of the document is just copied to ouput and can be written with
-   several different markup languages. See `formats <formats.html>`_ page for
-   a list of supported output formats.
+ The rest of the document is just copied to ouput and can be written with
+ several different markup languages. See `formats <formats.html>`_ page for
+ a list of supported output formats.
 
-.. describe:: Inline code
+Inline code
+-----------
 
-   Pweave supports evaluating inline code in documentation chunks
-   using ``<% %>`` (code will be evaluated in place) and ``<%= %>``
-   (result of expression will be printed) tags. Inline code will not
-   be included in weaved document.
+ Pweave supports evaluating inline code in documentation chunks
+ using ``<% %>`` (code will be evaluated in place) and ``<%= %>``
+ (result of expression will be printed) tags. Inline code will not
+ be included in weaved document.
 
-   **Example**: Use inline code to set some matplotlib options.
+ **Example**: Use inline code to set some matplotlib options.
 
 ::
 
@@ -84,7 +87,6 @@ Code chunk formats
 .. versionadded:: 0.2
 
 .. index:: options, figures, inline code chunks
-
 
 Weaving Pweave Documents
 ________________________

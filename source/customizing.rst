@@ -48,7 +48,7 @@ Have a look at what the format dictionary contains:
      'termend': '~~~~~~~~~~~~~\n\n',
      'termindent': '',
      'termstart': '~~~~{.%s}',
-     'width': '15 cm'}
+     'width': None}
     
     
 

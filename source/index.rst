@@ -1,5 +1,5 @@
-About Pweave
-============
+Pweave - Scientific Reports Using Python
+========================================
 
 Pweave is a scientific report generator and a literate programming
 tool for Python. Pweave can capture the results and plots from data
@@ -12,7 +12,7 @@ output from several input formats.
 
 - Noweb  uses `noweb <http://www.cs.tufts.edu/~nr/noweb/>`_ syntax for separating code from documentation.
 - Markdown. Run code from markdown code blocks.
-- Script. Python script with special markup in comments.
+- Script. Python script with special markup in comments. See: :ref:`publishing scripts <publish>`.
 
 Pweave is good for creating reports, tutorials, presentations etc. with embedded python
 code It can also be used to make websites together with e.g. Sphinx or rest2web.

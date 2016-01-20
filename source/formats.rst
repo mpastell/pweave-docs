@@ -26,6 +26,8 @@ You can list the supported formats using:
        HTML with pygments highlighting
     * leanpub:
        Leanpub markdown
+    * markdown:
+       Pandoc markdown, same as format pandoc
     * md2html:
        Markdown to HTML using Python-Markdown
     * pandoc:
