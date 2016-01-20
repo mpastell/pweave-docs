@@ -5,22 +5,29 @@ Pweave Basics
 .. index:: source document, output document
 
 
-Pweave syntax
-_____________
+Pweave documents
+________________
 
-Pweave uses noweb syntax for defining the code chunks and
-documentation chunks, just like `Sweave
-<http://www.stat.uni-muenchen.de/~leisch/Sweave/>`_.
+A Pweave input document contains documentation and code separated with special
+markup. Pweave supports several input formats for different purposes. All of the
+source formats produce identical output for code. You need to tell the input format
+to Pweave using `-i` command line option.
 
-.. describe:: Code chunk
+Code chunk formats
+------------------
 
-   start with a line marked with ``<<>>=`` or ``<<options>>=`` and end
-   with line marked with ``@``. The code between the start and end markers
-   is executed and the output is captured to the output document. See
-   for options below.
+.. describe:: noweb
 
-   **Example:** A code chunk that saves and displays a 12 cm wide image
-   and hides the source code:
+  Noweb syntax for defining code chunks has been adopted from  `Sweave
+  <http://www.stat.uni-muenchen.de/~leisch/Sweave/>`_.
+
+
+  Code chunk starts with a line marked with ``<<>>=`` or ``<<options>>=`` and end
+  with line marked with ``@``. The code between the start and end markers
+  is executed and the output is captured to the output document.
+
+  **Example:** A code chunk that saves and displays a 12 cm wide image
+  and hides the source code:
 
 ::
 
@@ -30,11 +37,31 @@ documentation chunks, just like `Sweave
   show()
   @
 
+.. describe:: markdown
+
+  Pweave can run code from fenced markdown python code blocks. All of the
+  following are valid ways to define a code chunk:
+
+::
+
+  ```python
+  ```{python}
+  ```{.python}
+
+..
+
+  However options can only be defined in brackets:
+
+::
+
+  ```{python, caption = "Some figure"}
+
+
 .. describe:: Documentation chunk
 
-   Are the rest of the document (between ``@`` and ``<<>>=`` lines and the
-   first chunk be default) and can be written with several different
-   markup languages.
+   The rest of the document is just copied to ouput and can be written with
+   several different markup languages. See `formats <formats.html>`_ page for
+   a list of supported output formats.
 
 .. describe:: Inline code
 
@@ -59,9 +86,6 @@ documentation chunks, just like `Sweave
 .. index:: options, figures, inline code chunks
 
 
-
-
-
 Weaving Pweave Documents
 ________________________
 
@@ -70,8 +94,6 @@ that contains text and the weaved code together with its
 evaluated output.  All of the produced figures are placed in the
 'figures/' folder as a default.
 
-See `formats <formats.html>`_ page for a list of supported
-output formats.
 
 **Pweave documents are weaved from the shell with the command:**
 

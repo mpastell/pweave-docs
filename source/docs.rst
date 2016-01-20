@@ -21,7 +21,7 @@ Contents:
    customizing.rst
    subclassing.rst
    examples/index.rst
-   emacs.rst
+   editors.rst
    links.rst
    release.rst
 
