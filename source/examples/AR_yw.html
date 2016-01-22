@@ -67,8 +67,10 @@
 .err { border: 1px solid #FF0000 } /* Error */
 .k { color: #008000; font-weight: bold } /* Keyword */
 .o { color: #666666 } /* Operator */
+.ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .cp { color: #BC7A00 } /* Comment.Preproc */
+.cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .cs { color: #408080; font-style: italic } /* Comment.Special */
 .gd { color: #A00000 } /* Generic.Deleted */
@@ -149,7 +151,7 @@
 <p>YW method requires that we compute the sample autocorrelation function:</p>
 <p><span class="math">\[r_k = \frac{1}{(n-k)\sigma^2}\sum_{t=1}^{n-k}(X_t - \mu)(X_{t+k} - \mu)\]</span class="math"></p>
 <div class="highlight"><pre>    <span class="k">def</span> <span class="nf">autocorr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lag</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="s">&#39;full&#39;</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="s1">&#39;full&#39;</span><span class="p">)</span>
         <span class="n">mid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">acov</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="n">mid</span><span class="p">:</span><span class="n">mid</span><span class="o">+</span><span class="n">lag</span><span class="p">]</span>
         <span class="n">acor</span> <span class="o">=</span> <span class="n">acov</span><span class="o">/</span><span class="n">acov</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -196,9 +198,9 @@ and it is thus easy to form using <code>toeplitz</code> function from <code>scip
         <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">freqz</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
         <span class="n">h_db</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">h</span><span class="p">)))</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">h_db</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">r&#39;Normalized Frequency ($\times \pi$rad/sample)&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">r&#39;Power/frequency (dB/rad/sample)&#39;</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">r&#39;Yule-Walker Spectral Density Estimate&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">r&#39;Normalized Frequency ($\times \pi$rad/sample)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">r&#39;Power/frequency (dB/rad/sample)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">r&#39;Yule-Walker Spectral Density Estimate&#39;</span><span class="p">)</span>
 </pre></div>
 
 <h1>Try it out:</h1>
@@ -217,6 +219,6 @@ and it is thus easy to form using <code>toeplitz</code> function from <code>scip
     <div class="footer">
       <p>Published from <a href="AR_yw.mdw">AR_yw.mdw</a>
     using <a href="http://mpastell.com/pweave">Pweave</a> 0.24
-    on 20-01-2016.<p></div>
+    on 22-01-2016.<p></div>
   </BODY>
 </HTML>

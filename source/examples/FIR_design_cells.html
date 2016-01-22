@@ -138,7 +138,7 @@
 <p>This an example of a script that can be published using
 <a href="http://mpastell.com/pweave">Pweave</a>. The script can be executed
 normally using Python or published to HTML with Pweave
-Text is written in markdown in lines starting with "<code>#'</code> " and code
+Text is written in markdown in lines starting with "<code>#%%</code> " and code
 is executed and results are included in the published document.
 The concept is similar to
 publishing documents with <a href="http://mathworks.com">MATLAB</a> or using
@@ -148,12 +148,12 @@ stitch with <a href="http://http://yihui.name/knitr/demo/stitch/">Knitr</a>.</p>
 ),
 but you do need one line of whitespace between text and code.
 If you want to define options you can do it on using a line starting with
-<code>#+</code>. just before code e.g. <code>#+ term=True, caption='Fancy plots.'</code>. 
+<code>#%%+</code>. just before code e.g. <code>#%%+ term=True, caption='Fancy plots.'</code>.
 If you're viewing the HTML version have a look at the
 <a href="FIR_design.py">source</a> to see the markup.</p>
 <p>The code and text below comes mostly
 from my blog post <a href="http://mpastell.com/2010/01/18/fir-with-scipy/">FIR design with SciPy</a>,
-but I've updated it to reflect new features in SciPy. </p>
+but I've updated it to reflect new features in SciPy.</p>
 <h1>FIR Filter Design</h1>
 <p>We'll implement lowpass, highpass and ' bandpass FIR filters. If
 you want to read more about DSP I highly recommend <a href="http://www.dspguide.com/">The Scientist
@@ -209,7 +209,7 @@ properties.</p>
 need to do is to define the window length, cut off frequency and the
 window.</p>
 <p>The Hamming window is defined as:
-<span class="math">\(w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}\)</span class="math">, where <span class="math">\(\alpha=0.54\)</span class="math"> and <span class="math">\(\beta=0.46\)</span class="math"> </p>
+<span class="math">\(w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}\)</span class="math">, where <span class="math">\(\alpha=0.54\)</span class="math"> and <span class="math">\(\beta=0.46\)</span class="math"></p>
 <p>The next code chunk is executed in term mode, see the <a href="FIR_design.py">Python script</a> for syntax.
 Notice also that Pweave can now catch multiple figures/code chunk.</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">61</span>
@@ -219,7 +219,7 @@ Notice also that Pweave can now catch multiple figures/code chunk.</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">show</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="c1">#Impulse and step response</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7fc3d93a8650</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">Figure</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7f80ecfd5650</span><span class="o">&gt;</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">impz</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -252,7 +252,7 @@ need to do ' spectral inversion "manually" anymore!</p>
 </figure>
     <HR/>
     <div class="footer">
-      <p>Published from <a href="FIR_design.py">FIR_design.py</a>
+      <p>Published from <a href="FIR_design_cells.py">FIR_design_cells.py</a>
     using <a href="http://mpastell.com/pweave">Pweave</a> 0.24
     on 22-01-2016.<p></div>
   </BODY>

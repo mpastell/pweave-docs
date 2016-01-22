@@ -121,7 +121,9 @@ Using cell mark up:
 .. code:: shell
 
     pypublish FIR_design.py
+    pypublish FIR_design_cells.py
     pypublish -f pdf FIR_design.py
+    pypublish -f pdf FIR_design_cells.py
     
 
 

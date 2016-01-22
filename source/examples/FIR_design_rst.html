@@ -658,25 +658,25 @@ online.</p>
 <span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
 <span class="keyword namespace">import</span> <span class="name namespace">scipy.signal</span> <span class="keyword namespace">as</span> <span class="name namespace">signal</span>
 
-<span class="comment">#Plot frequency and phase response</span>
+<span class="comment single">#Plot frequency and phase response</span>
 <span class="keyword">def</span> <span class="name function">mfreqz</span><span class="punctuation">(</span><span class="name">b</span><span class="punctuation">,</span><span class="name">a</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">):</span>
     <span class="name">w</span><span class="punctuation">,</span><span class="name">h</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">freqz</span><span class="punctuation">(</span><span class="name">b</span><span class="punctuation">,</span><span class="name">a</span><span class="punctuation">)</span>
     <span class="name">h_dB</span> <span class="operator">=</span> <span class="literal number integer">20</span> <span class="operator">*</span> <span class="name">log10</span> <span class="punctuation">(</span><span class="name builtin">abs</span><span class="punctuation">(</span><span class="name">h</span><span class="punctuation">))</span>
     <span class="name">subplot</span><span class="punctuation">(</span><span class="literal number integer">211</span><span class="punctuation">)</span>
     <span class="name">plot</span><span class="punctuation">(</span><span class="name">w</span><span class="operator">/</span><span class="name builtin">max</span><span class="punctuation">(</span><span class="name">w</span><span class="punctuation">),</span><span class="name">h_dB</span><span class="punctuation">)</span>
     <span class="name">ylim</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">150</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">)</span>
-    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string">'Magnitude (db)'</span><span class="punctuation">)</span>
-    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string">r'Normalized Frequency (x$\pi$rad/sample)'</span><span class="punctuation">)</span>
-    <span class="name">title</span><span class="punctuation">(</span><span class="literal string">r'Frequency response'</span><span class="punctuation">)</span>
+    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string single">'Magnitude (db)'</span><span class="punctuation">)</span>
+    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string single">r'Normalized Frequency (x$\pi$rad/sample)'</span><span class="punctuation">)</span>
+    <span class="name">title</span><span class="punctuation">(</span><span class="literal string single">r'Frequency response'</span><span class="punctuation">)</span>
     <span class="name">subplot</span><span class="punctuation">(</span><span class="literal number integer">212</span><span class="punctuation">)</span>
     <span class="name">h_Phase</span> <span class="operator">=</span> <span class="name">unwrap</span><span class="punctuation">(</span><span class="name">arctan2</span><span class="punctuation">(</span><span class="name">imag</span><span class="punctuation">(</span><span class="name">h</span><span class="punctuation">),</span><span class="name">real</span><span class="punctuation">(</span><span class="name">h</span><span class="punctuation">)))</span>
     <span class="name">plot</span><span class="punctuation">(</span><span class="name">w</span><span class="operator">/</span><span class="name builtin">max</span><span class="punctuation">(</span><span class="name">w</span><span class="punctuation">),</span><span class="name">h_Phase</span><span class="punctuation">)</span>
-    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string">'Phase (radians)'</span><span class="punctuation">)</span>
-    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string">r'Normalized Frequency (x$\pi$rad/sample)'</span><span class="punctuation">)</span>
-    <span class="name">title</span><span class="punctuation">(</span><span class="literal string">r'Phase response'</span><span class="punctuation">)</span>
+    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string single">'Phase (radians)'</span><span class="punctuation">)</span>
+    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string single">r'Normalized Frequency (x$\pi$rad/sample)'</span><span class="punctuation">)</span>
+    <span class="name">title</span><span class="punctuation">(</span><span class="literal string single">r'Phase response'</span><span class="punctuation">)</span>
     <span class="name">subplots_adjust</span><span class="punctuation">(</span><span class="name">hspace</span><span class="operator">=</span><span class="literal number float">0.5</span><span class="punctuation">)</span>
 
-<span class="comment">#Plot step and impulse response</span>
+<span class="comment single">#Plot step and impulse response</span>
 <span class="keyword">def</span> <span class="name function">impz</span><span class="punctuation">(</span><span class="name">b</span><span class="punctuation">,</span><span class="name">a</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">):</span>
     <span class="name">l</span> <span class="operator">=</span> <span class="name builtin">len</span><span class="punctuation">(</span><span class="name">b</span><span class="punctuation">)</span>
     <span class="name">impulse</span> <span class="operator">=</span> <span class="name">repeat</span><span class="punctuation">(</span><span class="literal number float">0.</span><span class="punctuation">,</span><span class="name">l</span><span class="punctuation">);</span> <span class="name">impulse</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span> <span class="operator">=</span><span class="literal number float">1.</span>
@@ -684,15 +684,15 @@ online.</p>
     <span class="name">response</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">lfilter</span><span class="punctuation">(</span><span class="name">b</span><span class="punctuation">,</span><span class="name">a</span><span class="punctuation">,</span><span class="name">impulse</span><span class="punctuation">)</span>
     <span class="name">subplot</span><span class="punctuation">(</span><span class="literal number integer">211</span><span class="punctuation">)</span>
     <span class="name">stem</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span> <span class="name">response</span><span class="punctuation">)</span>
-    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string">'Amplitude'</span><span class="punctuation">)</span>
-    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string">r'n (samples)'</span><span class="punctuation">)</span>
-    <span class="name">title</span><span class="punctuation">(</span><span class="literal string">r'Impulse response'</span><span class="punctuation">)</span>
+    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string single">'Amplitude'</span><span class="punctuation">)</span>
+    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string single">r'n (samples)'</span><span class="punctuation">)</span>
+    <span class="name">title</span><span class="punctuation">(</span><span class="literal string single">r'Impulse response'</span><span class="punctuation">)</span>
     <span class="name">subplot</span><span class="punctuation">(</span><span class="literal number integer">212</span><span class="punctuation">)</span>
     <span class="name">step</span> <span class="operator">=</span> <span class="name">cumsum</span><span class="punctuation">(</span><span class="name">response</span><span class="punctuation">)</span>
     <span class="name">stem</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span> <span class="name">step</span><span class="punctuation">)</span>
-    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string">'Amplitude'</span><span class="punctuation">)</span>
-    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string">r'n (samples)'</span><span class="punctuation">)</span>
-    <span class="name">title</span><span class="punctuation">(</span><span class="literal string">r'Step response'</span><span class="punctuation">)</span>
+    <span class="name">ylabel</span><span class="punctuation">(</span><span class="literal string single">'Amplitude'</span><span class="punctuation">)</span>
+    <span class="name">xlabel</span><span class="punctuation">(</span><span class="literal string single">r'n (samples)'</span><span class="punctuation">)</span>
+    <span class="name">title</span><span class="punctuation">(</span><span class="literal string single">r'Step response'</span><span class="punctuation">)</span>
     <span class="name">subplots_adjust</span><span class="punctuation">(</span><span class="name">hspace</span><span class="operator">=</span><span class="literal number float">0.5</span><span class="punctuation">)</span>
 </pre>
 </div>
@@ -708,13 +708,13 @@ window.</p>
 multiple figures/code chunk.</p>
 <pre class="code python literal-block">
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">n</span> <span class="operator">=</span> <span class="literal number integer">61</span>
-<span class="operator">&gt;&gt;&gt;</span> <span class="name">a</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">firwin</span><span class="punctuation">(</span><span class="name">n</span><span class="punctuation">,</span> <span class="name">cutoff</span> <span class="operator">=</span> <span class="literal number float">0.3</span><span class="punctuation">,</span> <span class="name">window</span> <span class="operator">=</span> <span class="literal string">&quot;hamming&quot;</span><span class="punctuation">)</span>
-<span class="operator">&gt;&gt;&gt;</span> <span class="comment">#Frequency and phase response</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">a</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">firwin</span><span class="punctuation">(</span><span class="name">n</span><span class="punctuation">,</span> <span class="name">cutoff</span> <span class="operator">=</span> <span class="literal number float">0.3</span><span class="punctuation">,</span> <span class="name">window</span> <span class="operator">=</span> <span class="literal string double">&quot;hamming&quot;</span><span class="punctuation">)</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="comment single">#Frequency and phase response</span>
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">mfreqz</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">)</span>
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">show</span><span class="punctuation">()</span>
-<span class="operator">&gt;&gt;&gt;</span> <span class="comment">#Impulse and step response</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="comment single">#Impulse and step response</span>
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">figure</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="operator">&lt;</span><span class="name">matplotlib</span><span class="operator">.</span><span class="name">figure</span><span class="operator">.</span><span class="name">Figure</span> <span class="name builtin">object</span> <span class="name">at</span> <span class="literal number hex">0x7fe923178050</span><span class="operator">&gt;</span>
+<span class="operator">&lt;</span><span class="name">matplotlib</span><span class="operator">.</span><span class="name">figure</span><span class="operator">.</span><span class="name">Figure</span> <span class="name builtin">object</span> <span class="name">at</span> <span class="literal number hex">0x7f9025512a90</span><span class="operator">&gt;</span>
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">impz</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">)</span>
 <span class="operator">&gt;&gt;&gt;</span> <span class="name">show</span><span class="punctuation">()</span>
 </pre>
@@ -726,7 +726,7 @@ multiple figures/code chunk.</p>
 <p>Let's define a highpass FIR filter:</p>
 <pre class="code python literal-block">
 <span class="name">n</span> <span class="operator">=</span> <span class="literal number integer">101</span>
-<span class="name">a</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">firwin</span><span class="punctuation">(</span><span class="name">n</span><span class="punctuation">,</span> <span class="name">cutoff</span> <span class="operator">=</span> <span class="literal number float">0.3</span><span class="punctuation">,</span> <span class="name">window</span> <span class="operator">=</span> <span class="literal string">&quot;hanning&quot;</span><span class="punctuation">,</span>
+<span class="name">a</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">firwin</span><span class="punctuation">(</span><span class="name">n</span><span class="punctuation">,</span> <span class="name">cutoff</span> <span class="operator">=</span> <span class="literal number float">0.3</span><span class="punctuation">,</span> <span class="name">window</span> <span class="operator">=</span> <span class="literal string double">&quot;hanning&quot;</span><span class="punctuation">,</span>
 <span class="name">pass_zero</span><span class="operator">=</span><span class="name builtin pseudo">False</span><span class="punctuation">)</span>
 <span class="name">mfreqz</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">)</span>
 <span class="name">show</span><span class="punctuation">()</span>
@@ -738,7 +738,7 @@ multiple figures/code chunk.</p>
 <p>Notice that the plot has a caption defined in code chunk options.</p>
 <pre class="code python literal-block">
 <span class="name">n</span> <span class="operator">=</span> <span class="literal number integer">1001</span>
-<span class="name">a</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">firwin</span><span class="punctuation">(</span><span class="name">n</span><span class="punctuation">,</span> <span class="name">cutoff</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal number float">0.2</span><span class="punctuation">,</span> <span class="literal number float">0.5</span><span class="punctuation">],</span> <span class="name">window</span> <span class="operator">=</span> <span class="literal string">'blackmanharris'</span><span class="punctuation">,</span>
+<span class="name">a</span> <span class="operator">=</span> <span class="name">signal</span><span class="operator">.</span><span class="name">firwin</span><span class="punctuation">(</span><span class="name">n</span><span class="punctuation">,</span> <span class="name">cutoff</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal number float">0.2</span><span class="punctuation">,</span> <span class="literal number float">0.5</span><span class="punctuation">],</span> <span class="name">window</span> <span class="operator">=</span> <span class="literal string single">'blackmanharris'</span><span class="punctuation">,</span>
 <span class="name">pass_zero</span> <span class="operator">=</span> <span class="name builtin pseudo">False</span><span class="punctuation">)</span>
 <span class="name">mfreqz</span><span class="punctuation">(</span><span class="name">a</span><span class="punctuation">)</span>
 <span class="name">show</span><span class="punctuation">()</span>

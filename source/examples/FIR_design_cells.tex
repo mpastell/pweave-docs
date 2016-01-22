@@ -11,7 +11,7 @@
 
         \hypersetup
         {   pdfauthor = {Pweave},
-            pdftitle={Published from FIR_design.py},
+            pdftitle={Published from FIR_design_cells.py},
             colorlinks=TRUE,
             linkcolor=black,
             citecolor=blue,
@@ -131,9 +131,9 @@
 This an example of a script that can be published using
 \href{http://mpastell.com/pweave}{Pweave}. The script can be executed
 normally using Python or published to HTML with Pweave Text is written
-in markdown in lines starting with ``\texttt{\#\textquotesingle{}}'' and
-code is executed and results are included in the published document. The
-concept is similar to publishing documents with
+in markdown in lines starting with ``\texttt{\#\%\%}'' and code is
+executed and results are included in the published document. The concept
+is similar to publishing documents with
 \href{http://mathworks.com}{MATLAB} or using stitch with
 \href{http://http://yihui.name/knitr/demo/stitch/}{Knitr}.
 
@@ -141,8 +141,8 @@ Notice that you don't need to define chunk options (see
 \href{http://mpastell.com/pweave/usage.html\#code-chunk-options}{Pweave
 docs} ), but you do need one line of whitespace between text and code.
 If you want to define options you can do it on using a line starting
-with \texttt{\#+}. just before code e.g.
-\texttt{\#+\ term=True,\ caption=\textquotesingle{}Fancy\ plots.\textquotesingle{}}.
+with \texttt{\#\%\%+}. just before code e.g.
+\texttt{\#\%\%+\ term=True,\ caption=\textquotesingle{}Fancy\ plots.\textquotesingle{}}.
 If you're viewing the HTML version have a look at the
 \href{FIR_design.py}{source} to see the markup.
 
@@ -226,12 +226,12 @@ can now catch multiple figures/code chunk.
 \PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{show}\PY{p}{(}\PY{p}{)}
 \PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{c+c1}{\PYZsh{}Impulse and step response}
 \PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
-\PY{o}{\PYZlt{}}\PY{n}{matplotlib}\PY{o}{.}\PY{n}{figure}\PY{o}{.}\PY{n}{Figure} \PY{n+nb}{object} \PY{n}{at} \PY{l+m+mh}{0x7f14e9f4b210}\PY{o}{\PYZgt{}}
+\PY{o}{\PYZlt{}}\PY{n}{matplotlib}\PY{o}{.}\PY{n}{figure}\PY{o}{.}\PY{n}{Figure} \PY{n+nb}{object} \PY{n}{at} \PY{l+m+mh}{0x7fbeb8d96210}\PY{o}{\PYZgt{}}
 \PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{impz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
-\includegraphics[width= \linewidth]{figures/FIR_design_figure2_1.pdf}
-\includegraphics[width= \linewidth]{figures/FIR_design_figure2_2.pdf}
+\includegraphics[width= \linewidth]{figures/FIR_design_cells_figure2_1.pdf}
+\includegraphics[width= \linewidth]{figures/FIR_design_cells_figure2_2.pdf}
 
 \subsection{Highpass FIR Filter}\label{highpass-fir-filter}
 
@@ -246,7 +246,7 @@ you'll notice that it has become easier since 2009. You don't need to do
 \PY{n}{mfreqz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
-\includegraphics[width= \linewidth]{figures/FIR_design_figure3_1.pdf}
+\includegraphics[width= \linewidth]{figures/FIR_design_cells_figure3_1.pdf}
 
 \subsection{Bandpass FIR filter}\label{bandpass-fir-filter}
 
@@ -261,7 +261,7 @@ Notice that the plot has a caption defined in code chunk options.
 \end{Verbatim}
 \begin{figure}[htpb]
 \center
-\includegraphics[width= \linewidth]{figures/FIR_design_figure4_1.pdf}
+\includegraphics[width= \linewidth]{figures/FIR_design_cells_figure4_1.pdf}
 \caption{Bandpass FIR filter.}
 \label{fig:None}
 \end{figure}

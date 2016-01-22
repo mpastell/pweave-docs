@@ -16,7 +16,7 @@ version = '0.24'
 release = '0.24'
 
 # General information about the project.
-project = u"Pweave v%s documentation" % release
+project = u"Pweave documentation"
 copyright = u'Matti Pastell. 2010 - '
 
 # List of directories, relative to source directory, that shouldn't be searched

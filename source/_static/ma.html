@@ -8,7 +8,7 @@
 <p>Create 11 point moving average filter and plot its frequency response and print the values.</p>
 <div class="highlight"><pre><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="kn">as</span> <span class="nn">signal</span>
-<span class="c">#A function to plot frequency and phase response</span>
+<span class="c1">#A function to plot frequency and phase response</span>
 <span class="k">def</span> <span class="nf">mfreqz</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">w</span><span class="p">,</span><span class="n">h</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">freqz</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
     <span class="n">h</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
@@ -30,10 +30,10 @@
 
 <p>Calculate the frequency response and plot it:</p>
 <div class="highlight"><pre><span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">mfreqz</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="c">#Plot the function</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">r&#39;Normalized Frequency (x$\pi$rad/sample)&#39;</span><span class="p">)</span>
+<span class="c1">#Plot the function</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s1">r&#39;Normalized Frequency (x$\pi$rad/sample)&#39;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">()</span>
 </pre></div>
 <figure>

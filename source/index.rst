@@ -17,6 +17,10 @@ output from several input formats.
 Pweave is good for creating reports, tutorials, presentations etc. with embedded python
 code It can also be used to make websites together with e.g. Sphinx or rest2web.
 
+
+.. warning:: **Note: pip install of Pweave fails in Python 3**. This is due to a bug in pip. You’ll
+   need to use "conda", "easy install" or download the source and run ``python setup.py install``.
+
 .. note::
 
    Report bugs on `Github <https://github.com/mpastell/Pweave>`_.

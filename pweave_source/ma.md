@@ -55,7 +55,7 @@ xlabel(r'Normalized Frequency (x$\pi$rad/sample)')
 show()
 ~~~~~~~~~~~~~
 
-![Frequency response of an 11 point moving average filter](figures/ma_figure3_1.pdf)
+![Frequency response of an 11 point moving average filter](figures/ma_figure3_1.pdf){width=10cm}
 
 
 
