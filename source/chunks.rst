@@ -46,9 +46,9 @@ chunks.
 .. envvar:: include = True or (False)
 
    If include is True generated figures are automatically included in
-    the document otherwise figures are generated, but not
-    included. This is useful if you want more control over figure
-    formatting e.g. use subfigures in Latex.
+   the document otherwise figures are generated, but not
+   included. This is useful if you want more control over figure
+   formatting e.g. use subfigures in Latex.
 
 .. versionadded:: 0.21
 

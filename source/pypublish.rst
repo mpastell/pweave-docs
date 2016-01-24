@@ -14,7 +14,7 @@ and code is executed and results are included in the published document.
 ``#%%`` is also  `code cell <https://pythonhosted.org/spyder/editor.html#how-to-define-a-code-cell>`_ mark up used in Spyder IDE.
 
 The concept is similar to publishing documents with MATLAB or
-using Knitr's `spin <http://yihui.name/knitr/demo/stitch/>`__.
+using Knitr's `spin <http://yihui.name/knitr/demo/stitch/>`_.
 Pweave will remove the first empty space from each line of documentation.
 
 
@@ -32,6 +32,14 @@ The scripts can be published using the `pypublish` scipts:
     pypublish FIR_design.py
     pypublish -f pdf FIR_design.py
 
+You can use diffent themes with pypublish using ``-t`` command line option. The
+default option is `skeleton <http://getskeleton.com>`_ , other options are
+``pweave`` (the old theme), `bootstrap <http://getbootstrap.com>`_ , `cerulean <https://bootswatch.com/cerulean/>`_ and `journal <https://bootswatch.com/journal/>`_.
+
+.. versionadded:: 0.25
+
+Other mark ups with scripts
+---------------------------
 
 You can also use any pweave supported format in the comments and run pweave
 using script as input. e.g to get latex output you can use:
