@@ -86,7 +86,6 @@ And after setting options weave and tangle the document:
     >>> doc.tangle()
     Tangled code from ma.mdw to ma.py
     
-    
 
 
 

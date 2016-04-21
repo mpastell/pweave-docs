@@ -38,6 +38,8 @@ You can list the supported formats using:
        Markdown to Latex using Pandoc, requires Pandoc in path
     * rst:
        reStructuredText
+    * softcover:
+       SoftCover markdown
     * sphinx:
        reStructuredText for Sphinx
     * tex:

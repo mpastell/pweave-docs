@@ -54,7 +54,7 @@ title('Histogram of residuals')
 ~~~~~~~~~~~~~
 
 ~~~~{.octave}
-a =  0.20284
+a =  0.19876
 
 ~~~~~~~~~~~~~
 

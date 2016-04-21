@@ -48,7 +48,6 @@ from the documents namespace :py:attr:`PwebProcessorGlobals.globals` to global n
     >>> pweave.tangle('ma.mdw')
     Tangled code from ma.mdw to ma.py
     
-    
 
 
 
