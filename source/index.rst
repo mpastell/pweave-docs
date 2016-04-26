@@ -17,6 +17,8 @@ output from several input formats.
 Pweave is good for creating reports, tutorials, presentations etc. with embedded python
 code It can also be used to make websites together with e.g. Sphinx or rest2web.
 
+There is now also Pweave syntax highlighting for Atom editor using
+`language-weave <https://atom.io/packages/language-weave>`_ .
 
 .. warning:: **Note: pip install of Pweave fails in Python 3**. This is due to a bug in pip. You’ll
    need to use "conda", "easy install" or download the source and run ``python setup.py install``.

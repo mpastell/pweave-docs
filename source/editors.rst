@@ -5,12 +5,19 @@ Editor support
 Atom
 ----
 
-**Markdown source:**
-I use the following packages to edit markdown source:
+I have made a package for Atom that does syntax highlighting for Pweave documents
+it is called `language-weave <https://atom.io/packages/language-weave>`_ and you can
+install it from Atom or using apm:
 
-- `Markdown Preview Plus <https://atom.io/packages/markdown-preview-plus>`_ without pandoc allows
-  preview of the source document (without syntax highlighting).
-- `language-pfm <https://atom.io/packages/language-pfm>`_ for pandoc syntax highlighting in source
+
+::
+      
+      apm install language-weave
+
+
+
+I use `Markdown Preview Plus <https://atom.io/packages/markdown-preview-plus>`_
+without pandoc allows preview of the source document (without syntax highlighting).
 
 
 Emacs

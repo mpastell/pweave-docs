@@ -1,6 +1,15 @@
 Release notes
 -------------
 
+**In 0.25**
+
+Released 21st, April 2016
+
+* New pweave option: `output` allows to set the output file
+* New better themes for pypublish and an option to choose theme
+* New output format: softcover (https://www.softcover.io/)
+
+
 **In 0.24**
 
 Released 20th, January 2016
