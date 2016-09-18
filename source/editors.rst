@@ -56,7 +56,7 @@ The code simply sets the documentation mode (*noweb-doc-mode as rst-mode*) as re
 VIM
 ---
 
-Pweave VIM plugin: `<https://github.com/naught101/vim-pweave>`__ .
+Pweave VIM plugin: `<https://github.com/coyotebush/vim-pweave>`__ .
 
 Spyder
 ------
