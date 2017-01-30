@@ -181,14 +181,15 @@ unharmed.
             if chunk['type'] == 'code':
                 source = os.path.splitext(self.source)[0]
                 fname = "chunks/{}_{}.tex".format(source, chunk['number'])
-                if chunk['term']:
-                    with open(fname, "w") as f:
+                with open(fname, "w") as f:
+                    if chunk['term']:
                         f.write(chunk['result'])
-                    chunk['result'] = r"\lstinputlisting{"+fname+"}"
-                else:
-                    with open(fname, "w") as f:
+                        chunk['result'] = r"\lstinputlisting{"+fname+"}"
+                    else:
                         f.write(chunk['content'])
-                    chunk['content'] = r"\lstinputlisting{"+fname+"}"
+                        f.write(chunk['result'])
+                        chunk['content'] = r"\lstinputlisting{"+fname+"}"
+                        chunk['result'] = "\n\n"
             return(chunk)
 
 
