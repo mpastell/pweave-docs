@@ -141,3 +141,64 @@ Let's see what the first code chunk contains:
   the document, but subclassing these is not currently documented and
   is hopefully not needed.
 
+
+Dealing with LaTeX files
+-------------------------
+
+
+Here is another example to show how to preformat LaTeX files.
+
+Some packages, such as `Exsheets
+<https://www.ctan.org/pkg/exsheets>`_, have difficulty with handling
+the verbatim environment of LaTeX. One way to work around this problem
+is to write the content of each code chunc to a file, and then include
+the file contents in the latex file with the `lstinputlisting` command
+of latex.
+
+Specifically, in the formatter below, we write the contents of each
+code chunk to a file with the same name as the source file, add a
+number to it, and store the file in the `chunks` directory. Then we
+replace the contents of the chunck with the `lstinputlisting` command
+so that latex reads the file. Since there is no further need for the
+environments, we set them them to empty strings. Finally, we save the
+weaved result in a ".tx" file, so that our source file remains
+unharmed.
+
+
+.. code-block:: python
+
+    #!/usr/bin/python3
+    import os
+
+    from pweave import Pweb, PwebTexPweaveFormatter
+
+
+    class ToFile(PwebTexPweaveFormatter):
+        chunks = []
+
+        def preformat_chunk(self, chunk):
+            ToFile.chunks.append(chunk.copy())  # Store the chunks
+            if chunk['type'] == 'code':
+                source = os.path.splitext(self.source)[0]
+                fname = "chunks/{}_{}.tex".format(source, chunk['number'])
+                with open(fname, "w") as f:
+                    f.write(chunk['result'])
+                chunk['result'] = r"\lstinputlisting{"+fname+"}"
+            return(chunk)
+
+
+    fname = "example"
+    doc = Pweb(fname+r".tex",  format="texpweave", output=fname+r".tx")
+    doc.setformat(Formatter=ToFile)
+    doc.updateformat({
+        "outputstart": "\n",
+        "outputend": "\n",
+        "codestart": "\n",
+        "codeend": "\n",
+        "termstart": "\n",
+        "termend": "\n",
+    }
+    )
+    doc.weave()
+
+                
