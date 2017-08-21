@@ -10,7 +10,7 @@ dictionary. You can manipulate the dictionary to change the options.
 import pweave
 import pprint
 pprint.pprint(pweave.rcParams["chunk"])
-@ 
+@
 
 **Change wrapping off and default figure position to "h!"**
 
@@ -18,4 +18,4 @@ pprint.pprint(pweave.rcParams["chunk"])
 pweave.rcParams["chunk"]["defaultoptions"].update({'wrap' : False, 'f_pos' : "h!"})
 #Updated options
 pprint.pprint(pweave.rcParams["chunk"])
-@ 
+@

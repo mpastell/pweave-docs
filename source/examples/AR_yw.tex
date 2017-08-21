@@ -9,6 +9,25 @@
 
         \ifluatex\usepackage{fontspec}\fi
 
+        \usepackage{xcolor}
+        % ANSI colors from nbconvert
+        \definecolor{ansi-black}{HTML}{3E424D}
+        \definecolor{ansi-black-intense}{HTML}{282C36}
+        \definecolor{ansi-red}{HTML}{E75C58}
+        \definecolor{ansi-red-intense}{HTML}{B22B31}
+        \definecolor{ansi-green}{HTML}{00A250}
+        \definecolor{ansi-green-intense}{HTML}{007427}
+        \definecolor{ansi-yellow}{HTML}{DDB62B}
+        \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+        \definecolor{ansi-blue}{HTML}{208FFB}
+        \definecolor{ansi-blue-intense}{HTML}{0065CA}
+        \definecolor{ansi-magenta}{HTML}{D160C4}
+        \definecolor{ansi-magenta-intense}{HTML}{A03196}
+        \definecolor{ansi-cyan}{HTML}{60C6C8}
+        \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+        \definecolor{ansi-white}{HTML}{C5C1B4}
+         \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
         \hypersetup
         {   pdfauthor = {Pweave},
             pdftitle={Published from AR_yw.mdw},
@@ -34,69 +53,73 @@
     \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
 \def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
 
-\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
 \expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
-\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
-\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
 \expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
-\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
 \expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
-\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
-\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
-\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
-\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
-\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
-\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
-\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
-\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
-\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
-\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
-\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
-\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
 \expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
-\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
 
 \def\PYZbs{\char`\\}
 \def\PYZus{\char`\_}
@@ -128,6 +151,7 @@
 \maketitle
 
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
 \PY{k+kn}{from} \PY{n+nn}{scipy} \PY{k+kn}{import} \PY{n}{signal}\PY{p}{,} \PY{n}{linalg}
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
@@ -135,8 +159,8 @@
 
 \PY{k}{class} \PY{n+nc}{YW}\PY{p}{(}\PY{n+nb}{object}\PY{p}{)}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}A class to fit AR model using Yule\PYZhy{}Walker method\PYZdq{}\PYZdq{}\PYZdq{}}
-
-    \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{X}\PY{p}{)}\PY{p}{:}
+    
+    \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{X}\PY{p}{)}\PY{p}{:}
         \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{X} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{X}\PY{p}{)}
 \end{Verbatim}
 
@@ -145,6 +169,7 @@
 YW method requires that we compute the sample autocorrelation function:
 
 \[r_k = \frac{1}{(n-k)\sigma^2}\sum_{t=1}^{n-k}(X_t - \mu)(X_{t+k} - \mu)\]
+
 
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
     \PY{k}{def} \PY{n+nf}{autocorr}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{lag}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
@@ -184,6 +209,7 @@ and it is thus easy to form using \texttt{toeplitz} function from
 
 And solve simply using: \[\Phi = R^{-1}r\]
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
     \PY{k}{def} \PY{n+nf}{fit}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{p}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{:}
         \PY{n}{ac} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{autocorr}\PY{p}{(}\PY{n}{p}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
@@ -201,31 +227,151 @@ The spectrum of an AR process is given by:
 
 It can be calcuted easily using \texttt{scipy.signal.freqz}.
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
     \PY{k}{def} \PY{n+nf}{spectrum}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{phi}\PY{p}{]}\PY{p}{)}
         \PY{n}{w}\PY{p}{,} \PY{n}{h} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{freqz}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{a}\PY{p}{)}
         \PY{n}{h\PYZus{}db} \PY{o}{=} \PY{l+m+mi}{10}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{log10}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{h}\PY{p}{)}\PY{o}{/}\PY{n+nb}{len}\PY{p}{(}\PY{n}{h}\PY{p}{)}\PY{p}{)}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{w}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{h\PYZus{}db}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Normalized Frequency (\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{times }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Power/frequency (dB/rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Yule\PYZhy{}Walker Spectral Density Estimate}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Normalized Frequency (\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{times }\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Power/frequency (dB/rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Yule\PYZhy{}Walker Spectral Density Estimate}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 \section{Try it out:}\label{try-it-out}
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
-\PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{)}\PY{p}{)}
-\PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{ar1} \PY{o}{=} \PY{n}{YW}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-\PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{ar1}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{p}{)}
-\PY{o}{\PYZlt{}}\PY{n}{string}\PY{o}{\PYZgt{}}\PY{p}{:}\PY{l+m+mi}{14}\PY{p}{:} \PY{n}{VisibleDeprecationWarning}\PY{p}{:} \PY{n}{using} \PY{n}{a} \PY{n}{non}\PY{o}{\PYZhy{}}\PY{n}{integer} \PY{n}{number}
-\PY{n}{instead} \PY{n}{of} \PY{n}{an} \PY{n}{integer} \PY{n}{will} \PY{n}{result} \PY{o+ow}{in} \PY{n}{an} \PY{n}{error} \PY{o+ow}{in} \PY{n}{the} \PY{n}{future}
-\PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{ar1}\PY{o}{.}\PY{n}{phi}
-\PY{n}{array}\PY{p}{(}\PY{p}{[} \PY{l+m+mf}{1.19379795}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.21810471}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.12747881}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.06257484}\PY{p}{,}
-\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.12929761}\PY{p}{]}\PY{p}{)}
-\PY{o}{\PYZgt{}\PYZgt{}}\PY{o}{\PYZgt{}} \PY{n}{ar1}\PY{o}{.}\PY{n}{spectrum}\PY{p}{(}\PY{p}{)}
+\PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{)}\PY{p}{)}
+\PY{n}{ar1} \PY{o}{=} \PY{n}{YW}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+\PY{n}{ar1}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
-\includegraphics[width= \linewidth]{figures/AR_yw_figure5_1.pdf}
+
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
+\textcolor{ansi-
+red}{---------------------------------------------------------------------------}\textcolor{ansi-
+red}{TypeError}                                 Traceback (most recent
+call last)\textcolor{ansi-green}{<ipython-input-7-2e9057d16458>} in
+\textcolor{ansi-cyan}{<module>}\textcolor{ansi-blue}{()}
+\textcolor{ansi-green}{----> 1}\textcolor{ansi-red}{
+}ar1\textcolor{ansi-blue}{.}fit\textcolor{ansi-
+blue}{(}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green}{<ipython-input-3-0f4be4acc3d3>} in
+\textcolor{ansi-cyan}{fit}\textcolor{ansi-blue}{(self, p)}
+\textcolor{ansi-green-intense}{\textbf{     15}}
+\textcolor{ansi-green}{return}\textcolor{ansi-
+blue}{(}acor\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     16}}     \textcolor{ansi-
+green}{def} fit\textcolor{ansi-blue}{(}self\textcolor{ansi-blue}{,}
+p\textcolor{ansi-blue}{=}\textcolor{ansi-cyan}{5}\textcolor{ansi-
+blue}{)}\textcolor{ansi-blue}{:}
+\textcolor{ansi-green}{---> 17}\textcolor{ansi-red}{         }ac
+\textcolor{ansi-blue}{=} self\textcolor{ansi-
+blue}{.}autocorr\textcolor{ansi-blue}{(}p\textcolor{ansi-
+blue}{+}\textcolor{ansi-cyan}{1}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     18}}         R
+\textcolor{ansi-blue}{=} linalg\textcolor{ansi-
+blue}{.}toeplitz\textcolor{ansi-blue}{(}ac\textcolor{ansi-
+blue}{[}\textcolor{ansi-blue}{:}p\textcolor{ansi-
+blue}{]}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     19}}         r
+\textcolor{ansi-blue}{=} ac\textcolor{ansi-blue}{[}\textcolor{ansi-
+cyan}{1}\textcolor{ansi-blue}{:}p\textcolor{ansi-
+blue}{+}\textcolor{ansi-cyan}{1}\textcolor{ansi-blue}{]}
+\textcolor{ansi-green}{<ipython-input-3-0f4be4acc3d3>} in
+\textcolor{ansi-cyan}{autocorr}\textcolor{ansi-blue}{(self, lag)}
+\textcolor{ansi-green-intense}{\textbf{     11}}         c
+\textcolor{ansi-blue}{=} np\textcolor{ansi-
+blue}{.}correlate\textcolor{ansi-blue}{(}self\textcolor{ansi-
+blue}{.}X\textcolor{ansi-blue}{,} self\textcolor{ansi-
+blue}{.}X\textcolor{ansi-blue}{,} \textcolor{ansi-
+blue}{'full'}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     12}}         mid
+\textcolor{ansi-blue}{=} np\textcolor{ansi-
+blue}{.}floor\textcolor{ansi-blue}{(}len\textcolor{ansi-
+blue}{(}c\textcolor{ansi-blue}{)}\textcolor{ansi-
+blue}{/}\textcolor{ansi-cyan}{2}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green}{---> 13}\textcolor{ansi-red}{         }acov
+\textcolor{ansi-blue}{=} c\textcolor{ansi-blue}{[}mid\textcolor{ansi-
+blue}{:}mid\textcolor{ansi-blue}{+}lag\textcolor{ansi-blue}{]}
+\textcolor{ansi-green-intense}{\textbf{     14}}         acor
+\textcolor{ansi-blue}{=} acov\textcolor{ansi-
+blue}{/}acov\textcolor{ansi-blue}{[}\textcolor{ansi-
+cyan}{0}\textcolor{ansi-blue}{]}
+\textcolor{ansi-green-intense}{\textbf{     15}}
+\textcolor{ansi-green}{return}\textcolor{ansi-
+blue}{(}acor\textcolor{ansi-blue}{)}
+\textcolor{ansi-red}{TypeError}: slice indices must be integers or
+None or have an __index__ method
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
+\PY{n}{ar1}\PY{o}{.}\PY{n}{phi}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
+\textcolor{ansi-
+red}{---------------------------------------------------------------------------}\textcolor{ansi-
+red}{AttributeError}                            Traceback (most recent
+call last)\textcolor{ansi-green}{<ipython-input-8-5802d533bab0>} in
+\textcolor{ansi-cyan}{<module>}\textcolor{ansi-blue}{()}
+\textcolor{ansi-green}{----> 1}\textcolor{ansi-red}{
+}ar1\textcolor{ansi-blue}{.}phi
+\textcolor{ansi-red}{AttributeError}: 'YW' object has no attribute
+'phi'
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
+\PY{n}{ar1}\PY{o}{.}\PY{n}{spectrum}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
+\textcolor{ansi-
+red}{---------------------------------------------------------------------------}\textcolor{ansi-
+red}{AttributeError}                            Traceback (most recent
+call last)\textcolor{ansi-green}{<ipython-input-9-bebd81bb3343>} in
+\textcolor{ansi-cyan}{<module>}\textcolor{ansi-blue}{()}
+\textcolor{ansi-green}{----> 1}\textcolor{ansi-red}{
+}ar1\textcolor{ansi-blue}{.}spectrum\textcolor{ansi-
+blue}{(}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green}{<ipython-input-3-0f4be4acc3d3>} in
+\textcolor{ansi-cyan}{spectrum}\textcolor{ansi-blue}{(self)}
+\textcolor{ansi-green-intense}{\textbf{     20}}
+self\textcolor{ansi-blue}{.}phi \textcolor{ansi-blue}{=}
+linalg\textcolor{ansi-blue}{.}inv\textcolor{ansi-
+blue}{(}R\textcolor{ansi-blue}{)}\textcolor{ansi-
+blue}{.}dot\textcolor{ansi-blue}{(}r\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     21}}     \textcolor{ansi-
+green}{def} spectrum\textcolor{ansi-blue}{(}self\textcolor{ansi-
+blue}{)}\textcolor{ansi-blue}{:}
+\textcolor{ansi-green}{---> 22}\textcolor{ansi-red}{         }a
+\textcolor{ansi-blue}{=} np\textcolor{ansi-
+blue}{.}concatenate\textcolor{ansi-blue}{(}\textcolor{ansi-
+blue}{[}np\textcolor{ansi-blue}{.}ones\textcolor{ansi-
+blue}{(}\textcolor{ansi-cyan}{1}\textcolor{ansi-
+blue}{)}\textcolor{ansi-blue}{,} \textcolor{ansi-
+blue}{-}self\textcolor{ansi-blue}{.}phi\textcolor{ansi-
+blue}{]}\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     23}}
+w\textcolor{ansi-blue}{,} h \textcolor{ansi-blue}{=}
+signal\textcolor{ansi-blue}{.}freqz\textcolor{ansi-
+blue}{(}\textcolor{ansi-cyan}{1}\textcolor{ansi-blue}{,}
+a\textcolor{ansi-blue}{)}
+\textcolor{ansi-green-intense}{\textbf{     24}}         h_db
+\textcolor{ansi-blue}{=} \textcolor{ansi-cyan}{10}\textcolor{ansi-
+blue}{*}np\textcolor{ansi-blue}{.}log10\textcolor{ansi-
+blue}{(}\textcolor{ansi-cyan}{2}\textcolor{ansi-
+blue}{*}\textcolor{ansi-blue}{(}np\textcolor{ansi-
+blue}{.}abs\textcolor{ansi-blue}{(}h\textcolor{ansi-
+blue}{)}\textcolor{ansi-blue}{/}len\textcolor{ansi-
+blue}{(}h\textcolor{ansi-blue}{)}\textcolor{ansi-
+blue}{)}\textcolor{ansi-blue}{)}
+\textcolor{ansi-red}{AttributeError}: 'YW' object has no attribute
+'phi'
+\end{Verbatim}
 
 
 \end{document}

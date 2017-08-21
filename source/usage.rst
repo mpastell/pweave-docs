@@ -15,6 +15,27 @@ to Pweave using `-i` command line option.
 Code chunk formats
 ------------------
 
+markdown
+++++++++
+
+Pweave can run code from fenced markdown python code blocks. All of the
+following are valid ways to define a code chunk:
+
+::
+
+  ```python
+  ```{python}
+  ```{.python}
+
+..
+
+However options can only be defined in brackets:
+
+::
+
+  ```{python, caption = "Some figure"}
+
+
 noweb
 +++++
 
@@ -37,25 +58,6 @@ and hides the source code:
   show()
   @
 
-markdown
-++++++++
-
-Pweave can run code from fenced markdown python code blocks. All of the
-following are valid ways to define a code chunk:
-
-::
-
-  ```python
-  ```{python}
-  ```{.python}
-
-..
-
-However options can only be defined in brackets:
-
-::
-
-  ```{python, caption = "Some figure"}
 
 
 Documentation chunk
@@ -73,17 +75,6 @@ Inline code
  (result of expression will be printed) tags. Inline code will not
  be included in weaved document.
 
- **Example**: Use inline code to set some matplotlib options.
-
-::
-
-   <%
-   import matplotlib
-   matplotlib.rcParams.update({'figure.figsize' : (6, 4),
-                           'savefig.dpi': 100,
-                           'font.size' : 10 })
-   %>
-
 .. versionadded:: 0.2
 
 .. index:: options, figures, inline code chunks
@@ -99,67 +90,53 @@ evaluated output.  All of the produced figures are placed in the
 
 **Pweave documents are weaved from the shell with the command:**
 
-.. describe:: Pweave [options] sourcefile
+.. describe:: pweave [options] sourcefile
 
-Options:
+  Options:
+    --version             show program's version number and exit
+    -h, --help            show this help message and exit
+    -f DOCTYPE, --format=DOCTYPE
+                          The output format. Available formats:  tex, texminted,
+                          texpweave, texpygments, rst, pandoc, markdown,
+                          leanpub, sphinx, html, md2html, softcover,
+                          pandoc2latex, pandoc2html, notebook Use Pweave -l to
+                          list descriptions or see
+                          http://mpastell.com/pweave/formats.html
+    -i INFORMAT, --input-format=INFORMAT
+                          Input format: noweb, markdown, notebook or script
+    -k KERNEL, --kernel=KERNEL
+                          Jupyter kernel used to run code: default is python3
+    -o OUTPUT, --output=OUTPUT
+                          Name of the output file
+    -l, --list-formats    List output formats
+    -m, --matplotlib      Disable matplotlib
+    -d, --documentation-mode
+                          Use documentation mode, chunk code and results will be
+                          loaded from cache and inline code will be hidden
+    -c, --cache-results   Cache results to disk for documentation mode
+    -F FIGDIR, --figure-directory=FIGDIR
+                          Directory path for matplolib graphics: Default
+                          'figures'
+    --cache-directory=CACHEDIR
+                          Directory path for cached results used in
+                          documentation mode: Default 'cache'
+    -g FIGFORMAT, --figure-format=FIGFORMAT
+                          Figure format for matplotlib graphics: Defaults to
+                          'png' for rst and Sphinx html documents and 'pdf' for
+                          tex
+    -t MIMETYPE, --mimetype=MIMETYPE
+                          Source document's text mimetype. This is used to set
+                          cell type in Jupyter notebooks
 
-.. program:: Pweave
 
-.. cmdoption:: --version
-
-   show the version number and exit
-
-.. cmdoption:: -h, --help
-
-   show help message and exit
-
-.. cmdoption:: -f FORMAT, --format FORMAT
-
-   The output format. Available formats: sphinx, pandoc, tex, html,
-   rst, texpweave, texminted. See `<http://mpastell.com/pweave/formats.html>`_
-
-
-.. cmdoption::  -m MPLOTLIB, --matplotlib=MPLOTLIB
-
-   Do you want to use matplotlib (or Sho with Ironpython) true
-   (default) or false
-
-.. cmdoption::  -d, --documentation-mode
-
-   Use documentation mode, chunk code and results will be loaded from
-   cache and inline code will be hidden
-
-.. cmdoption::  -c, --cache-results
-
-   Cache results to disk for documentation mode
-
-.. cmdoption::  --figure-directory=FIGDIR
-
-   Directory path for matplolib graphics: Default 'figures'
-
-.. cmdoption::  --cache-directory=CACHEDIR
-
-   Directory path for cached results used in documentation mode:
-   Default 'cache'
-
-.. cmdoption::  -g FIGFMT, --figure-format=FIGFMT
-
-   Figure format for matplolib graphics: Defaults to 'png' for rst and
-   Sphinx html documents and 'pdf' for tex
-
-Weave a document with default options (rst with png figures)
+Weave a markdown document. Output format is detected based on extension,
+but in can be changed using the ```-f`` option:
 
 ::
 
-  $ pweave ma.Pnw
-  Output written to ma.rst
+  $ pweave FIR_design.pmd
 
 
-Weave a Latex document with png figures:
-
-::
-
-  $ pweave -f tex -g png source.Pnw
 
 Get options:
 

@@ -51,10 +51,11 @@ Let's first define functions to plot filter properties.
 
 
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
 \PY{k+kn}{from} \PY{n+nn}{pylab} \PY{k+kn}{import} \PY{o}{*}
 \PY{k+kn}{import} \PY{n+nn}{scipy.signal} \PY{k+kn}{as} \PY{n+nn}{signal}
-
+    
 \PY{c+c1}{\PYZsh{}Plot frequency and phase response}
 \PY{k}{def} \PY{n+nf}{mfreqz}\PY{p}{(}\PY{n}{b}\PY{p}{,}\PY{n}{a}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
     \PY{n}{w}\PY{p}{,}\PY{n}{h} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{freqz}\PY{p}{(}\PY{n}{b}\PY{p}{,}\PY{n}{a}\PY{p}{)}
@@ -63,14 +64,14 @@ Let's first define functions to plot filter properties.
     \PY{n}{plot}\PY{p}{(}\PY{n}{w}\PY{o}{/}\PY{n+nb}{max}\PY{p}{(}\PY{n}{w}\PY{p}{)}\PY{p}{,}\PY{n}{h\PYZus{}dB}\PY{p}{)}
     \PY{n}{ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{150}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}
     \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Magnitude (db)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Normalized Frequency (x\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{title}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Frequency response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Normalized Frequency (x\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Frequency response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
     \PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{212}\PY{p}{)}
     \PY{n}{h\PYZus{}Phase} \PY{o}{=} \PY{n}{unwrap}\PY{p}{(}\PY{n}{arctan2}\PY{p}{(}\PY{n}{imag}\PY{p}{(}\PY{n}{h}\PY{p}{)}\PY{p}{,}\PY{n}{real}\PY{p}{(}\PY{n}{h}\PY{p}{)}\PY{p}{)}\PY{p}{)}
     \PY{n}{plot}\PY{p}{(}\PY{n}{w}\PY{o}{/}\PY{n+nb}{max}\PY{p}{(}\PY{n}{w}\PY{p}{)}\PY{p}{,}\PY{n}{h\PYZus{}Phase}\PY{p}{)}
     \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Phase (radians)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Normalized Frequency (x\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{title}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Phase response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Normalized Frequency (x\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}rad/sample)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Phase response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
     \PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{hspace}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
 
 \PY{c+c1}{\PYZsh{}Plot step and impulse response}
@@ -82,14 +83,14 @@ Let's first define functions to plot filter properties.
     \PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{211}\PY{p}{)}
     \PY{n}{stem}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{response}\PY{p}{)}
     \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{n (samples)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{title}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Impulse response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n (samples)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Impulse response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
     \PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{212}\PY{p}{)}
     \PY{n}{step} \PY{o}{=} \PY{n}{cumsum}\PY{p}{(}\PY{n}{response}\PY{p}{)}
     \PY{n}{stem}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{step}\PY{p}{)}
     \PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Amplitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{n (samples)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-    \PY{n}{title}\PY{p}{(}\PY{l+s+s1}{r\PYZsq{}}\PY{l+s+s1}{Step response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{xlabel}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n (samples)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+    \PY{n}{title}\PY{p}{(}\PY{l+s+sa}{r}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Step response}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
     \PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{hspace}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
 \end{Verbatim}
 
@@ -109,27 +110,35 @@ for syntax. Notice also that Pweave can now catch multiple
 figures/code chunk.
 
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:} \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{61}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{:} \PY{n}{a} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{firwin}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{cutoff} \PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{window} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hamming}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{:} \PY{c+c1}{\PYZsh{}Frequency and phase response}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{:} \PY{n}{mfreqz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{:} \PY{n}{show}\PY{p}{(}\PY{p}{)}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{:} \PY{c+c1}{\PYZsh{}Impulse and step response}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{:} \PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
-\PY{n}{Out}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{:} \PY{o}{\PYZlt{}}\PY{n}{matplotlib}\PY{o}{.}\PY{n}{figure}\PY{o}{.}\PY{n}{Figure} \PY{n+nb}{object} \PY{n}{at} \PY{l+m+mh}{0x7f04282c3210}\PY{o}{\PYZgt{}}
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{:} \PY{n}{impz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
-
-\PY{n}{In} \PY{p}{[}\PY{l+m+mi}{9}\PY{p}{]}\PY{p}{:} \PY{n}{show}\PY{p}{(}\PY{p}{)}
+\PY{n}{n} \PY{o}{=} \PY{l+m+mi}{61}
+\PY{n}{a} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{firwin}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{cutoff} \PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{window} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hamming}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{c+c1}{\PYZsh{}Frequency and phase response}
+\PY{n}{mfreqz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \end{Verbatim}
 \includegraphics[width= \linewidth]{figures/FIR_design_pygments_figure2_1.pdf}
-\includegraphics[width= \linewidth]{figures/FIR_design_pygments_figure2_2.pdf}
+
+
+\begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
+\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\PY{c+c1}{\PYZsh{}Impulse and step response}
+\PY{n}{figure}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
+<matplotlib.figure.Figure at 0x7f18c60a0a20>
+\end{Verbatim}
+
+\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
+<matplotlib.figure.Figure at 0x7f18c60a0a20>
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
+\PY{n}{impz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+\end{Verbatim}
+\includegraphics[width= \linewidth]{figures/FIR_design_pygments_figure2_1.pdf}
 
 
 \subsection{Highpass FIR Filter}
@@ -137,10 +146,10 @@ figures/code chunk.
 Let's define a highpass FIR filter:
 
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
 \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{101}
-\PY{n}{a} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{firwin}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{cutoff} \PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{window} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hanning}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}
-\PY{n}{pass\PYZus{}zero}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
+\PY{n}{a} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{firwin}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{cutoff} \PY{o}{=} \PY{l+m+mf}{0.3}\PY{p}{,} \PY{n}{window} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hanning}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{pass\PYZus{}zero}\PY{o}{=}\PY{n+nb+bp}{False}\PY{p}{)}
 \PY{n}{mfreqz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
@@ -153,10 +162,10 @@ Notice that the plot has a caption defined in code chunk options.
 
 
 
+
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
 \PY{n}{n} \PY{o}{=} \PY{l+m+mi}{1001}
-\PY{n}{a} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{firwin}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{cutoff} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{]}\PY{p}{,} \PY{n}{window} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blackmanharris}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-\PY{n}{pass\PYZus{}zero} \PY{o}{=} \PY{n+nb+bp}{False}\PY{p}{)}
+\PY{n}{a} \PY{o}{=} \PY{n}{signal}\PY{o}{.}\PY{n}{firwin}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{n}{cutoff} \PY{o}{=} \PY{p}{[}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{]}\PY{p}{,} \PY{n}{window} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blackmanharris}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{pass\PYZus{}zero} \PY{o}{=} \PY{n+nb+bp}{False}\PY{p}{)}
 \PY{n}{mfreqz}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}

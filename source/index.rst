@@ -7,21 +7,29 @@ analysis and works well with NumPy, SciPy and matplotlib. It is able to run
 python code from source document and include the results and capture
 `matplotlib <http://matplotlib.sourceforge.net/>`_ plots in the output.
 
-It can produce reST, Sphinx, Latex, HTML and markdown (pandoc and leanpub)
-output from several input formats.
+Features:
+---------
 
-- Noweb  uses `noweb <http://www.cs.tufts.edu/~nr/noweb/>`_ syntax for separating code from documentation.
-- Markdown. Run code from markdown code blocks.
-- Script. Python script with special markup in comments. See: :ref:`publishing scripts <publish>`.
+* Python 3.4, 3.5 and 3.6 compatibility
+* **Execute python code** in the chunks and **capture** input and output to a report.
+* Rich output and support for IPython magics
+* **Use hidden code chunks,** i.e. code is executed, but not printed in the output file.
+* Capture matplotlib graphics.
+* Evaluate inline code in documentation chunks marked using ``<% %>`` and ``<%= %>``.
+* Cache all code and results from previous runs for fast report
+  generation when you are only working with documentation. Inline code
+  will be hidden in documentation mode.
+* Publish reports from Python scipts. Similar to R markdown.
+* Run from command line or interpreter.
+* Execute code using any Jupyter kernel.
 
-Pweave is good for creating reports, tutorials, presentations etc. with embedded python
-code It can also be used to make websites together with e.g. Sphinx or rest2web.
+.. note::
 
-There is now also Pweave syntax highlighting for Atom editor using
-`language-weave <https://atom.io/packages/language-weave>`_ .
+  Pweave 0.3 has been update to use IPython to run code from the documents.
+  This brings support for IPython magics and rich output and support for other.
 
-.. warning:: **Note: pip install of Pweave fails in Python 3**. This is due to a bug in pip. You’ll
-   need to use "conda", "easy install" or download the source and run ``python setup.py install``.
+  Pweave 0.3 works on Python 3 only, but you can use Python 2 run the code via
+  `kernel` argument.
 
 .. note::
 
@@ -29,21 +37,6 @@ There is now also Pweave syntax highlighting for Atom editor using
    Post your questions and comments to `Pweave <https://groups.google.com/forum/?fromgroups=#!forum/pweave>`_
    google group.
 
-Features:
----------
-
-* Python 2.7, 3.4 and 3.5 compatibility
-* **Execute python code** in the chunks and **capture** input and output to a report.
-* **Use hidden code chunks,** i.e. code is executed, but not printed in the output file.
-* Capture matplotlib graphics.
-* Evaluate inline code in documentation chunks marked using ``<% %>`` and ``<%= %>``.
-* Cache all code and results from previous runs for fast report
-  generation when you are only working with documentation. Inline code
-  will be hidden in documentation mode.
-* Supports reST, LaTeX, HTML or markdown for document chunks
-* Publish reports from Python scipts. Similar to R markdown.
-* Run from command line or interpreter.
-* Support also for Octave and Matlab code.
 
 Install and quickstart:
 -----------------------
@@ -54,13 +47,7 @@ with pip::
 
 with conda::
 
-  conda config --add channels mpastell
-  conda install pweave
-
-Or download the source package from `PyPi
-<http://pypi.python.org/pypi/Pweave>`_ and run::
-
-  python setup.py install
+  conda install pweave -c conda-forge
 
 After the installation you get options with:
 

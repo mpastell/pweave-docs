@@ -1,5 +1,5 @@
 html:
-	Pweave index.rstw
+	pweave index.rstw
 clean:
 	rm -f *.pdf
 	rm -f *.out

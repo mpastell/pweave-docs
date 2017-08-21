@@ -41,7 +41,7 @@ Let's first define functions to plot filter properties.
 
     from pylab import *
     import scipy.signal as signal
-    
+        
     #Plot frequency and phase response
     def mfreqz(b,a=1):
         w,h = signal.freqz(b,a)
@@ -78,7 +78,7 @@ Let's first define functions to plot filter properties.
         xlabel(r'n (samples)')
         title(r'Step response')
         subplots_adjust(hspace=0.5)
-    
+
 
 
 
@@ -101,23 +101,40 @@ multiple figures/code chunk.
 
 .. code:: python
 
-    >>> n = 61
-    >>> a = signal.firwin(n, cutoff = 0.3, window = "hamming")
-    >>> #Frequency and phase response
-    >>> mfreqz(a)
-    >>> show()
-    >>> #Impulse and step response
-    >>> figure(2)
-    <matplotlib.figure.Figure object at 0x7f027fefb5d0>
-    >>> impz(a)
-    >>> show()
-    
-    
+    n = 61
+    a = signal.firwin(n, cutoff = 0.3, window = "hamming")
+    #Frequency and phase response
+    mfreqz(a)
+
 
 .. image:: figures/FIR_design_figure2_1.png
    :width: 15 cm
 
-.. image:: figures/FIR_design_figure2_2.png
+
+.. code:: python
+
+    show()
+    #Impulse and step response
+    figure(2)
+
+
+.. code::
+
+    <matplotlib.figure.Figure at 0x7f3fd8469668>
+    
+
+.. code::
+
+    <matplotlib.figure.Figure at 0x7f3fd8469668>
+    
+
+
+.. code:: python
+
+    impz(a)
+
+
+.. image:: figures/FIR_design_figure2_1.png
    :width: 15 cm
 
 
@@ -132,11 +149,10 @@ Let's define a highpass FIR filter:
 .. code:: python
 
     n = 101
-    a = signal.firwin(n, cutoff = 0.3, window = "hanning",
-    pass_zero=False)
+    a = signal.firwin(n, cutoff = 0.3, window = "hanning", pass_zero=False)
     mfreqz(a)
     show()
-    
+
 
 .. image:: figures/FIR_design_figure3_1.png
    :width: 15 cm
@@ -153,11 +169,10 @@ Notice that the plot has a caption defined in code chunk options.
 .. code:: python
 
     n = 1001
-    a = signal.firwin(n, cutoff = [0.2, 0.5], window = 'blackmanharris',
-    pass_zero = False)
+    a = signal.firwin(n, cutoff = [0.2, 0.5], window = 'blackmanharris', pass_zero = False)
     mfreqz(a)
     show()
-    
+
 
 .. figure:: figures/FIR_design_figure4_1.png
    :width: 15 cm

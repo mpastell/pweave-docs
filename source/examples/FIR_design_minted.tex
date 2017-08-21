@@ -54,7 +54,7 @@ Let's first define functions to plot filter properties.
 \begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
 from pylab import *
 import scipy.signal as signal
-
+    
 #Plot frequency and phase response
 def mfreqz(b,a=1):
     w,h = signal.freqz(b,a)
@@ -109,21 +109,30 @@ for syntax. Notice also that Pweave can now catch multiple
 figures/code chunk.
 
 
-\begin{minted}[fontsize=\footnotesize, xleftmargin=0.5em, mathescape]{python}
->>> n = 61
->>> a = signal.firwin(n, cutoff = 0.3, window = "hamming")
->>> #Frequency and phase response
->>> mfreqz(a)
->>> show()
->>> #Impulse and step response
->>> figure(2)
-<matplotlib.figure.Figure object at 0x7f946b457610>
->>> impz(a)
->>> show()
-
+\begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
+n = 61
+a = signal.firwin(n, cutoff = 0.3, window = "hamming")
+#Frequency and phase response
+mfreqz(a)
 \end{minted}
 \includegraphics[width= \linewidth]{figures/FIR_design_minted_figure2_1.pdf}
-\includegraphics[width= \linewidth]{figures/FIR_design_minted_figure2_2.pdf}
+
+\begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
+show()
+#Impulse and step response
+figure(2)
+\end{minted}
+\begin{minted}[fontsize=\small, xleftmargin=0.5em, mathescape, frame = leftline]{text}
+<matplotlib.figure.Figure at 0x7f5c95829a58>
+\end{minted}
+\begin{minted}[fontsize=\small, xleftmargin=0.5em, mathescape, frame = leftline]{text}
+<matplotlib.figure.Figure at 0x7f5c95829a58>
+\end{minted}
+
+\begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
+impz(a)
+\end{minted}
+\includegraphics[width= \linewidth]{figures/FIR_design_minted_figure2_1.pdf}
 
 
 \subsection{Highpass FIR Filter}
@@ -133,8 +142,7 @@ Let's define a highpass FIR filter:
 
 \begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
 n = 101
-a = signal.firwin(n, cutoff = 0.3, window = "hanning",
-pass_zero=False)
+a = signal.firwin(n, cutoff = 0.3, window = "hanning", pass_zero=False)
 mfreqz(a)
 show()
 \end{minted}
@@ -149,8 +157,7 @@ Notice that the plot has a caption defined in code chunk options.
 
 \begin{minted}[mathescape, fontsize=\small, xleftmargin=0.5em]{python}
 n = 1001
-a = signal.firwin(n, cutoff = [0.2, 0.5], window = 'blackmanharris',
-pass_zero = False)
+a = signal.firwin(n, cutoff = [0.2, 0.5], window = 'blackmanharris', pass_zero = False)
 mfreqz(a)
 show()
 \end{minted}

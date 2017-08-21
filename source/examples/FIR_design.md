@@ -18,13 +18,13 @@ Notice that you don't need to define chunk options (see
 ),
 but you do need one line of whitespace between text and code.
 If you want to define options you can do it on using a line starting with
-`#+`. just before code e.g. `#+ term=True, caption='Fancy plots.'`. 
+`#+`. just before code e.g. `#+ term=True, caption='Fancy plots.'`.
 If you're viewing the HTML version have a look at the
 [source](FIR_design.py) to see the markup.
 
 The code and text below comes mostly
 from my blog post [FIR design with SciPy](http://mpastell.com/2010/01/18/fir-with-scipy/),
-but I've updated it to reflect new features in SciPy. 
+but I've updated it to reflect new features in SciPy.
 
 # FIR Filter Design
 
@@ -41,7 +41,7 @@ properties.
 
 
 
-~~~~{.python}
+```python
 from pylab import *
 import scipy.signal as signal
 
@@ -81,7 +81,7 @@ def impz(b,a=1):
     xlabel(r'n (samples)')
     title(r'Step response')
     subplots_adjust(hspace=0.5)
-~~~~~~~~~~~~~
+```
 
 
 
@@ -92,28 +92,41 @@ need to do is to define the window length, cut off frequency and the
 window.
 
 The Hamming window is defined as:
-$w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}$, where $\alpha=0.54$ and $\beta=0.46$ 
+$w(n) = \alpha - \beta\cos\frac{2\pi n}{N-1}$, where $\alpha=0.54$ and $\beta=0.46$
 
 The next code chunk is executed in term mode, see the [Python script](FIR_design.py) for syntax.
 Notice also that Pweave can now catch multiple figures/code chunk.
 
 
 
-~~~~{.python}
->>> n = 61
->>> a = signal.firwin(n, cutoff = 0.3, window = "hamming")
->>> #Frequency and phase response
->>> mfreqz(a)
->>> show()
->>> #Impulse and step response
->>> figure(2)
-<matplotlib.figure.Figure object at 0x7f5d24f3c5d0>
->>> impz(a)
->>> show()
-
-~~~~~~~~~~~~~
+```python
+n = 61
+a = signal.firwin(n, cutoff = 0.3, window = "hamming")
+#Frequency and phase response
+mfreqz(a)
+```
 
 ![](figures/FIR_design_figure2_1.png)\
+
+```python
+show()
+#Impulse and step response
+figure(2)
+```
+
+```
+<matplotlib.figure.Figure at 0x7fb24c9d1048>
+```
+
+```
+<matplotlib.figure.Figure at 0x7fb24c9d1048>
+```
+
+
+```python
+impz(a)
+```
+
 ![](figures/FIR_design_figure2_1.png)\
 
 
@@ -125,13 +138,12 @@ need to do ' spectral inversion "manually" anymore!
 
 
 
-~~~~{.python}
+```python
 n = 101
-a = signal.firwin(n, cutoff = 0.3, window = "hanning",
-pass_zero=False)
+a = signal.firwin(n, cutoff = 0.3, window = "hanning", pass_zero=False)
 mfreqz(a)
 show()
-~~~~~~~~~~~~~
+```
 
 ![](figures/FIR_design_figure3_1.png)\
 
@@ -142,13 +154,12 @@ Notice that the plot has a caption defined in code chunk options.
 
 
 
-~~~~{.python}
+```python
 n = 1001
-a = signal.firwin(n, cutoff = [0.2, 0.5], window = 'blackmanharris',
-pass_zero = False)
+a = signal.firwin(n, cutoff = [0.2, 0.5], window = 'blackmanharris', pass_zero = False)
 mfreqz(a)
 show()
-~~~~~~~~~~~~~
+```
 
 ![Bandpass FIR filter.](figures/FIR_design_figure4_1.png)
 

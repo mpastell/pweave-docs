@@ -12,18 +12,20 @@ dictionary. You can manipulate the dictionary to change the options.
     import pweave
     import pprint
     pprint.pprint(pweave.rcParams["chunk"])
-    
+
 
 ::
 
     {'defaultoptions': {'caption': False,
                         'complete': True,
+                        'display_data': True,
+                        'display_stream': True,
+                        'dpi': 100,
                         'echo': True,
-                        'engine': 'python',
                         'evaluate': True,
                         'f_env': None,
                         'f_pos': 'htpb',
-                        'f_size': (8, 6),
+                        'f_size': (6, 4),
                         'f_spines': True,
                         'fig': True,
                         'include': True,
@@ -31,8 +33,7 @@ dictionary. You can manipulate the dictionary to change the options.
                         'option_string': '',
                         'results': 'verbatim',
                         'term': False,
-                        'wrap': True}}
-    
+                        'wrap': 'output'}}
     
 
 
@@ -42,22 +43,23 @@ dictionary. You can manipulate the dictionary to change the options.
 
 .. code-block:: python
 
-    pweave.rcParams["chunk"]["defaultoptions"].update({'wrap' : False,
-    'f_pos' : "h!"})
+    pweave.rcParams["chunk"]["defaultoptions"].update({'wrap' : False, 'f_pos' : "h!"})
     #Updated options
     pprint.pprint(pweave.rcParams["chunk"])
-    
+
 
 ::
 
     {'defaultoptions': {'caption': False,
                         'complete': True,
+                        'display_data': True,
+                        'display_stream': True,
+                        'dpi': 100,
                         'echo': True,
-                        'engine': 'python',
                         'evaluate': True,
                         'f_env': None,
                         'f_pos': 'h!',
-                        'f_size': (8, 6),
+                        'f_size': (6, 4),
                         'f_spines': True,
                         'fig': True,
                         'include': True,
@@ -66,7 +68,6 @@ dictionary. You can manipulate the dictionary to change the options.
                         'results': 'verbatim',
                         'term': False,
                         'wrap': False}}
-    
     
 
 
