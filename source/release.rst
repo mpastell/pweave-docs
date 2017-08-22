@@ -1,6 +1,22 @@
 Release notes
 -------------
 
+**In 0.3**
+
+* Use IPython kernel to run Python code:
+
+  - support for rich output
+  - support IPython magics
+  - Improved error handling
+
+* Render tracebacks correctly
+* Drop Python 2 support
+* Run code using any Jupyter kernel with `--kernel` option
+* Output directly to Jupyter notebooks with chunk options preserved
+  as metadata -> ability to use custom nbconvert templates in addition to builtin formatters.
+* Drop uppercase versions on `pweave` and `ptangle` scripts
+* Weave documents from URLs
+
 **In 0.25**
 
 Released 21st, April 2016

@@ -7,4 +7,10 @@ me an e-mail.
 
 * Nicky van Foreest: `Python Code <http://nicky.vanforeest.com/pythonCode.html>`_
 * `Python, Pweave and pandoc howto <http://iaingallagher.tumblr.com/post/41359279059/python-pweave-and-pandoc-howto>`_
-* UCL GeogG122 Scientific Computing: `Numerical and Scientific Python and Data Visualisation <http://www2.geog.ucl.ac.uk/~plewis/geogg122/pythonmodel.html>`_
+* `Basics of Sweave and Pweave <https://www.johndcook.com/blog/2012/12/20/basics-of-sweave-and-pweave/>`_
+* `Literate Python setup with pweave and Atom <http://protips.maxmasnick.com/literate-python-setup-with-pweave-and-atom>`_
+
+Papers using Pweave
++++++++++++++++++++
+
+* `PyMICE: APython library for analysis of IntelliCage data <https://link.springer.com/article/10.3758%2Fs13428-017-0907-5>`_ `[source] <https://github.com/Neuroinflab/PyMICE_SM/>`_
