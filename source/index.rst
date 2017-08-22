@@ -71,4 +71,5 @@ and `R markdown <http://rmarkdown.rstudio.com/>`_.
 
 Thanks to following people for contributing patches and ideas: Jakub Kowalski, Tamas
 Nepusz, Nicky van Foreest, Mark Edgington, Thomas Unterthiner, Matthew
-McDonald, Grant Goodyear, Aaron O'Leary, Thomas Saunders .
+McDonald, Grant Goodyear, Aaron O'Leary, Thomas Saunders and contributors on Github
+https://github.com/mpastell/Pweave/graphs/contributors.
