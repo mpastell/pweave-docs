@@ -159,7 +159,7 @@
 
 \PY{k}{class} \PY{n+nc}{YW}\PY{p}{(}\PY{n+nb}{object}\PY{p}{)}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}A class to fit AR model using Yule\PYZhy{}Walker method\PYZdq{}\PYZdq{}\PYZdq{}}
-    
+
     \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{X}\PY{p}{)}\PY{p}{:}
         \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X} \PY{o}{=} \PY{n}{X} \PY{o}{\PYZhy{}} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{X}\PY{p}{)}
 \end{Verbatim}
@@ -174,7 +174,7 @@ YW method requires that we compute the sample autocorrelation function:
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
     \PY{k}{def} \PY{n+nf}{autocorr}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{lag}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{:}
         \PY{n}{c} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{correlate}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{X}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{full}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{mid} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{floor}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}
+        \PY{n}{mid} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{c}\PY{p}{)}\PY{o}{/}\PY{o}{/}\PY{l+m+mi}{2}
         \PY{n}{acov} \PY{o}{=} \PY{n}{c}\PY{p}{[}\PY{n}{mid}\PY{p}{:}\PY{n}{mid}\PY{o}{+}\PY{n}{lag}\PY{p}{]}
         \PY{n}{acor} \PY{o}{=} \PY{n}{acov}\PY{o}{/}\PY{n}{acov}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
         \PY{k}{return}\PY{p}{(}\PY{n}{acor}\PY{p}{)}
@@ -197,7 +197,7 @@ and it is thus easy to form using \texttt{toeplitz} function from
   \begin{pmatrix}
     r_0      & r_1    & \ldots  & r_{p-1} \\
     r_1    & r_0      & \ldots  & r_{p-2} \\
-    \vdots & \vdots & \ddots  & \vdots \\ 
+    \vdots & \vdots & \ddots  & \vdots \\
     r_{p-1} & r_{p-2} & \ldots  &  r_0
   \end{pmatrix}
     \begin{pmatrix}
@@ -246,132 +246,19 @@ It can be calcuted easily using \texttt{scipy.signal.freqz}.
 \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{)}\PY{p}{)}
 \PY{n}{ar1} \PY{o}{=} \PY{n}{YW}\PY{p}{(}\PY{n}{x}\PY{p}{)}
 \PY{n}{ar1}\PY{o}{.}\PY{n}{fit}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
-\textcolor{ansi-
-red}{---------------------------------------------------------------------------}\textcolor{ansi-
-red}{TypeError}                                 Traceback (most recent
-call last)\textcolor{ansi-green}{<ipython-input-7-2e9057d16458>} in
-\textcolor{ansi-cyan}{<module>}\textcolor{ansi-blue}{()}
-\textcolor{ansi-green}{----> 1}\textcolor{ansi-red}{
-}ar1\textcolor{ansi-blue}{.}fit\textcolor{ansi-
-blue}{(}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green}{<ipython-input-3-0f4be4acc3d3>} in
-\textcolor{ansi-cyan}{fit}\textcolor{ansi-blue}{(self, p)}
-\textcolor{ansi-green-intense}{\textbf{     15}}
-\textcolor{ansi-green}{return}\textcolor{ansi-
-blue}{(}acor\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     16}}     \textcolor{ansi-
-green}{def} fit\textcolor{ansi-blue}{(}self\textcolor{ansi-blue}{,}
-p\textcolor{ansi-blue}{=}\textcolor{ansi-cyan}{5}\textcolor{ansi-
-blue}{)}\textcolor{ansi-blue}{:}
-\textcolor{ansi-green}{---> 17}\textcolor{ansi-red}{         }ac
-\textcolor{ansi-blue}{=} self\textcolor{ansi-
-blue}{.}autocorr\textcolor{ansi-blue}{(}p\textcolor{ansi-
-blue}{+}\textcolor{ansi-cyan}{1}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     18}}         R
-\textcolor{ansi-blue}{=} linalg\textcolor{ansi-
-blue}{.}toeplitz\textcolor{ansi-blue}{(}ac\textcolor{ansi-
-blue}{[}\textcolor{ansi-blue}{:}p\textcolor{ansi-
-blue}{]}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     19}}         r
-\textcolor{ansi-blue}{=} ac\textcolor{ansi-blue}{[}\textcolor{ansi-
-cyan}{1}\textcolor{ansi-blue}{:}p\textcolor{ansi-
-blue}{+}\textcolor{ansi-cyan}{1}\textcolor{ansi-blue}{]}
-\textcolor{ansi-green}{<ipython-input-3-0f4be4acc3d3>} in
-\textcolor{ansi-cyan}{autocorr}\textcolor{ansi-blue}{(self, lag)}
-\textcolor{ansi-green-intense}{\textbf{     11}}         c
-\textcolor{ansi-blue}{=} np\textcolor{ansi-
-blue}{.}correlate\textcolor{ansi-blue}{(}self\textcolor{ansi-
-blue}{.}X\textcolor{ansi-blue}{,} self\textcolor{ansi-
-blue}{.}X\textcolor{ansi-blue}{,} \textcolor{ansi-
-blue}{'full'}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     12}}         mid
-\textcolor{ansi-blue}{=} np\textcolor{ansi-
-blue}{.}floor\textcolor{ansi-blue}{(}len\textcolor{ansi-
-blue}{(}c\textcolor{ansi-blue}{)}\textcolor{ansi-
-blue}{/}\textcolor{ansi-cyan}{2}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green}{---> 13}\textcolor{ansi-red}{         }acov
-\textcolor{ansi-blue}{=} c\textcolor{ansi-blue}{[}mid\textcolor{ansi-
-blue}{:}mid\textcolor{ansi-blue}{+}lag\textcolor{ansi-blue}{]}
-\textcolor{ansi-green-intense}{\textbf{     14}}         acor
-\textcolor{ansi-blue}{=} acov\textcolor{ansi-
-blue}{/}acov\textcolor{ansi-blue}{[}\textcolor{ansi-
-cyan}{0}\textcolor{ansi-blue}{]}
-\textcolor{ansi-green-intense}{\textbf{     15}}
-\textcolor{ansi-green}{return}\textcolor{ansi-
-blue}{(}acor\textcolor{ansi-blue}{)}
-\textcolor{ansi-red}{TypeError}: slice indices must be integers or
-None or have an __index__ method
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
 \PY{n}{ar1}\PY{o}{.}\PY{n}{phi}
 \end{Verbatim}
 
 \begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
-\textcolor{ansi-
-red}{---------------------------------------------------------------------------}\textcolor{ansi-
-red}{AttributeError}                            Traceback (most recent
-call last)\textcolor{ansi-green}{<ipython-input-8-5802d533bab0>} in
-\textcolor{ansi-cyan}{<module>}\textcolor{ansi-blue}{()}
-\textcolor{ansi-green}{----> 1}\textcolor{ansi-red}{
-}ar1\textcolor{ansi-blue}{.}phi
-\textcolor{ansi-red}{AttributeError}: 'YW' object has no attribute
-'phi'
+array([ 1.19379795, -0.21810471, -0.12747881, -0.06257484,
+-0.12929761])
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\},frame=single,fontsize=\small, xleftmargin=0.5em]
 \PY{n}{ar1}\PY{o}{.}\PY{n}{spectrum}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
-
-\begin{Verbatim}[commandchars=\\\{\},frame=leftline,fontsize=\small, xleftmargin=0.5em]
-\textcolor{ansi-
-red}{---------------------------------------------------------------------------}\textcolor{ansi-
-red}{AttributeError}                            Traceback (most recent
-call last)\textcolor{ansi-green}{<ipython-input-9-bebd81bb3343>} in
-\textcolor{ansi-cyan}{<module>}\textcolor{ansi-blue}{()}
-\textcolor{ansi-green}{----> 1}\textcolor{ansi-red}{
-}ar1\textcolor{ansi-blue}{.}spectrum\textcolor{ansi-
-blue}{(}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green}{<ipython-input-3-0f4be4acc3d3>} in
-\textcolor{ansi-cyan}{spectrum}\textcolor{ansi-blue}{(self)}
-\textcolor{ansi-green-intense}{\textbf{     20}}
-self\textcolor{ansi-blue}{.}phi \textcolor{ansi-blue}{=}
-linalg\textcolor{ansi-blue}{.}inv\textcolor{ansi-
-blue}{(}R\textcolor{ansi-blue}{)}\textcolor{ansi-
-blue}{.}dot\textcolor{ansi-blue}{(}r\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     21}}     \textcolor{ansi-
-green}{def} spectrum\textcolor{ansi-blue}{(}self\textcolor{ansi-
-blue}{)}\textcolor{ansi-blue}{:}
-\textcolor{ansi-green}{---> 22}\textcolor{ansi-red}{         }a
-\textcolor{ansi-blue}{=} np\textcolor{ansi-
-blue}{.}concatenate\textcolor{ansi-blue}{(}\textcolor{ansi-
-blue}{[}np\textcolor{ansi-blue}{.}ones\textcolor{ansi-
-blue}{(}\textcolor{ansi-cyan}{1}\textcolor{ansi-
-blue}{)}\textcolor{ansi-blue}{,} \textcolor{ansi-
-blue}{-}self\textcolor{ansi-blue}{.}phi\textcolor{ansi-
-blue}{]}\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     23}}
-w\textcolor{ansi-blue}{,} h \textcolor{ansi-blue}{=}
-signal\textcolor{ansi-blue}{.}freqz\textcolor{ansi-
-blue}{(}\textcolor{ansi-cyan}{1}\textcolor{ansi-blue}{,}
-a\textcolor{ansi-blue}{)}
-\textcolor{ansi-green-intense}{\textbf{     24}}         h_db
-\textcolor{ansi-blue}{=} \textcolor{ansi-cyan}{10}\textcolor{ansi-
-blue}{*}np\textcolor{ansi-blue}{.}log10\textcolor{ansi-
-blue}{(}\textcolor{ansi-cyan}{2}\textcolor{ansi-
-blue}{*}\textcolor{ansi-blue}{(}np\textcolor{ansi-
-blue}{.}abs\textcolor{ansi-blue}{(}h\textcolor{ansi-
-blue}{)}\textcolor{ansi-blue}{/}len\textcolor{ansi-
-blue}{(}h\textcolor{ansi-blue}{)}\textcolor{ansi-
-blue}{)}\textcolor{ansi-blue}{)}
-\textcolor{ansi-red}{AttributeError}: 'YW' object has no attribute
-'phi'
-\end{Verbatim}
+\includegraphics[width= \linewidth]{figures/AR_yw_figure5_1.pdf}
 
 
 \end{document}

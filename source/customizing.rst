@@ -20,6 +20,15 @@ is a small demonstration using ReST Pweave document `ma.mdw <_static/ma.mdw>`_.
 Let's start by creating an instance of :py:class:`Pweb` class with markdown document:
 
 
+.. code-block:: python
+
+    from pweave import *
+    from pprint import pprint
+    doc = Pweb('ma.mdw', doctype = "pandoc")
+    
+
+
+
 
 Have a look at what the format dictionary contains:
 
@@ -57,6 +66,13 @@ default figure width to 10cm and figure format to pdf and
 :py:attr:`figfmt` specifies what format is used in the output.
 
 
+.. code-block:: python
+
+    doc.updateformat({'width' : '10cm', 'figfmt' : '.pdf'})
+    
+
+
+
 
 And after setting options weave and tangle the document:
 
@@ -68,12 +84,18 @@ And after setting options weave and tangle the document:
 
 ::
 
+    ERROR! Session/line number was not unique in database. History logging
+    moved to new session 3455
     Processing chunk 1 named None from line 22
     
 
 ::
 
     Processing chunk 2 named None from line 31
+    
+
+::
+
     Processing chunk 3 named None from line 42
     
 

@@ -115,11 +115,11 @@ figure(2)
 ```
 
 ```
-<matplotlib.figure.Figure at 0x7fb24c9d1048>
+<matplotlib.figure.Figure at 0x7f4d8b7ba0f0>
 ```
 
 ```
-<matplotlib.figure.Figure at 0x7fb24c9d1048>
+<matplotlib.figure.Figure at 0x7f4d8b7ba0f0>
 ```
 
 
@@ -128,6 +128,11 @@ impz(a)
 ```
 
 ![](figures/FIR_design_figure2_1.png)\
+
+```python
+show()
+```
+
 
 
 ## Highpass FIR Filter

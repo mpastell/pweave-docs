@@ -11,9 +11,9 @@ master_doc = 'docs'
 
 
 # The short X.Y version.
-version = '0.25'
+version = '0.30'
 # The full version, including alpha/beta/rc tags.
-release = '0.25'
+release = '0.30'
 
 # General information about the project.
 project = u"Pweave documentation"

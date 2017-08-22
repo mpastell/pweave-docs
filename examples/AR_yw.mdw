@@ -9,11 +9,11 @@ import matplotlib.pyplot as plt
 
 class YW(object):
     """A class to fit AR model using Yule-Walker method"""
-    
+
     def __init__(self, X):
         self.X = X - np.mean(X)
-@ 
-        
+@
+
 # Calculate autocorrelation
 
 YW method requires that we compute the sample autocorrelation function:
@@ -23,11 +23,11 @@ $$r_k = \frac{1}{(n-k)\sigma^2}\sum_{t=1}^{n-k}(X_t - \mu)(X_{t+k} - \mu)$$
 <<complete=False>>=
     def autocorr(self, lag=10):
         c = np.correlate(self.X, self.X, 'full')
-        mid = np.floor(len(c)/2)
+        mid = len(c)//2
         acov = c[mid:mid+lag]
         acor = acov/acov[0]
         return(acor)
-@         
+@
 
 
 # Fit
@@ -46,7 +46,7 @@ and it is thus easy to form using `toeplitz` function from `scipy.linalg`.
   \begin{pmatrix}
     r_0      & r_1    & \ldots  & r_{p-1} \\
     r_1    & r_0      & \ldots  & r_{p-2} \\
-    \vdots & \vdots & \ddots  & \vdots \\ 
+    \vdots & \vdots & \ddots  & \vdots \\
     r_{p-1} & r_{p-2} & \ldots  &  r_0
   \end{pmatrix}
     \begin{pmatrix}
@@ -67,14 +67,14 @@ And solve simply using: $$\Phi = R^{-1}r$$
 @
 
 
-# Calculate and plot the spectrum 
+# Calculate and plot the spectrum
 
 The spectrum of an AR process is given by:
 
 $$S(f) = \frac{\sigma^2}{|1 - \sum_{k=1}^{p} \phi_k e^{-2\pi ikf}|^2} $$
 
 It can be calcuted easily using `scipy.signal.freqz`.
-        
+
 <<complete=True>>=
     def spectrum(self):
         a = np.concatenate([np.ones(1), -self.phi])
@@ -84,7 +84,7 @@ It can be calcuted easily using `scipy.signal.freqz`.
         plt.xlabel(r'Normalized Frequency ($\times \pi$rad/sample)')
         plt.ylabel(r'Power/frequency (dB/rad/sample)')
         plt.title(r'Yule-Walker Spectral Density Estimate')
-@ 
+@
 
 
 # Try it out:
@@ -95,4 +95,4 @@ ar1 = YW(x)
 ar1.fit()
 ar1.phi
 ar1.spectrum()
-@ 
+@

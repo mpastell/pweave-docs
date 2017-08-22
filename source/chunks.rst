@@ -113,10 +113,3 @@ chunks.
     Read chunk contents from file or python module or file. e.g. source = "mychunk.py".
 
 .. versionadded:: 0.22
-
-.. envvar:: engine
-
-    Choose engine running the code. “python” or “shell”. If "shell" code will
-    be run line by line using `subprocess.Open`.
-
-.. versionadded:: 0.22

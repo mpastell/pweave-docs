@@ -43,11 +43,17 @@ occurred.
 ::
 
     Processing chunk 1 named None from line 22
+    ERROR! Session/line number was not unique in database. History logging
+    moved to new session 3452
     
 
 ::
 
     Processing chunk 2 named None from line 31
+    
+
+::
+
     Processing chunk 3 named None from line 42
     
 
@@ -64,42 +70,6 @@ occurred.
     # Extract the code
     pweave.tangle('ma.mdw')
 
-
-::
-
-    ---------------------------------------------------------------------------AttributeError
-    Traceback (most recent call last)<ipython-input-5-d41c1a734f25> in
-    <module>()
-          1 # Extract the code
-    ----> 2 pweave.tangle('ma.mdw')
-    ~/anaconda3/lib/python3.6/site-
-    packages/Pweave-0.30a1-py3.6.egg/pweave/__init__.py in tangle(file,
-    informat)
-         65     :param file: ``string`` the pweave document containing the
-    code
-         66     """
-    ---> 67     doc = Pweb(file, kernel = None, informat = informat)
-         68     doc.tangle()
-         69
-    ~/anaconda3/lib/python3.6/site-
-    packages/Pweave-0.30a1-py3.6.egg/pweave/pweb.py in __init__(self,
-    source, doctype, informat, kernel, output, figdir, mimetype)
-         67         self.theme = "skeleton"
-         68
-    ---> 69         self.setformat(doctype)
-         70         self.read(reader = informat)
-         71
-    ~/anaconda3/lib/python3.6/site-
-    packages/Pweave-0.30a1-py3.6.egg/pweave/pweb.py in setformat(self,
-    doctype, Formatter)
-        148
-        149         self.formatter = Formatter([],
-    --> 150                                    kernel = self.kernel,
-        151                                    language = self.language,
-        152                                    mimetype =
-    self.mimetype.type,
-    AttributeError: 'Pweb' object has no attribute 'kernel'
-    
 
 
 

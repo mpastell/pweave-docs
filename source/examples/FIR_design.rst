@@ -120,12 +120,12 @@ multiple figures/code chunk.
 
 .. code::
 
-    <matplotlib.figure.Figure at 0x7f3fd8469668>
+    <matplotlib.figure.Figure at 0x7fc7e2665e80>
     
 
 .. code::
 
-    <matplotlib.figure.Figure at 0x7f3fd8469668>
+    <matplotlib.figure.Figure at 0x7fc7e2665e80>
     
 
 
@@ -136,6 +136,13 @@ multiple figures/code chunk.
 
 .. image:: figures/FIR_design_figure2_1.png
    :width: 15 cm
+
+
+.. code:: python
+
+    show()
+    
+
 
 
 
