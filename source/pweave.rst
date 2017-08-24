@@ -43,8 +43,6 @@ occurred.
 ::
 
     Processing chunk 1 named None from line 22
-    ERROR! Session/line number was not unique in database. History logging
-    moved to new session 3452
     
 
 ::

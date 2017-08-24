@@ -5,7 +5,12 @@ Pweave is a scientific report generator and a literate programming
 tool for Python. Pweave can capture the results and plots from data
 analysis and works well with NumPy, SciPy and matplotlib. It is able to run
 python code from source document and include the results and capture
-`matplotlib <http://matplotlib.sourceforge.net/>`_ plots in the output.
+`matplotlib <http://matplotlib.org/>`_ plots in the output.
+
+.. note::
+
+  Pweave 0.30 has been updated to use IPython to run code from the documents.
+  This brings support for IPython magics and rich output and support for other.
 
 Features:
 ---------
@@ -22,14 +27,12 @@ Features:
 * Publish reports from Python scipts. Similar to R markdown.
 * Run from command line or interpreter.
 * Execute code using any Jupyter kernel.
-
-.. note::
-
-  Pweave 0.3 has been update to use IPython to run code from the documents.
-  This brings support for IPython magics and rich output and support for other.
-
-  Pweave 0.3 works on Python 3 only, but you can use Python 2 run the code via
+* Pweave 0.30 works on Python 3 only, but you can use Python 2 run the code via
   `kernel` argument.
+
+.. figure:: _static/pweave_atom.png
+
+  Pweave markdown document in Atom together with output. Atom support using ``language-weave``-package.
 
 .. note::
 

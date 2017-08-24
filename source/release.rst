@@ -1,7 +1,7 @@
 Release notes
 -------------
 
-**In 0.3**
+**In 0.30**
 
 * Use IPython kernel to run Python code:
 

@@ -120,12 +120,12 @@ multiple figures/code chunk.
 
 .. code::
 
-    <matplotlib.figure.Figure at 0x7fc7e2665e80>
+    <matplotlib.figure.Figure at 0x7f5f4fbf9e80>
     
 
 .. code::
 
-    <matplotlib.figure.Figure at 0x7fc7e2665e80>
+    <matplotlib.figure.Figure at 0x7f5f4fbf9e80>
     
 
 

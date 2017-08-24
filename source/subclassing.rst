@@ -57,11 +57,6 @@ The specified subclass can then be used as formatter with
 
 ::
 
-    status
-    
-
-::
-
     Processing chunk 1 named None from line 22
     
 
@@ -125,7 +120,7 @@ Let's see what the first code chunk contains:
      'display_data': True,
      'display_stream': True,
      'doctype': 'html',
-     'dpi': 100,
+     'dpi': 200,
      'echo': True,
      'evaluate': True,
      'f_env': None,
@@ -143,7 +138,7 @@ Let's see what the first code chunk contains:
                  'complete': True,
                  'display_data': True,
                  'display_stream': True,
-                 'dpi': 100,
+                 'dpi': 200,
                  'echo': True,
                  'evaluate': True,
                  'f_env': None,

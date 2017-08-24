@@ -14,7 +14,7 @@ capturing figures and it is available in several formats.
    :header: "Format", "Source", "Pweaved", "HTML", "PDF"
    :widths: 7, 11, 5, 5, 5
 
-
+   md2html, :download:`FIR_designp.pmd <FIR_designp.pmd>` , ,:download:`open <FIR_designp.html>`,
    texpygments, :download:`FIR_design_pygments.texw <FIR_design_pygments.texw>` , :download:`open <FIR_design_pygments.tex>` , , :download:`open <FIR_design_pygments.pdf>`
    tex, :download:`FIR_design_verb.texw <FIR_design_verb.texw>`, :download:`open <FIR_design_verb.tex>`, , :download:`open <FIR_design_verb.pdf>`
    texminted, :download:`FIR_design_minted.texw <FIR_design_minted.texw>`, :download:`open <FIR_design_minted.tex>`, ,:download:`open <FIR_design_minted.pdf>`
@@ -23,6 +23,42 @@ capturing figures and it is available in several formats.
    pandoc, :download:`FIR_design.mdw <FIR_design.mdw>`, :download:`open <FIR_design.md>` , :download:`open <FIR_design_pandoc.html>`,
 
 The commands used to process the examples from command line are shown below.
+
+Markdown
+========
+
+HTML output
+~~~~~~~~~~~
+
+`md2html` and `pandoc2html` formats produce output that is identical
+to pypublish command.
+
+:download:`FIR_designp.pmd <FIR_design.pmd>`, :download:`FIR_designp.html <FIR_designp.html>`
+
+
+.. code:: python
+
+    %%bash
+    pweave -f md2html FIR_designp.pmd
+
+
+
+
+To pandoc markdown
+~~~~~~~~~~~~~~~~~~
+
+:download:`FIR_designp.pmd <FIR_designp.pmd>`, :download:`FIR_designp.md <FIR_designp.md>` , :download:`FIR_design_pandoc.html <FIR_design_pandoc.html>`
+
+
+.. code:: python
+
+    %%bash
+    pweave -f pandoc FIR_designp.pmd
+    pandoc -s --mathjax FIR_designp.md -o FIR_design_pandoc.html
+
+
+
+
 
 Latex
 =====
@@ -129,43 +165,6 @@ Using cell mark up:
 
 
 
-
-Markdown
-========
-
-Pandoc
-~~~~~~
-
-:download:`FIR_design.mdw <FIR_design.mdw>`, :download:`FIR_design.md <FIR_design.md>` , :download:`FIR_design_pandoc.html <FIR_design_pandoc.html>`
-
-
-.. code:: python
-
-    %%bash
-    pweave -f pandoc FIR_design.mdw
-    pandoc -s --mathjax FIR_design.md -o FIR_design_pandoc.html
-
-
-
-
-Python-markdown
-~~~~~~~~~~~~~~~
-
-`md2html` and `pandoc2latex` formats produce output that is identical
-to pypublish command.
-
-:download:`FIR_design.mdw <FIR_design.mdw>`, :download:`FIR_design.html <FIR_design.html>`
-
-
-.. code:: python
-
-    %%bash
-    pweave -f md2html FIR_design_noweb.mdw
-
-
-
-
-
 .. _multi-chunk-example:
 
 Splitting code to multiple chunks
@@ -226,7 +225,7 @@ This gallery was created using:
 
 .. code::
 
-    '0.30-alpha1'
+    '0.30rc1'
     
 
 

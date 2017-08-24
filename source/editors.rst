@@ -4,21 +4,40 @@ Editor support
 
 Atom
 ----
+The recommended editor to use with Pweave is Atom. `language-weave <https://atom.io/packages/language-weave>`_
+package has Pweave syntax highlighting for several markups and support running code
+from chunks interactively using `Hydrogen <https://nteract.io/atom>`__.
 
-I have made a package for Atom that does syntax highlighting for Pweave documents
-it is called `language-weave <https://atom.io/packages/language-weave>`_ and you can
-install it from Atom or using apm:
-
+Install from Atom or using apm:
 
 ::
-      
-      apm install language-weave
+
+    apm install language-weave Hydrogen
+
+To install packages that I find useful for preview and formatting run:
+
+::
+
+    apm install language-markdown atom-html-preview pdf-view
+
+And for terminal support connected to Hydrogen kernel:
+
+::
+
+    apm install hydrogen-launcher platformio-ide-terminal
 
 
+.. figure:: _static/atom_hydrogen.png
 
-I use `Markdown Preview Plus <https://atom.io/packages/markdown-preview-plus>`_
-without pandoc allows preview of the source document (without syntax highlighting).
+  Pweave syntax highlighting in Atom and output from Hydrogen.
 
+
+Spyder
+------
+
+There a Spyder plugin called `Spyder reports <https://github.com/spyder-ide/spyder-reports>`__
+that can render Pweave documents inside Spyder. Pweave can also publish
+scipts using Spyder cell format ``#%%`` `code cell mark up <https://pythonhosted.org/spyder/editor.html#how-to-define-a-code-cell>`_ .
 
 Emacs
 -----
@@ -57,8 +76,3 @@ VIM
 ---
 
 Pweave VIM plugin: `<https://github.com/coyotebush/vim-pweave>`__ .
-
-Spyder
-------
-
-Pweave can publish Spyder can scipts using ``#%%`` `code cell mark up <https://pythonhosted.org/spyder/editor.html#how-to-define-a-code-cell>`_ .
