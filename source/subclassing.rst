@@ -57,6 +57,11 @@ The specified subclass can then be used as formatter with
 
 ::
 
+    status
+    
+
+::
+
     Processing chunk 1 named None from line 22
     
 

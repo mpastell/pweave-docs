@@ -20,7 +20,7 @@ capturing figures and it is available in several formats.
    texminted, :download:`FIR_design_minted.texw <FIR_design_minted.texw>`, :download:`open <FIR_design_minted.tex>`, ,:download:`open <FIR_design_minted.pdf>`
    rst, :download:`FIR_design.rstw <FIR_design.rstw>`, :download:`open <FIR_design.rst>`, :download:`open <FIR_design_rst.html>`,
    script, :download:`FIR_design.py <FIR_design.py>`, , :download:`open <FIR_design.html>`, :download:`open <FIR_design.pdf>`
-   pandoc, :download:`FIR_design.mdw <FIR_design.mdw>`, :download:`open <FIR_design.md>` , :download:`open <FIR_design_pandoc.html>`,
+   pandoc, :download:`FIR_designp.pmd <FIR_designp.pmd>`, :download:`open <FIR_designp.md>` , :download:`open <FIR_design_pandoc.html>`,
 
 The commands used to process the examples from command line are shown below.
 
@@ -33,7 +33,7 @@ HTML output
 `md2html` and `pandoc2html` formats produce output that is identical
 to pypublish command.
 
-:download:`FIR_designp.pmd <FIR_design.pmd>`, :download:`FIR_designp.html <FIR_designp.html>`
+:download:`FIR_designp.pmd <FIR_designp.pmd>`, :download:`FIR_designp.html <FIR_designp.html>`
 
 
 .. code:: python

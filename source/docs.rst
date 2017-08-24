@@ -13,6 +13,7 @@ Contents:
 
    index.rst
    usage.rst
+   script.rst
    chunks.rst
    defaults.rst
    formats.rst

@@ -29,9 +29,6 @@ document `ma.mdw <_static/ma.mdw>`_. Notice that pweave prints out the
 progress so in case of an error you can tell in which chunk it
 occurred.
 
-.. change default options for code chunks
-
-
 
 .. code-block:: python
 
@@ -39,6 +36,11 @@ occurred.
     # Weave a pandoc document with default options
     pweave.weave('ma.mdw', doctype = "pandoc")
 
+
+::
+
+    status
+    
 
 ::
 
