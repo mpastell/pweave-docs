@@ -39,26 +39,9 @@ occurred.
 
 ::
 
-    status
-    
-
-::
-
     Processing chunk 1 named None from line 22
-    
-
-::
-
     Processing chunk 2 named None from line 31
-    
-
-::
-
     Processing chunk 3 named None from line 42
-    
-
-::
-
     Weaved ma.mdw to ma.md
     
 

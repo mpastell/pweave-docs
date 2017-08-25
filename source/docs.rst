@@ -14,10 +14,10 @@ Contents:
    index.rst
    usage.rst
    script.rst
+   pweave.rst
    chunks.rst
    defaults.rst
    formats.rst
-   pweave.rst
    pypublish.rst
    customizing.rst
    subclassing.rst
